@@ -18,7 +18,7 @@ fun CoffeeTopAppBar(){
     TopAppBar(
         title = {
             Text(
-                text = stringResource(R.string.Main_title),
+                text = stringResource(R.string.Main_title) + "☕",
                 modifier = Modifier.padding(12.dp),
 
             )
