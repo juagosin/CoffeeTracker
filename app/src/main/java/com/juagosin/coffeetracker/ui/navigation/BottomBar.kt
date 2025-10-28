@@ -1,19 +1,43 @@
 package com.juagosin.coffeetracker.ui.navigation
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.BarChart
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import com.juagosin.coffeetracker.R
 
 @Composable
 fun CoffeBottomBar(){
     NavigationBar {
         NavigationBarItem(
-            label = { Text("Home") },
+            label = {
+                Text(
+                    text = stringResource(R.string.screenHome_title)
+                )
+                    },
             selected = true,
             onClick = { /*TODO*/ },
-            icon = { /*TODO*/ },
+            icon = {
+                Icon( Icons.Default.Home, contentDescription = "")
+            },
 
             )
+        NavigationBarItem(
+            label = {
+                Text(text = stringResource(R.string.screenStats_title))
+                    },
+            selected = true,
+            onClick = { /*TODO*/ },
+            icon = {
+                Icon( Icons.Filled.BarChart, contentDescription = "")
+            },
+
+            )
+
     }
 }
