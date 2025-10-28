@@ -7,5 +7,6 @@
     <string name="Main_title">Coffee Tracker</string>
     <string name="fab_description">Añadir café</string>
 
-
+    <string name="btn_accept">Aceptar</string>
+    <string name="btn_cancel">Cancelar</string>
 </resources>
