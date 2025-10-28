@@ -11,20 +11,23 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import com.juagosin.coffeetracker.Greeting
 import com.juagosin.coffeetracker.R
 
 
 @Composable
-fun CoffeeScaffold( modifier: Modifier
-){
-
-    Scaffold(modifier = Modifier.fillMaxSize(),
+fun CoffeeScaffold(
+    modifier: Modifier
+) {
+    val navController = rememberNavController()
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
         topBar = {
             CoffeeTopAppBar()
         },
         bottomBar = {
-            CoffeeBottomBar()
+            CoffeeBottomBar(navController)
         },
         floatingActionButton = {
             FloatingActionButton(
@@ -39,9 +42,7 @@ fun CoffeeScaffold( modifier: Modifier
             }
         }
     ) { innerPadding ->
-        Greeting(
-            name = "Android",
-            modifier = Modifier.padding(innerPadding)
-        )
+        CoffeeNavHost(modifier.padding(innerPadding), navController)
+
     }
 }
