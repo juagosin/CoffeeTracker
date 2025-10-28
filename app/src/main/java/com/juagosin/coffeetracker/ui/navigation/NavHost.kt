@@ -5,6 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.juagosin.coffeetracker.ui.screens.addcoffee.AddScreen
 import com.juagosin.coffeetracker.ui.screens.home.HomeScreen
 import com.juagosin.coffeetracker.ui.screens.stats.StatsScreen
 
@@ -20,6 +21,9 @@ fun CoffeeNavHost(modifier: Modifier = Modifier, navController: NavHostControlle
         }
         composable(Screens.Stats.route){
             StatsScreen()
+        }
+        composable(Screens.Add.route){
+            AddScreen()
         }
     }
 

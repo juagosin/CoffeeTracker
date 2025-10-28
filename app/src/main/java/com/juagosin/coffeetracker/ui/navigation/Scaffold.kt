@@ -30,7 +30,9 @@ fun CoffeeScaffold(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* TODO FAB logic */ }
+                onClick = {
+                    navController.navigate(Screens.Add.route)
+                }
             ) {
                 Icon(
                     painter = painterResource(id = R.drawable.coffeecup),
