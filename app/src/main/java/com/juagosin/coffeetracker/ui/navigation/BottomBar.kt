@@ -23,7 +23,7 @@ fun CoffeBottomBar(){
             selected = true,
             onClick = { /*TODO*/ },
             icon = {
-                Icon( Icons.Default.Home, contentDescription = "")
+                Icon( Screens.Home.icon, contentDescription = "")
             },
 
             )
@@ -34,7 +34,7 @@ fun CoffeBottomBar(){
             selected = true,
             onClick = { /*TODO*/ },
             icon = {
-                Icon( Icons.Filled.BarChart, contentDescription = "")
+                Icon( Screens.Stats.icon, contentDescription = "")
             },
 
             )
