@@ -2,4 +2,7 @@
     <string name="app_name">Android_Estudio-CoffeeTracker</string>
 
     <string name="Main_title">Coffee Tracker</string>
+    <string name="fab_description">Añadir café</string>
+
+
 </resources>
