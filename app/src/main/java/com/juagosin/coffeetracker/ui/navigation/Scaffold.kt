@@ -1,6 +1,5 @@
 package com.juagosin.coffeetracker.ui.navigation
 
-import android.R.attr.resource
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
