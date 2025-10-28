@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Android_Estudio-CoffeeTracker</string>
+
+    <string name="Main_title">Coffee Tracker</string>
 </resources>
