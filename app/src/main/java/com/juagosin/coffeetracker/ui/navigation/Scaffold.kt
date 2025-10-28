@@ -21,10 +21,10 @@ fun CoffeeScaffold( modifier: Modifier
 
     Scaffold(modifier = Modifier.fillMaxSize(),
         topBar = {
-            CoffeTopAppBar()
+            CoffeeTopAppBar()
         },
         bottomBar = {
-            CoffeBottomBar()
+            CoffeeBottomBar()
         },
         floatingActionButton = {
             FloatingActionButton(

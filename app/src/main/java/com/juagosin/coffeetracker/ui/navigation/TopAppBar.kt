@@ -14,7 +14,7 @@ import com.juagosin.coffeetracker.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CoffeTopAppBar(){
+fun CoffeeTopAppBar(){
     TopAppBar(
         title = {
             Text(
