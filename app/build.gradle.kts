@@ -70,4 +70,6 @@ dependencies {
     ksp(libs.room.compiler)
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
+    //Material Icons
+    implementation(libs.androidx.compose.material.icons.extended)
 }

@@ -14,6 +14,7 @@ coroutines = "1.10.2"
 ksp = "2.2.10-2.0.2"
 uiTextGoogleFonts = "1.9.4"
 room = "2.8.3"
+materialIconsExtended = "1.6.8"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -38,6 +39,7 @@ hilt-navigation = {module = "androidx.hilt:hilt-navigation-compose", version.ref
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
