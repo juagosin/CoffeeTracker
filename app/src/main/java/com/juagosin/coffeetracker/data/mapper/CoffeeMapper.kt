@@ -2,20 +2,23 @@ package com.juagosin.coffeetracker.data.mapper
 
 import com.juagosin.coffeetracker.data.entity.CoffeeEntity
 import com.juagosin.coffeetracker.domain.model.Coffee
+import com.juagosin.coffeetracker.domain.model.CoffeeType
 
 fun CoffeeEntity.toDomain(): Coffee {
     return Coffee(
-        id = id,
-        type = coffeeType,
-        date =timestamp
+        id = this.id,
+        type = CoffeeType.fromString(this.coffeeType),
+        timestamp = this.timestamp,
+        notes = this.notes
     )
 }
 
 fun Coffee.toEntity(): CoffeeEntity {
     return CoffeeEntity(
         id = id,
-        coffeeType = type,
-        timestamp = date
+        coffeeType = this.type.name,
+        timestamp = this.timestamp,
+        notes = this.notes
     )
 }
 
