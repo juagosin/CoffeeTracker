@@ -14,6 +14,7 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -52,7 +53,7 @@ fun AddScreen() {
                     textAlign = TextAlign.Start,
                     modifier = Modifier
                         .padding(bottom = 8.dp),
-                    style = MaterialTheme.typography.headlineSmall,
+                    style = MaterialTheme.typography.headlineMedium,
 
                     )
                 Text(
@@ -107,7 +108,8 @@ fun AddScreen() {
                 Text(
                     "Fecha",
                     style = MaterialTheme.typography.titleLarge,
-                    color = colorScheme.primary
+                    color = colorScheme.primary,
+                    modifier = Modifier.padding(top = 8.dp)
                 )
                 DatePickerTextField(
                     value = System.currentTimeMillis(),
@@ -118,14 +120,19 @@ fun AddScreen() {
                 Text(
                     "Notas",
                     style = MaterialTheme.typography.titleLarge,
-                    color = colorScheme.primary
+                    color = colorScheme.primary,
+                    modifier = Modifier.padding(top = 8.dp)
                 )
                 OutlinedTextField(
                     value = "Notas",
                     onValueChange = {},
                     label = {
-                        Text("Notas")
+
                     },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedContainerColor = Color.White,
+                        unfocusedContainerColor = Color.White
+                    ),
                     modifier = Modifier.fillMaxWidth()
 
                 )

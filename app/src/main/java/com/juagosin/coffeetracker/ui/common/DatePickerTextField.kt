@@ -17,6 +17,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 
 // ui/components/DatePickerTextField.kt
 
@@ -58,7 +59,10 @@ fun DatePickerTextField(
                 )
             }
         },
-        colors = OutlinedTextFieldDefaults.colors(),
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedContainerColor = Color.White,
+            unfocusedContainerColor = Color.White
+        ),
         interactionSource = remember { MutableInteractionSource() }
             .also { interactionSource ->
                 LaunchedEffect(interactionSource) {
