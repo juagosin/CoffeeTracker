@@ -1,11 +1,9 @@
 package com.juagosin.coffeetracker.ui.screens.addcoffee
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.juagosin.coffeetracker.domain.use_case.AddCoffeeUseCase
 import com.juagosin.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
