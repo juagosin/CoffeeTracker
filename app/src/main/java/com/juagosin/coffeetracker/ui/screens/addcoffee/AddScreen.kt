@@ -1,6 +1,5 @@
 package com.juagosin.coffeetracker.ui.screens.addcoffee
 
-import android.R.attr.text
 import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

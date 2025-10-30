@@ -5,7 +5,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.room.Insert
 import com.juagosin.coffeetracker.domain.model.CoffeePhrases
 import com.juagosin.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel

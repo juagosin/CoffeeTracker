@@ -1,6 +1,5 @@
 package com.juagosin.coffeetracker.ui.screens.addcoffee
 
-import android.util.Log.e
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
