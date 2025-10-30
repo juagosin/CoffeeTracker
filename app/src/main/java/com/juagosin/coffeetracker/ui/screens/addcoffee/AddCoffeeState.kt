@@ -9,5 +9,6 @@ data class AddCoffeeState(
 
     val isSaving: Boolean = false,
     val isSaved: Boolean = false,
+    val isSuccess: Boolean = false,
     val error: String? = null
 )

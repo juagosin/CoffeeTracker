@@ -75,13 +75,14 @@ fun AddScreen(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
 
-                ) {
-                    CoffeeType.entries.forEach { coffee->
+                    ) {
+                    CoffeeType.entries.forEach { coffee ->
                         FilterChip(
                             selected = selectedOption == coffee.displayName,
                             onClick = {
                                 selectedOption = coffee.displayName
                                 Log.d("FilterChip", "Selected option: $selectedOption")
+                                viewModel.onEvent(AddEvent.OnCoffeeTypeChanged(coffee))
                             },
                             label = { Text(coffee.displayName) },
                             shape = RoundedCornerShape(16.dp),
@@ -89,11 +90,9 @@ fun AddScreen(
                                 selectedContainerColor = colorScheme.tertiaryContainer,
                                 selectedLabelColor = colorScheme.onTertiaryContainer,
 
-                            )
+                                )
                         )
                     }
-
-
 
 
                 }
@@ -134,12 +133,15 @@ fun AddScreen(
                     modifier = Modifier.fillMaxWidth()
 
                 )
-                Button(modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(24.dp),
-                    onClick = { /*TODO*/ },
-                    enabled = true
-                ){
+                Button(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(24.dp),
+                    onClick = {
+                        viewModel.onEvent(AddEvent.SaveCoffee)
+                    },
+                    enabled = !state.isSaving
+                ) {
                     Text("Guardar")
                 }
             }
