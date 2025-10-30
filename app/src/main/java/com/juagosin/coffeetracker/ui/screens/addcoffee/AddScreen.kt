@@ -1,5 +1,6 @@
 package com.juagosin.coffeetracker.ui.screens.addcoffee
 
+import android.R.attr.text
 import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FilterChipDefaults
@@ -24,9 +26,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.juagosin.coffeetracker.R
 import com.juagosin.coffeetracker.domain.model.CoffeeType
 import com.juagosin.readingAPP.presentation.common.DatePickerTextField
 
@@ -59,7 +63,7 @@ fun AddScreen(
 
                 ) {
                 Text(
-                    "Nuevo Café ☕",
+                    text = stringResource(R.string.title_newCoffee),
                     textAlign = TextAlign.Start,
                     modifier = Modifier
                         .padding(bottom = 8.dp),
@@ -67,7 +71,7 @@ fun AddScreen(
 
                     )
                 Text(
-                    "Tipo",
+                    text = stringResource(R.string.label_type),
                     style = MaterialTheme.typography.titleLarge,
                     color = colorScheme.primary
                 )
@@ -98,7 +102,7 @@ fun AddScreen(
                 }
 
                 Text(
-                    "Fecha",
+                    text = stringResource(R.string.label_date),
                     style = MaterialTheme.typography.titleLarge,
                     color = colorScheme.primary,
                     modifier = Modifier.padding(top = 8.dp)
@@ -112,7 +116,7 @@ fun AddScreen(
                     modifier = Modifier.fillMaxWidth()
                 )
                 Text(
-                    "Notas",
+                    text = stringResource(R.string.label_notes),
                     style = MaterialTheme.typography.titleLarge,
                     color = colorScheme.primary,
                     modifier = Modifier.padding(top = 8.dp)
@@ -142,7 +146,11 @@ fun AddScreen(
                     },
                     enabled = !state.isSaving
                 ) {
-                    Text("Guardar")
+                    if(state.isSaving){
+                        CircularProgressIndicator()
+                    }else {
+                        Text(stringResource(R.string.btn_save))
+                    }
                 }
             }
         }

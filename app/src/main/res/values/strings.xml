@@ -7,6 +7,13 @@
     <string name="Main_title">Coffee Tracker</string>
     <string name="fab_description">Añadir café</string>
 
+    <string name="title_newCoffee">Nuevo Café ☕</string>
+
+    <string name="label_notes">Notas</string>
+    <string name="label_date">Fecha</string>
+    <string name="label_type">Tipo</string>
+
+    <string name="btn_save">Guardar</string>
     <string name="btn_accept">Aceptar</string>
     <string name="btn_cancel">Cancelar</string>
 </resources>
