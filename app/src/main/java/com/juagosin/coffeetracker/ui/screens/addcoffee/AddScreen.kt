@@ -26,11 +26,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.juagosin.coffeetracker.domain.model.CoffeeType
 import com.juagosin.readingAPP.presentation.common.DatePickerTextField
 
 @Composable
-fun AddScreen() {
+fun AddScreen(
+    viewModel: AddViewModel = hiltViewModel(),
+) {
+    val state = viewModel.state
     var selectedOption by remember { mutableStateOf(CoffeeType.entries.first().displayName) }
     Column(
         modifier = Modifier
@@ -101,8 +105,10 @@ fun AddScreen() {
                     modifier = Modifier.padding(top = 8.dp)
                 )
                 DatePickerTextField(
-                    value = System.currentTimeMillis(),
-                    onValueChange = {},
+                    value = state.date,
+                    onValueChange = {
+                        viewModel.onEvent(AddEvent.OnDateChanged(it))
+                    },
                     label = "",
                     modifier = Modifier.fillMaxWidth()
                 )
