@@ -19,8 +19,11 @@ class AddViewModel @Inject constructor(
     fun onEvent(event: AddEvent) {
         when (event){
             is AddEvent.OnDateChanged -> {
-                Log.d("Date", event.value.toString())
                 state = state.copy(date = event.value)
+            }
+
+            is AddEvent.OnNotesChanged -> {
+                state = state.copy(notes = event.value)
             }
         }
     }

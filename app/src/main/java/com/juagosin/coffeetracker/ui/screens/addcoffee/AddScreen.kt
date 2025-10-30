@@ -119,8 +119,10 @@ fun AddScreen(
                     modifier = Modifier.padding(top = 8.dp)
                 )
                 OutlinedTextField(
-                    value = "Notas",
-                    onValueChange = {},
+                    value = state.notes,
+                    onValueChange = {
+                        viewModel.onEvent(AddEvent.OnNotesChanged(it))
+                    },
                     label = {
 
                     },
@@ -128,6 +130,7 @@ fun AddScreen(
                         focusedContainerColor = Color.White,
                         unfocusedContainerColor = Color.White
                     ),
+                    maxLines = 5,
                     modifier = Modifier.fillMaxWidth()
 
                 )
