@@ -16,6 +16,10 @@ class CoffeeRepositoryImpl(
 
     }
 
+    override suspend fun getCoffeeCount(): Int {
+        return coffeeDao.getCoffeeCount()
+    }
+
     override suspend fun deleteCoffee(id: Int?) {
         coffeeDao.deleteCoffee(id)
     }

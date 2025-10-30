@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.CardDefaults
@@ -38,7 +40,7 @@ fun HomeScreen(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             ElevatedCard(
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.height(100.dp).weight(1f),
                 shape = RoundedCornerShape(16.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = colorScheme.surfaceContainerLow,
@@ -53,24 +55,23 @@ fun HomeScreen(
                         .padding(8.dp)
                         .fillMaxWidth(),
                     style = MaterialTheme.typography.bodyLarge,
-                    )
+                )
 
                 Text(
-                    "8",
+                    text = state.coffeeCount.toString(),
                     textAlign = TextAlign.Center,
                     color = colorScheme.primary,
 
                     modifier = Modifier
                         .padding(bottom = 16.dp)
-                        .fillMaxWidth()
-                        ,
+                        .fillMaxWidth(),
                     style = MaterialTheme.typography.titleLarge,
 
                     )
             }
 
             ElevatedCard(
-                modifier = Modifier.weight(1f),
+                modifier = Modifier.height(100.dp).weight(1f),
                 shape = RoundedCornerShape(16.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = colorScheme.surfaceContainerLow,
@@ -89,15 +90,13 @@ fun HomeScreen(
                     )
 
                 Text(
-                    "8",
-                    textAlign = TextAlign.Center,
-                    color = colorScheme.primary,
-
+                    "Hace 1h 20min",
                     modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .fillMaxWidth()
-                    ,
-                    style = MaterialTheme.typography.titleLarge,
+                        .padding(vertical = 12.dp)
+                        .fillMaxSize(),
+                    textAlign = TextAlign.Center,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = colorScheme.primary,
 
                     )
             }
