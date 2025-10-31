@@ -12,6 +12,9 @@ interface CoffeeDao {
     @Query("SELECT * FROM coffee_table ORDER BY timestamp DESC LIMIT 10")
     fun getLastCoffees(): Flow<List<CoffeeEntity>>
 
+    @Query("SELECT * FROM coffee_table ORDER BY timestamp DESC LIMIT 1")
+    fun getLastCoffee(): Flow<CoffeeEntity>
+
     @Query("SELECT COUNT(id) FROM coffee_table")
     suspend fun getCoffeeCount(): Int
 

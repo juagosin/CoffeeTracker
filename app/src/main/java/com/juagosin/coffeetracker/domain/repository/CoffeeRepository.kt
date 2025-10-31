@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.Flow
 interface CoffeeRepository {
 
     fun getLastCoffees(): Flow<List<Coffee>>
+    fun getLastCoffee(): Flow<Coffee?>
     suspend fun getCoffeeCount(): Int
 
     suspend fun deleteCoffee(id: Int?)

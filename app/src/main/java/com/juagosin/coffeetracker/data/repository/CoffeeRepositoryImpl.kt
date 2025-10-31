@@ -16,6 +16,11 @@ class CoffeeRepositoryImpl(
 
     }
 
+    override fun getLastCoffee(): Flow<Coffee?> {
+        return coffeeDao.getLastCoffee()
+            .map { entity -> entity?.toDomain() }
+    }
+
     override suspend fun getCoffeeCount(): Int {
         return coffeeDao.getCoffeeCount()
     }
