@@ -1,5 +1,6 @@
 package com.juagosin.coffeetracker.ui.screens.home
 
+import TimeDuration
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -20,9 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -196,7 +195,7 @@ fun CoffeeBarChart(modifier: Modifier = Modifier, state: HomeState) {
                         Text(
                             text = day.count.toString(),
                             fontSize = 12.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            color = colorScheme.onSurfaceVariant,
                             modifier = Modifier.padding(top = 4.dp)
                         )
                         Box(
@@ -204,13 +203,13 @@ fun CoffeeBarChart(modifier: Modifier = Modifier, state: HomeState) {
                                 .width(24.dp)
                                 .height((day.count / maxCount.toFloat()) * 120.dp)
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(MaterialTheme.colorScheme.primary)
+                                .background(colorScheme.primary)
                         )
                     }
                     Text(
                         text = day.dayOfWeek,
                         fontSize = 12.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        color = colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(top = 4.dp)
                     )
                 }

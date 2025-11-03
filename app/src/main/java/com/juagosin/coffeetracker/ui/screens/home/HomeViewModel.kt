@@ -1,6 +1,5 @@
 package com.juagosin.coffeetracker.ui.screens.home
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -10,7 +9,6 @@ import com.juagosin.coffeetracker.domain.model.Coffee
 import com.juagosin.coffeetracker.domain.model.CoffeePhrases
 import com.juagosin.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
