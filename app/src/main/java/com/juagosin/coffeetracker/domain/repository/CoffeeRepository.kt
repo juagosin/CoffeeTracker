@@ -1,6 +1,7 @@
 package com.juagosin.coffeetracker.domain.repository
 
 import com.juagosin.coffeetracker.domain.model.Coffee
+import com.juagosin.coffeetracker.domain.model.stats.DailyCoffeeStat
 import kotlinx.coroutines.flow.Flow
 
 interface CoffeeRepository {
@@ -11,6 +12,10 @@ interface CoffeeRepository {
 
     suspend fun deleteCoffee(id: Int?)
     suspend fun insertCoffee(coffee: Coffee)
+
+
+    // ESTADISTICAS
+    fun getLastNDaysStats(days: Int): Flow<List<DailyCoffeeStat>>
 }
 
 

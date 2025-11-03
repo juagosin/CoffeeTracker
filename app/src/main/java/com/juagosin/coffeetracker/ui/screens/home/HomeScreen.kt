@@ -1,6 +1,5 @@
 package com.juagosin.coffeetracker.ui.screens.home
 
-import android.R.attr.top
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -21,6 +20,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -44,7 +45,9 @@ fun HomeScreen(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             ElevatedCard(
-                modifier = Modifier.height(100.dp).weight(1f),
+                modifier = Modifier
+                    .height(100.dp)
+                    .weight(1f),
                 shape = RoundedCornerShape(16.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = colorScheme.surfaceContainerLow,
@@ -75,7 +78,9 @@ fun HomeScreen(
             }
 
             ElevatedCard(
-                modifier = Modifier.height(100.dp).weight(1f),
+                modifier = Modifier
+                    .height(100.dp)
+                    .weight(1f),
                 shape = RoundedCornerShape(16.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = colorScheme.surfaceContainerLow,
@@ -94,7 +99,11 @@ fun HomeScreen(
                     )
 
                 Text(
-                    text = if (state.timeLastCoffee>0){ TimeDuration.fromTimestamp(state.timeLastCoffee).toSmartString()} else{ "Nunca"},
+                    text = if (state.timeLastCoffee > 0) {
+                        TimeDuration.fromTimestamp(state.timeLastCoffee).toSmartString()
+                    } else {
+                        "Nunca"
+                    },
                     modifier = Modifier
                         .padding(vertical = 12.dp)
                         .fillMaxSize(),
@@ -106,8 +115,7 @@ fun HomeScreen(
             }
         }
 
-        CoffeeBarChart()
-        WeekStats()
+        CoffeeBarChart(Modifier, state)
 
         ElevatedCard(
             modifier = Modifier
@@ -132,6 +140,7 @@ fun HomeScreen(
                 state.randomPhrase,
                 textAlign = TextAlign.Justify,
                 style = MaterialTheme.typography.bodySmall,
+                fontStyle = FontStyle.Italic,
                 color = colorScheme.onSurface,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -143,26 +152,12 @@ fun HomeScreen(
 }
 
 
-@Composable
-fun WeekStats(
-
-) {
-   // Text("Grafica semanal")
-}
 
 @Composable
-fun CoffeeBarChart(modifier: Modifier = Modifier) {
-    val coffeeData = listOf(
-        CoffeeDay("Lun", 3),
-        CoffeeDay("Mar", 2),
-        CoffeeDay("Mié", 7),
-        CoffeeDay("Jue", 1),
-        CoffeeDay("Vie", 5),
-        CoffeeDay("Sáb", 2),
-        CoffeeDay("Dom", 3)
-    )
+fun CoffeeBarChart(modifier: Modifier = Modifier, state: HomeState) {
 
-    val maxCount = coffeeData.maxOf { it.count }
+
+    val maxCount = state.lastNDaysStats.maxOfOrNull { it.count } ?: 1
 
     ElevatedCard(
         modifier = Modifier
@@ -176,36 +171,44 @@ fun CoffeeBarChart(modifier: Modifier = Modifier) {
     ) {
         Text(
             text = "Cafés de la última semana",
-            style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-            color = MaterialTheme.colorScheme.surfaceContainerLow,
-            modifier = Modifier.padding(bottom = 12.dp)
+            textAlign = TextAlign.Justify,
+            style = MaterialTheme.typography.bodyLarge,
+
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 14.dp, start = 14.dp, end = 14.dp),
         )
 
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(175.dp), // altura total de la gráfica
+                .height(185.dp), // altura total de la gráfica
             horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.Bottom // 👈 CLAVE: las barras se anclan abajo
-        ){
-            coffeeData.forEach { day ->
-                Column(horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Bottom) {
+            verticalAlignment = Alignment.Bottom
+        ) {
+
+            state.lastNDaysStats.forEach { day ->
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Bottom
+                ) {
+                    if(day.count>0) {
+                        Text(
+                            text = day.count.toString(),
+                            fontSize = 12.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            modifier = Modifier.padding(top = 4.dp)
+                        )
+                        Box(
+                            modifier = Modifier
+                                .width(24.dp)
+                                .height((day.count / maxCount.toFloat()) * 120.dp)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(MaterialTheme.colorScheme.primary)
+                        )
+                    }
                     Text(
-                        text = day.count.toString(),
-                        fontSize = 12.sp,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.padding(top = 4.dp)
-                    )
-                    Box(
-                        modifier = Modifier
-                            .width(24.dp)
-                            .height((day.count / maxCount.toFloat()) * 120.dp)
-                            .clip(RoundedCornerShape(8.dp))
-                            .background(MaterialTheme.colorScheme.primary)
-                    )
-                    Text(
-                        text = day.day,
+                        text = day.dayOfWeek,
                         fontSize = 12.sp,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         modifier = Modifier.padding(top = 4.dp)
@@ -215,5 +218,3 @@ fun CoffeeBarChart(modifier: Modifier = Modifier) {
         }
     }
 }
-
-data class CoffeeDay(val day: String, val count: Int)

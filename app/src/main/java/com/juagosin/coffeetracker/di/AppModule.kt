@@ -9,6 +9,7 @@ import com.juagosin.coffeetracker.domain.use_case.AddCoffeeUseCase
 import com.juagosin.coffeetracker.domain.use_case.CoffeeUseCases
 import com.juagosin.coffeetracker.domain.use_case.GetCoffeeCount
 import com.juagosin.coffeetracker.domain.use_case.GetLasCoffeeUseCase
+import com.juagosin.coffeetracker.domain.use_case.GetLastNDaysStatsUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,7 +44,8 @@ object AppModule {
         return CoffeeUseCases(
             addCoffeeUseCase = AddCoffeeUseCase(repository),
             getCoffeeCount = GetCoffeeCount(repository),
-            getLasCoffeeUseCase = GetLasCoffeeUseCase(repository)
+            getLasCoffeeUseCase = GetLasCoffeeUseCase(repository),
+            getLastNDaysCoffeeUseCase = GetLastNDaysStatsUseCase(repository)
         )
     }
 

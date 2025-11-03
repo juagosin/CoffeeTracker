@@ -10,6 +10,7 @@ import com.juagosin.coffeetracker.domain.model.Coffee
 import com.juagosin.coffeetracker.domain.model.CoffeePhrases
 import com.juagosin.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,6 +24,22 @@ class HomeViewModel @Inject constructor(
         loadPhrases()
         getCoffeeCount()
         getTimeLastCoffee()
+        getLastNDaysCoffees()
+    }
+
+    private fun getLastNDaysCoffees() {
+        viewModelScope.launch {
+            try {
+                coffeeUseCase.getLastNDaysCoffeeUseCase(7).collect { stats ->
+                    state = state.copy(
+                        lastNDaysStats = stats
+                    )
+                }
+            } catch (e: Exception) {
+                // Manejar el error según necesites
+                // Por ejemplo, podrías añadir un campo de error en el state
+            }
+        }
     }
 
     private fun getTimeLastCoffee() {

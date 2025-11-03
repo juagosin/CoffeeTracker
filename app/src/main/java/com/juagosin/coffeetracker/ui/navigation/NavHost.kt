@@ -23,7 +23,11 @@ fun CoffeeNavHost(modifier: Modifier = Modifier, navController: NavHostControlle
             StatsScreen()
         }
         composable(Screens.Add.route){
-            AddScreen()
+            AddScreen(
+                onCoffeeSaved = {
+                    navController.navigate(Screens.Home.route)
+                },
+            )
         }
     }
 

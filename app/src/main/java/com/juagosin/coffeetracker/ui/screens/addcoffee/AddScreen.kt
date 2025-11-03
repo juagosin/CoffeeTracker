@@ -36,8 +36,12 @@ import com.juagosin.readingAPP.presentation.common.DatePickerTextField
 @Composable
 fun AddScreen(
     viewModel: AddViewModel = hiltViewModel(),
+    onCoffeeSaved: () -> Unit
 ) {
     val state = viewModel.state
+    if (state.isSuccess) {
+        onCoffeeSaved()
+    }
     var selectedOption by remember { mutableStateOf(CoffeeType.entries.first().displayName) }
     Column(
         modifier = Modifier

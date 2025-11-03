@@ -23,4 +23,24 @@ interface CoffeeDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCoffee(coffee: CoffeeEntity)
+
+    // COnsultas para estadísticas:
+    @Query("""
+        WITH RECURSIVE days(day, remaining) AS (
+            SELECT date('now', '-' || :daysAgo || ' days'), :daysAgo
+            UNION ALL
+            SELECT date(day, '+1 day'), remaining - 1
+            FROM days
+            WHERE remaining > 0
+        )
+        SELECT 
+            d.day AS day,
+            COALESCE(COUNT(c.id), 0) AS count
+        FROM days d
+        LEFT JOIN coffee_table c 
+            ON date(c.timestamp / 1000, 'unixepoch') = d.day
+        GROUP BY d.day
+        ORDER BY d.day
+    """)
+    fun getLastNDaysStats(daysAgo: Int = 6): Flow<List<DayStats>>
 }
