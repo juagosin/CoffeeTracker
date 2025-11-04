@@ -4,5 +4,6 @@ data class CoffeeUseCases(
     val addCoffeeUseCase: AddCoffeeUseCase,
     val getCoffeeCount: GetCoffeeCount,
     val getLasCoffeeUseCase: GetLasCoffeeUseCase,
-    val getLastNDaysCoffeeUseCase: GetLastNDaysStatsUseCase
+    val getLastNDaysCoffeeUseCase: GetLastNDaysStatsUseCase,
+    val getLastNCoffeesUseCase: GetLastNCoffeesUseCase
 )

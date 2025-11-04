@@ -9,8 +9,8 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CoffeeDao {
-    @Query("SELECT * FROM coffee_table ORDER BY timestamp DESC LIMIT 10")
-    fun getLastCoffees(): Flow<List<CoffeeEntity>>
+    @Query("SELECT * FROM coffee_table ORDER BY timestamp DESC LIMIT :n")
+    fun getLastNCoffees(n: Int=10): Flow<List<CoffeeEntity>>
 
     @Query("SELECT * FROM coffee_table ORDER BY timestamp DESC LIMIT 1")
     fun getLastCoffee(): Flow<CoffeeEntity>

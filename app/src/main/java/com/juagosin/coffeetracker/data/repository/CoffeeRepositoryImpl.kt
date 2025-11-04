@@ -13,9 +13,9 @@ import kotlinx.coroutines.flow.map
 class CoffeeRepositoryImpl(
     private val coffeeDao: CoffeeDao
 ) : CoffeeRepository {
-    override fun getLastCoffees(): Flow<List<Coffee>> {
-        return coffeeDao.getLastCoffees().map { it.toDomain() }
 
+    override fun getLastNCoffees(n: Int): Flow<List<Coffee>> {
+        return coffeeDao.getLastNCoffees().map { it.toDomain() }
     }
 
     override fun getLastCoffee(): Flow<Coffee?> {
