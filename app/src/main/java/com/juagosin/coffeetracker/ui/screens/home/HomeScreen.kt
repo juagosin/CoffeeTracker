@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.juagosin.coffeetracker.ui.common.EmptyData
 
 @Composable
 fun HomeScreen(
@@ -39,82 +40,87 @@ fun HomeScreen(
         verticalArrangement = Arrangement.Center
     ) {
 
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            ElevatedCard(
-                modifier = Modifier
-                    .height(100.dp)
-                    .weight(1f),
-                shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = colorScheme.surfaceContainerLow,
-                    contentColor = colorScheme.onSurfaceVariant
-                ),
+
+        if (state.coffeeCount == 0) {
+
+            EmptyData()
+        } else {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                Text(
-                    "Contador de cafés",
-                    textAlign = TextAlign.Center,
-
+                ElevatedCard(
                     modifier = Modifier
-                        .padding(8.dp)
-                        .fillMaxWidth(),
-                    style = MaterialTheme.typography.bodyLarge,
-                )
+                        .height(100.dp)
+                        .weight(1f),
+                    shape = RoundedCornerShape(16.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = colorScheme.surfaceContainerLow,
+                        contentColor = colorScheme.onSurfaceVariant
+                    ),
+                ) {
+                    Text(
+                        "Contador de cafés",
+                        textAlign = TextAlign.Center,
 
-                Text(
-                    text = state.coffeeCount.toString(),
-                    textAlign = TextAlign.Center,
-                    color = colorScheme.primary,
-
-                    modifier = Modifier
-                        .padding(bottom = 16.dp)
-                        .fillMaxWidth(),
-                    style = MaterialTheme.typography.titleLarge,
-
+                        modifier = Modifier
+                            .padding(8.dp)
+                            .fillMaxWidth(),
+                        style = MaterialTheme.typography.bodyLarge,
                     )
+
+                    Text(
+                        text = state.coffeeCount.toString(),
+                        textAlign = TextAlign.Center,
+                        color = colorScheme.primary,
+
+                        modifier = Modifier
+                            .padding(bottom = 16.dp)
+                            .fillMaxWidth(),
+                        style = MaterialTheme.typography.titleLarge,
+
+                        )
+                }
+
+                ElevatedCard(
+                    modifier = Modifier
+                        .height(100.dp)
+                        .weight(1f),
+                    shape = RoundedCornerShape(16.dp),
+                    colors = CardDefaults.cardColors(
+                        containerColor = colorScheme.surfaceContainerLow,
+                        contentColor = colorScheme.onSurfaceVariant
+                    ),
+                ) {
+                    Text(
+                        "Último café",
+                        textAlign = TextAlign.Center,
+
+                        modifier = Modifier
+                            .padding(8.dp)
+                            .fillMaxWidth(),
+                        style = MaterialTheme.typography.bodyLarge,
+
+                        )
+
+                    Text(
+                        text = if (state.timeLastCoffee > 0) {
+                            TimeDuration.fromTimestamp(state.timeLastCoffee).toSmartString()
+                        } else {
+                            "Nunca"
+                        },
+                        modifier = Modifier
+                            .padding(vertical = 12.dp)
+                            .fillMaxSize(),
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = colorScheme.primary,
+
+                        )
+                }
             }
-
-            ElevatedCard(
-                modifier = Modifier
-                    .height(100.dp)
-                    .weight(1f),
-                shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = colorScheme.surfaceContainerLow,
-                    contentColor = colorScheme.onSurfaceVariant
-                ),
-            ) {
-                Text(
-                    "Último café",
-                    textAlign = TextAlign.Center,
-
-                    modifier = Modifier
-                        .padding(8.dp)
-                        .fillMaxWidth(),
-                    style = MaterialTheme.typography.bodyLarge,
-
-                    )
-
-                Text(
-                    text = if (state.timeLastCoffee > 0) {
-                        TimeDuration.fromTimestamp(state.timeLastCoffee).toSmartString()
-                    } else {
-                        "Nunca"
-                    },
-                    modifier = Modifier
-                        .padding(vertical = 12.dp)
-                        .fillMaxSize(),
-                    textAlign = TextAlign.Center,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = colorScheme.primary,
-
-                    )
-            }
+            CoffeeBarChart(Modifier, state)
         }
-
-        CoffeeBarChart(Modifier, state)
 
         ElevatedCard(
             modifier = Modifier
@@ -149,7 +155,6 @@ fun HomeScreen(
     }
 
 }
-
 
 
 @Composable
@@ -191,7 +196,7 @@ fun CoffeeBarChart(modifier: Modifier = Modifier, state: HomeState) {
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Bottom
                 ) {
-                    if(day.count>0) {
+                    if (day.count > 0) {
                         Text(
                             text = day.count.toString(),
                             fontSize = 12.sp,

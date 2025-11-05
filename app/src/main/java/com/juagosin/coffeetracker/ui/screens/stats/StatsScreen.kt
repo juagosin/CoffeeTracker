@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
@@ -44,14 +45,17 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.juagosin.coffeetracker.R
 import com.juagosin.coffeetracker.domain.model.CoffeeType
 import com.juagosin.coffeetracker.domain.model.toFormattedDate
+import com.juagosin.coffeetracker.ui.common.EmptyData
 import kotlin.math.PI
 import kotlin.math.atan2
 import kotlin.math.cos
@@ -71,8 +75,9 @@ fun StatsScreen(
         verticalArrangement = Arrangement.Center
     ) {
 
-        Log.d("StatsScreen", "ENTRA EN EL COLLECT = ${state.allCoffeesStats.isEmpty()}")
+
         if(state.allCoffeesStats.isEmpty()){
+            EmptyData()
 
         }else{
             val datosPieChart = remember(state.allCoffeesStats) {
