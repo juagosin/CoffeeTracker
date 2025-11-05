@@ -13,12 +13,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.juagosin.coffeetracker.R
 
 @Composable
-fun EmptyData(txtTitle: String = "No hay registros de consumo de café") {
+fun EmptyData(txtTitle: String = stringResource(R.string.title_nodata)) {
     Box(
         ) {
         Column(modifier = Modifier.fillMaxWidth()) {

@@ -21,12 +21,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.unit.times
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.juagosin.coffeetracker.R
 import com.juagosin.coffeetracker.ui.common.EmptyData
 
 @Composable
@@ -60,7 +62,7 @@ fun HomeScreen(
                     ),
                 ) {
                     Text(
-                        "Contador de cafés",
+                        text = stringResource(R.string.title_coffecount),
                         textAlign = TextAlign.Center,
 
                         modifier = Modifier
@@ -93,7 +95,7 @@ fun HomeScreen(
                     ),
                 ) {
                     Text(
-                        "Último café",
+                        text = stringResource(R.string.title_lastcoffe),
                         textAlign = TextAlign.Center,
 
                         modifier = Modifier
@@ -107,7 +109,7 @@ fun HomeScreen(
                         text = if (state.timeLastCoffee > 0) {
                             TimeDuration.fromTimestamp(state.timeLastCoffee).toSmartString()
                         } else {
-                            "Nunca"
+                            stringResource(R.string.txt_never)
                         },
                         modifier = Modifier
                             .padding(vertical = 12.dp)
@@ -133,7 +135,7 @@ fun HomeScreen(
             ),
         ) {
             Text(
-                text = "Sabías que...",
+                text = stringResource(R.string.title_didyouknow),
                 textAlign = TextAlign.Justify,
                 style = MaterialTheme.typography.titleLarge,
                 color = colorScheme.primary,
@@ -174,7 +176,7 @@ fun CoffeeBarChart(modifier: Modifier = Modifier, state: HomeState) {
         ),
     ) {
         Text(
-            text = "Cafés de la última semana",
+            text = stringResource(R.string.title_lastweek),
             textAlign = TextAlign.Justify,
             style = MaterialTheme.typography.bodyLarge,
 
@@ -186,7 +188,7 @@ fun CoffeeBarChart(modifier: Modifier = Modifier, state: HomeState) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(185.dp), // altura total de la gráfica
+                .height(185.dp),
             horizontalArrangement = Arrangement.SpaceEvenly,
             verticalAlignment = Alignment.Bottom
         ) {
