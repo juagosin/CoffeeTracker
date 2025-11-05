@@ -1,6 +1,7 @@
 package com.juagosin.coffeetracker.domain.model
 
 import TimeDuration
+import androidx.compose.ui.graphics.Color
 import timeSinceNow
 
 data class Coffee (
@@ -10,19 +11,15 @@ data class Coffee (
     val notes: String? = null
 )
 
-enum class CoffeeType(val displayName: String, val emoji: String) {
+enum class CoffeeType(val displayName: String, val emoji: String,val color: Color) {
 
-    CORTADO("Cortado", "☕"),
-    LATTE("Con Leche", "🥛"),
-    ESPRESSO("Corto", "☕"),
-    LUNGO("Largo", "☕"),
-    AMERICANO("Americano", "☕"),
-
-    CAPPUCCINO("Capuchino", "☕"),
-
-    MACCHIATO("Manchado", "☕"),
-    MOCHA("Moka", "🍫"),
-    DESCAFEINADO("Descafeinado", "☕");
+    CORTADO("Cortado", "☕",Color(0xFF3B82F6)),
+    LATTE("Con Leche", "🥛", Color(0xFFF59E0B)),
+    ESPRESSO("Solo", "☕", Color(0xFFEC4899)),
+    LUNGO("Largo", "☕", Color(0xFF8B5A3C)),
+    CAPPUCCINO("Capuchino", "☕", Color(0xFF6366F1)),
+    DESCAFEINADO("Descafeinado", "☕", Color(0xFF10B981)),
+    OTROS("Otros", "🍫", Color(0xFFEF4444));
 
     companion object {
         fun fromString(value: String): CoffeeType {

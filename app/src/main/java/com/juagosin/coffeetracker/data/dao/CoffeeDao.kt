@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.juagosin.coffeetracker.data.entity.CoffeeEntity
+import com.juagosin.coffeetracker.domain.model.stats.AllTimeTypeStats
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -24,7 +25,7 @@ interface CoffeeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCoffee(coffee: CoffeeEntity)
 
-    // COnsultas para estadísticas:
+    // Consultas para estadísticas:
     @Query("""
         WITH RECURSIVE days(day, remaining) AS (
             SELECT date('now', '-' || :daysAgo || ' days'), :daysAgo
@@ -43,4 +44,16 @@ interface CoffeeDao {
         ORDER BY d.day
     """)
     fun getLastNDaysStats(daysAgo: Int = 6): Flow<List<DayStats>>
+
+    @Query("""
+        SELECT 
+            coffeeType,
+            COUNT(id) AS value
+        FROM coffee_table
+        GROUP BY coffeeType
+        ORDER BY value DESC
+    """)
+    fun getAllTimeTypeStats(): Flow<List<CoffeeTypeCount>>
+
+
 }

@@ -1,5 +1,6 @@
 package com.juagosin.coffeetracker.ui.screens.stats
 
+import android.util.Log
 import android.util.Log.e
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -17,7 +18,30 @@ class StatsViewModel @Inject constructor(
 ) : ViewModel() {
     var state by mutableStateOf(StatsState())
     init {
+        Log.d("StatsViewModel", "coffeeCount = ${state.coffeeCount}")
         loadLastCoffees()
+        loadAllHistoryCoffees()
+
+    }
+
+    private fun loadAllHistoryCoffees() {
+        viewModelScope.launch {
+            try{
+                coffeeUseCases.getAllTimeTypeStatsUseCase().collect{
+
+                    state = state.copy(
+                        allCoffeesStats = it,
+                        coffeeCount = state.allCoffeesStats.size
+                    )
+
+                }
+
+
+
+            }catch (e:Exception){
+
+            }
+        }
     }
 
     private fun loadLastCoffees() {
