@@ -25,9 +25,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.juagosin.coffeetracker.R
 import com.juagosin.coffeetracker.domain.model.CoffeeType
 import com.juagosin.coffeetracker.domain.model.toFormattedDate
 import com.juagosin.coffeetracker.ui.common.EmptyData
@@ -57,7 +59,7 @@ fun StatsScreen(
                     )
                 }
             }
-        ModernPieChart(titleChart = "Histórico de consumo de café", data = datosPieChart)
+        ModernPieChart(titleChart = stringResource(R.string.title_chart_historical), data = datosPieChart)
         LastCoffees(state)
         }
         Spacer(modifier = Modifier.height(32.dp))
@@ -67,7 +69,7 @@ fun StatsScreen(
 @Composable
 fun LastCoffees(state: StatsState) {
     Text(
-        text = "Últimos cafés",
+        text = stringResource(R.string.title_last_coffees),
         textAlign = TextAlign.Justify,
         style = MaterialTheme.typography.bodyLarge,
     )

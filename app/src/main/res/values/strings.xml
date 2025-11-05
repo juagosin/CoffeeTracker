@@ -21,7 +21,11 @@
     <string name="title_coffecount">Contador de cafés</string>
     <string name="title_didyouknow">Sabías que...</string>
     <string name="title_lastcoffe">Último café</string>
+    <string name="title_last_coffees">Últimos cafés</string>
     <string name="title_lastweek">Cafés de la última semana</string>
+
+
+    <string name="title_chart_historical">Histórico de consumo de café</string>
 
     <string name="txt_never">Nunca</string>
 
