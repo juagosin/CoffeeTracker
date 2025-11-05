@@ -7,6 +7,7 @@ import com.juagosin.coffeetracker.data.repository.CoffeeRepositoryImpl
 import com.juagosin.coffeetracker.domain.repository.CoffeeRepository
 import com.juagosin.coffeetracker.domain.use_case.AddCoffeeUseCase
 import com.juagosin.coffeetracker.domain.use_case.CoffeeUseCases
+import com.juagosin.coffeetracker.domain.use_case.DeleteCoffeeUseCase
 import com.juagosin.coffeetracker.domain.use_case.GetAllTimeTypeStatsUseCase
 import com.juagosin.coffeetracker.domain.use_case.GetCoffeeCount
 import com.juagosin.coffeetracker.domain.use_case.GetLasCoffeeUseCase
@@ -49,7 +50,8 @@ object AppModule {
             getLasCoffeeUseCase = GetLasCoffeeUseCase(repository),
             getLastNDaysCoffeeUseCase = GetLastNDaysStatsUseCase(repository),
             getLastNCoffeesUseCase = GetLastNCoffeesUseCase(repository),
-            getAllTimeTypeStatsUseCase = GetAllTimeTypeStatsUseCase(repository)
+            getAllTimeTypeStatsUseCase = GetAllTimeTypeStatsUseCase(repository),
+            deleteCoffeeUseCase = DeleteCoffeeUseCase(repository)
         )
     }
 

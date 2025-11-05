@@ -7,4 +7,6 @@ data class StatsState(
     val lastNCoffees: List<Coffee> = emptyList(),
     val allCoffeesStats: List<AllTimeTypeStats> = emptyList(),
     val coffeeCount: Int = 0,
+    val confirmDialog: Boolean = false,
+    val coffeeToDelete: Coffee? = null,
 )

@@ -6,6 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.juagosin.coffeetracker.domain.model.Coffee
 import com.juagosin.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -17,12 +18,29 @@ class StatsViewModel @Inject constructor(
 ) : ViewModel() {
     var state by mutableStateOf(StatsState())
     init {
-        Log.d("StatsViewModel", "coffeeCount = ${state.coffeeCount}")
+
         loadLastCoffees()
         loadAllHistoryCoffees()
 
     }
 
+    fun showDeleteDialog(coffee: Coffee) {
+
+        state = state.copy(coffeeToDelete = coffee)
+
+    }
+
+    fun dismissDeleteDialog() {
+        state = state.copy(coffeeToDelete = null)
+
+    }
+
+    fun deleteCoffee(id: Int) {
+        viewModelScope.launch {
+            coffeeUseCases.deleteCoffeeUseCase(id)
+        }
+        state = state.copy(coffeeToDelete = null)
+    }
     private fun loadAllHistoryCoffees() {
         viewModelScope.launch {
             try{
