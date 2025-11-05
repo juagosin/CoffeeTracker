@@ -88,7 +88,7 @@ fun AddScreen(
                             selected = selectedOption == coffee.displayName,
                             onClick = {
                                 selectedOption = coffee.displayName
-                                Log.d("FilterChip", "Selected option: $selectedOption")
+
                                 viewModel.onEvent(AddEvent.OnCoffeeTypeChanged(coffee))
                             },
                             label = { Text(coffee.displayName) },
