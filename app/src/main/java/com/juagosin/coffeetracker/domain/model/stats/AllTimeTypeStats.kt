@@ -1,6 +1,5 @@
 package com.juagosin.coffeetracker.domain.model.stats
 
-import androidx.compose.ui.graphics.Color
 import com.juagosin.coffeetracker.data.dao.CoffeeTypeCount
 import com.juagosin.coffeetracker.domain.model.CoffeeType
 

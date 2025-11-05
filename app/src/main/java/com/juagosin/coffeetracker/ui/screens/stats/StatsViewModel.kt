@@ -1,7 +1,6 @@
 package com.juagosin.coffeetracker.ui.screens.stats
 
 import android.util.Log
-import android.util.Log.e
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
