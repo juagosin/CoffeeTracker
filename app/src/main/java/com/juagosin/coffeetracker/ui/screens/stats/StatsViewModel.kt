@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.juagosin.coffeetracker.domain.model.Coffee
 import com.juagosin.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -21,9 +22,31 @@ class StatsViewModel @Inject constructor(
 
         loadLastCoffees()
         loadAllHistoryCoffees()
+        getCoffeeCount()
+
+        //loadStats()
 
     }
+    private fun loadStats() {
+        viewModelScope.launch {
+            combine(
+                coffeeUseCases.getAllTimeTypeStatsUseCase(),
+                coffeeUseCases.getLastNCoffeesUseCase()
+            ){allStats, lastCoffees ->
+                Pair(allStats, lastCoffees)
 
+            }.collect { (allStats, lastCoffees) ->
+                val totalCount = allStats.size
+
+                state = state.copy(
+                    allCoffeesStats = allStats,
+                    lastNCoffees = lastCoffees,
+                    coffeeCount = totalCount
+                )
+
+            }
+        }
+    }
     fun showDeleteDialog(coffee: Coffee) {
 
         state = state.copy(coffeeToDelete = coffee)
@@ -41,14 +64,29 @@ class StatsViewModel @Inject constructor(
         }
         state = state.copy(coffeeToDelete = null)
     }
+    private fun getCoffeeCount() {
+        var coffeeCount:Int = 0
+        viewModelScope.launch {
+            try{
+                coffeeCount = coffeeUseCases.getCoffeeCount()
+                state = state.copy(
+                    coffeeCount = coffeeCount
+                )
+            }catch (e:Exception){
+
+            }
+
+        }
+
+    }
+
     private fun loadAllHistoryCoffees() {
         viewModelScope.launch {
             try{
                 coffeeUseCases.getAllTimeTypeStatsUseCase().collect{
 
                     state = state.copy(
-                        allCoffeesStats = it,
-                        coffeeCount = state.allCoffeesStats.size
+                        allCoffeesStats = it
                     )
 
                 }

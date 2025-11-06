@@ -52,7 +52,7 @@ fun StatsScreen(
     ) {
 
 
-        if(state.allCoffeesStats.isEmpty()){
+        if(state.coffeeCount == 0){
             EmptyData()
 
         }else{
