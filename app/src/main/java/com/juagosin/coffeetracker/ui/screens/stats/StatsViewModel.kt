@@ -63,6 +63,7 @@ class StatsViewModel @Inject constructor(
             coffeeUseCases.deleteCoffeeUseCase(id)
         }
         state = state.copy(coffeeToDelete = null)
+        getCoffeeCount()
     }
     private fun getCoffeeCount() {
         var coffeeCount:Int = 0
