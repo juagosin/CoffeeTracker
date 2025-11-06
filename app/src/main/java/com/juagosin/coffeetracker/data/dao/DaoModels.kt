@@ -11,3 +11,8 @@ data class CoffeeTypeCount(
     val coffeeType: CoffeeType,
     val value: Float,
 )
+
+data class MonthStats(
+    val month: String,
+    val count: Int
+)

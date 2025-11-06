@@ -1,13 +1,17 @@
 package com.juagosin.coffeetracker.data.repository
 
 import com.juagosin.coffeetracker.data.dao.CoffeeDao
+import com.juagosin.coffeetracker.data.dao.MonthStats
+
 import com.juagosin.coffeetracker.data.mapper.toDomain
 import com.juagosin.coffeetracker.data.mapper.toDomainDailyStats
+import com.juagosin.coffeetracker.data.mapper.toDomainMonthlyStats
 import com.juagosin.coffeetracker.data.mapper.toEntity
 import com.juagosin.coffeetracker.data.mapper.toTypeHistory
 import com.juagosin.coffeetracker.domain.model.Coffee
 import com.juagosin.coffeetracker.domain.model.stats.DailyCoffeeStat
 import com.juagosin.coffeetracker.domain.model.stats.AllTimeTypeStats
+import com.juagosin.coffeetracker.domain.model.stats.MonthlyCoffeeStats
 import com.juagosin.coffeetracker.domain.repository.CoffeeRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -47,4 +51,12 @@ class CoffeeRepositoryImpl(
             historyStats-> historyStats.toTypeHistory()
         }
     }
+
+    override fun getLast12MonthsStats(): Flow<List<MonthlyCoffeeStats>> {
+        return coffeeDao.getLast12MonthsStats().map{
+            monthStats -> monthStats.toDomainMonthlyStats()
+        }
+    }
+
+
 }

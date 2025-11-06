@@ -11,6 +11,7 @@ import com.juagosin.coffeetracker.domain.use_case.DeleteCoffeeUseCase
 import com.juagosin.coffeetracker.domain.use_case.GetAllTimeTypeStatsUseCase
 import com.juagosin.coffeetracker.domain.use_case.GetCoffeeCount
 import com.juagosin.coffeetracker.domain.use_case.GetLasCoffeeUseCase
+import com.juagosin.coffeetracker.domain.use_case.GetLast12MonthsStatsUseCase
 import com.juagosin.coffeetracker.domain.use_case.GetLastNCoffeesUseCase
 import com.juagosin.coffeetracker.domain.use_case.GetLastNDaysStatsUseCase
 import dagger.Module
@@ -51,7 +52,8 @@ object AppModule {
             getLastNDaysCoffeeUseCase = GetLastNDaysStatsUseCase(repository),
             getLastNCoffeesUseCase = GetLastNCoffeesUseCase(repository),
             getAllTimeTypeStatsUseCase = GetAllTimeTypeStatsUseCase(repository),
-            deleteCoffeeUseCase = DeleteCoffeeUseCase(repository)
+            deleteCoffeeUseCase = DeleteCoffeeUseCase(repository),
+            getLast12MonthsStatsUseCase = GetLast12MonthsStatsUseCase(repository)
         )
     }
 

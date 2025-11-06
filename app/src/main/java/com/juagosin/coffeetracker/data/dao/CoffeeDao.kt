@@ -54,5 +54,22 @@ interface CoffeeDao {
     """)
     fun getAllTimeTypeStats(): Flow<List<CoffeeTypeCount>>
 
-
+    @Query("""
+    WITH RECURSIVE months(month_date, remaining) AS (
+        SELECT date('now', 'start of month', '-11 months'), 11
+        UNION ALL
+        SELECT date(month_date, '+1 month'), remaining - 1
+        FROM months
+        WHERE remaining >= 1
+    )
+    SELECT 
+        strftime('%Y-%m', m.month_date) AS month,
+        COALESCE(COUNT(c.id), 0) AS count
+    FROM months m
+    LEFT JOIN coffee_table c 
+        ON strftime('%Y-%m', datetime(c.timestamp / 1000, 'unixepoch')) = strftime('%Y-%m', m.month_date)
+    GROUP BY strftime('%Y-%m', m.month_date)
+    ORDER BY m.month_date
+""")
+    fun getLast12MonthsStats(): Flow<List<MonthStats>>
 }

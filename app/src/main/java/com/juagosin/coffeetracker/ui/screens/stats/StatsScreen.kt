@@ -34,6 +34,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import com.example.app.ui.components.BarChart
+import com.example.app.ui.components.BarData
+import com.example.app.ui.components.CoffeePodium
 import com.juagosin.coffeetracker.R
 import com.juagosin.coffeetracker.domain.model.Coffee
 import com.juagosin.coffeetracker.domain.model.CoffeeType
@@ -67,6 +70,23 @@ fun StatsScreen(
             }
         ModernPieChart(titleChart = stringResource(R.string.title_chart_historical), data = datosPieChart)
         LastCoffees(state, viewModel)
+val datosBarChart = remember(state.last12MonthsStats){
+    state.last12MonthsStats.mapIndexed { index, coffee ->
+        BarData(
+            txtBar = coffee.monthAbbreviation,
+            value = coffee.value.toFloat()
+        )
+    }
+}
+
+            BarChart(
+                data = datosBarChart,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                title = "Consumo últimos 12 meses ",
+                valueLabel = "tazas"
+            )
         }
         Spacer(modifier = Modifier.height(32.dp))
     }

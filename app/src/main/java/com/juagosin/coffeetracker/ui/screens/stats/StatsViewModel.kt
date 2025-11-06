@@ -23,10 +23,31 @@ class StatsViewModel @Inject constructor(
         loadLastCoffees()
         loadAllHistoryCoffees()
         getCoffeeCount()
+        loadLast12Months()
 
         //loadStats()
 
     }
+
+    private fun loadLast12Months() {
+        viewModelScope.launch {
+            try{
+                coffeeUseCases.getLast12MonthsStatsUseCase().collect{
+
+                    state = state.copy(
+                        last12MonthsStats = it
+                    )
+
+                }
+
+
+
+            }catch (e:Exception){
+
+            }
+        }
+    }
+
     private fun loadStats() {
         viewModelScope.launch {
             combine(
