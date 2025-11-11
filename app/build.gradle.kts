@@ -7,13 +7,13 @@ plugins {
 }
 
 android {
-    namespace = "com.juagosin.coffeetracker"
+    namespace = "com.calleserpis.coffeetracker"
     compileSdk {
         version = release(36)
     }
 
     defaultConfig {
-        applicationId = "com.juagosin.coffeetracker"
+        applicationId = "com.calleserpis.coffeetracker"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
