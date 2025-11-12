@@ -1,6 +1,7 @@
 package com.calleserpis.coffeetracker.ui.screens.home
 
 import TimeDuration
+import android.R.attr.fontStyle
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -85,6 +86,7 @@ fun HomeScreen(
                         )
                 }
 
+
                 ElevatedCard(
                     modifier = Modifier
                         .height(100.dp)
@@ -147,6 +149,16 @@ fun HomeScreen(
             Text(
                 state.randomPhrase,
                 textAlign = TextAlign.Justify,
+                style = MaterialTheme.typography.bodySmall,
+                fontStyle = FontStyle.Italic,
+                color = colorScheme.onSurface,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(14.dp),
+            )
+            Text(
+                text = stringResource(R.string.title_total_spent) +" "+ state.moneySpent.toString() +" €",
+                textAlign = TextAlign.Right,
                 style = MaterialTheme.typography.bodySmall,
                 fontStyle = FontStyle.Italic,
                 color = colorScheme.onSurface,

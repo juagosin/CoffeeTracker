@@ -8,7 +8,8 @@ data class Coffee (
     val id: Int,
     val type: CoffeeType,
     val timestamp: Long,
-    val notes: String? = null
+    val notes: String? = null,
+    val price: Double? = null
 )
 
 enum class CoffeeType(val displayName: String, val emoji: String,val color: Color) {

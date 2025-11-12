@@ -6,6 +6,7 @@ data class AddCoffeeState(
     val date: Long = System.currentTimeMillis(),
     val type: CoffeeType = CoffeeType.entries.first(),
     val notes: String = "",
+    val price: Double = 0.0,
 
     val isSaving: Boolean = false,
     val isSaved: Boolean = false,
