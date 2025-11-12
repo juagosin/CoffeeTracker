@@ -37,6 +37,11 @@ class AddViewModel @Inject constructor(
                     currentState.copy(notes = event.value)
                 }
             }
+            is AddEvent.OnPriceChanged -> {
+                _state.update{ currentState ->
+                    currentState.copy(price = event.value.toDouble())
+                }
+            }
 
             AddEvent.SaveCoffee -> {
                 saveCoffee()
@@ -62,7 +67,8 @@ class AddViewModel @Inject constructor(
                         id = 0,
                         type = _state.value.type,
                         timestamp = _state.value.date,
-                        notes = _state.value.notes
+                        notes = _state.value.notes,
+                        price = _state.value.price
                     )
                 )
             }

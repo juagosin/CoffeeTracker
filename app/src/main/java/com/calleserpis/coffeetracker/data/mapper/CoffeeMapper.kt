@@ -9,7 +9,8 @@ fun CoffeeEntity.toDomain(): Coffee {
         id = this.id,
         type = CoffeeType.fromString(this.coffeeType),
         timestamp = this.timestamp,
-        notes = this.notes
+        notes = this.notes,
+        price = this.price
     )
 }
 
@@ -18,7 +19,8 @@ fun Coffee.toEntity(): CoffeeEntity {
         id = id,
         coffeeType = this.type.name,
         timestamp = this.timestamp,
-        notes = this.notes
+        notes = this.notes,
+        price = this.price
     )
 }
 

@@ -10,6 +10,7 @@
     <string name="title_newCoffee">Nuevo Café ☕</string>
 
     <string name="label_notes">Notas</string>
+    <string name="label_price">Precio</string>
     <string name="label_date">Fecha</string>
     <string name="label_type">Tipo</string>
 
@@ -21,6 +22,7 @@
     <string name="title_nodata">No hay registros de consumo de café</string>
     <string name="title_coffecount">Contador de cafés</string>
     <string name="title_didyouknow">Sabías que...</string>
+    <string name="title_total_spent">LLevas gastado un total de </string>
     <string name="title_lastcoffe">Último café</string>
     <string name="title_last_coffees">Últimos cafés</string>
     <string name="title_lastweek">Cafés de la última semana</string>

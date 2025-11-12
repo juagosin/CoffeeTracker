@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -25,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
@@ -119,15 +121,30 @@ fun AddScreen(
                     modifier = Modifier.fillMaxWidth()
                 )
                 Text(
-                    text = stringResource(R.string.label_notes),
+                    text = stringResource(R.string.label_price),
                     style = MaterialTheme.typography.titleLarge,
                     color = colorScheme.primary,
                     modifier = Modifier.padding(top = 8.dp)
                 )
                 OutlinedTextField(
-                    value = state.notes,
-                    onValueChange = {
-                        viewModel.onEvent(AddEvent.OnNotesChanged(it))
+                    value = state.price.toString(),
+                    onValueChange = { newValue ->
+                        // Permitir solo números, un punto o una coma
+                        val filtered = newValue.filter { it.isDigit() || it == '.' || it == ',' }
+
+                        // Validar formato decimal correcto
+                        val decimalSeparators = filtered.count { it == '.' || it == ',' }
+
+                        if (decimalSeparators <= 1) {
+                            // Opcional: limitar decimales a 2 dígitos
+                            val parts = filtered.split('.', ',')
+                            val isValid = parts.size <= 2 &&
+                                    (parts.size == 1 || parts[1].length <= 2)
+
+                            if (isValid) {
+                                viewModel.onEvent(AddEvent.OnPriceChanged(filtered))
+                            }
+                        }
                     },
                     label = {
 
@@ -136,10 +153,11 @@ fun AddScreen(
                         focusedContainerColor = Color.White,
                         unfocusedContainerColor = Color.White
                     ),
-                    maxLines = 5,
-                    modifier = Modifier.fillMaxWidth()
+                    maxLines = 1,
+                    keyboardOptions = KeyboardOptions( keyboardType = KeyboardType.Number),
+                        modifier = Modifier.fillMaxWidth()
 
-                )
+                    )
                 Button(
                     modifier = Modifier
                         .fillMaxWidth()

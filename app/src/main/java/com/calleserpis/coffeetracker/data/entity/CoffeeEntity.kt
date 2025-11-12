@@ -8,5 +8,6 @@ data class CoffeeEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val coffeeType: String,
     val timestamp: Long = System.currentTimeMillis(),
-    val notes: String? = null
+    val notes: String? = null,
+    val price: Double? = null
 )

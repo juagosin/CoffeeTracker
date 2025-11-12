@@ -27,8 +27,24 @@ class HomeViewModel @Inject constructor(
     init {
         loadPhrases()
         getCoffeeCount()
+        getMoneySpent()
         getTimeLastCoffee()
         getLastNDaysCoffees()
+    }
+
+    private fun getMoneySpent() {
+        var moneySpent:Double = 0.0
+        viewModelScope.launch {
+            try{
+                moneySpent = coffeeUseCase.getMoneySpent()
+                _state.update { currentState ->
+                    currentState.copy(moneySpent = moneySpent)
+                }
+            }catch (e:Exception){
+
+            }
+
+        }
     }
 
     private fun getLastNDaysCoffees() {

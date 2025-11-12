@@ -18,6 +18,9 @@ interface CoffeeDao {
     @Query("SELECT COUNT(id) FROM coffee_table")
     suspend fun getCoffeeCount(): Int
 
+    @Query("SELECT SUM(price) FROM coffee_table")
+    suspend fun getSpentMoney(): Double
+
     @Query("DELETE FROM coffee_table WHERE id = :id")
     suspend fun deleteCoffee(id: Int?)
 
