@@ -240,7 +240,7 @@ fun LegendItem(
             text = label,
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier.weight(1f),
-            color = if (isSelected) MaterialTheme.colorScheme.primary else Color.Black
+            color = if (isSelected) MaterialTheme.colorScheme.primary else colorScheme.onSurface
         )
 
         Text(
