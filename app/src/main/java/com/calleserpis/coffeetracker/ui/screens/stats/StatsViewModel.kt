@@ -19,9 +19,9 @@ class StatsViewModel @Inject constructor(
     var state by mutableStateOf(StatsState())
     init {
 
+        getCoffeeCount()
         loadLastCoffees()
         loadAllHistoryCoffees()
-        getCoffeeCount()
         loadLast12Months()
 
         //loadStats()
