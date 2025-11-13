@@ -33,6 +33,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.calleserpis.coffeetracker.R
 import com.calleserpis.coffeetracker.ui.common.EmptyData
+
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
@@ -157,7 +158,7 @@ fun HomeScreen(
                     .padding(14.dp),
             )
             Text(
-                text = stringResource(R.string.title_total_spent) +" "+ state.moneySpent.toString() +" €",
+                text = stringResource(R.string.title_total_spent) + " " + state.moneySpent.toString() + " €",
                 textAlign = TextAlign.Right,
                 style = MaterialTheme.typography.bodySmall,
                 fontStyle = FontStyle.Italic,
