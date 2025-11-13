@@ -63,7 +63,7 @@ fun BarChart(
         Text(
             text = title,
             textAlign = TextAlign.Justify,
-            style = MaterialTheme.typography.titleLarge,
+            style = MaterialTheme.typography.titleMedium,
             color = colorScheme.primary,
             modifier = Modifier.padding(bottom = 8.dp)
         )
