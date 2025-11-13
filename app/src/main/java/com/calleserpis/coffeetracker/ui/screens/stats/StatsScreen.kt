@@ -114,7 +114,7 @@ fun LastCoffees(state: StatsState, viewModel: StatsViewModel) {
                             .width(2.dp)
                             .height(48.dp)
                             .background(
-                                color = if(coffee.type == CoffeeType.DESCAFEINADO) colorScheme.tertiaryContainer else colorScheme.primary,
+                                color = coffee.type.color,
                                 shape = RoundedCornerShape(2.dp)
                             )
                     )
