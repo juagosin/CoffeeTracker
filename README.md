@@ -69,7 +69,7 @@ Se planifican futuras actualizaciones para:
 
 ## 📝 Licencia
 
-Este proyecto está bajo la licencia **[MIT](LICENSE)**.  
+Este proyecto está bajo la licencia **[MIT](https://es.wikipedia.org/wiki/Licencia_MIT)**.  
 Puedes usar, modificar y distribuir el código libremente, siempre que se mantenga la atribución correspondiente.
 
 ---
