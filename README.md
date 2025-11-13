@@ -4,7 +4,7 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21%2B-blue?logo=kotlin)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-orange?logo=jetpackcompose)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![Status](https://img.shields.io/badge/Version-3.0.0-brightgreen)
+![Status](https://img.shields.io/badge/Version-3.1.0-brightgreen)
 
 ---
 
@@ -59,7 +59,7 @@ Muestra el contador de hoy, el historial reciente de los últimos 7 días y tiem
 
 ## 🧪 Estado del proyecto
 
-🟢 **Versión actual:** `v3.0.0`  
+🟢 **Versión actual:** `v3.1.0`  
 🔧 Proyecto en desarrollo activo.  
 Se planifican futuras actualizaciones para:
 - Refinamiento visual.
@@ -69,7 +69,7 @@ Se planifican futuras actualizaciones para:
 
 ## 📝 Licencia
 
-Este proyecto está bajo la licencia **[MIT](LICENSE)**.  
+Este proyecto está bajo la licencia **[MIT](https://es.wikipedia.org/wiki/Licencia_MIT)**.  
 Puedes usar, modificar y distribuir el código libremente, siempre que se mantenga la atribución correspondiente.
 
 ---
