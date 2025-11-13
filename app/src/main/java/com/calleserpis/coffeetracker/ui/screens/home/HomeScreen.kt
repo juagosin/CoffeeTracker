@@ -6,11 +6,15 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.defaultMinSize
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -53,12 +57,14 @@ fun HomeScreen(
             EmptyData()
         } else {
             Row(
-                modifier = Modifier.fillMaxWidth(),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(IntrinsicSize.Min),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 ElevatedCard(
                     modifier = Modifier
-                        .height(100.dp)
+                        .fillMaxHeight()
                         .weight(1f),
                     shape = RoundedCornerShape(16.dp),
                     colors = CardDefaults.cardColors(
@@ -66,33 +72,35 @@ fun HomeScreen(
                         contentColor = colorScheme.onSurfaceVariant
                     ),
                 ) {
-                    Text(
-                        text = stringResource(R.string.title_coffecount),
-                        textAlign = TextAlign.Center,
-
+                    Column(
                         modifier = Modifier
-                            .padding(8.dp)
-                            .fillMaxWidth(),
-                        style = MaterialTheme.typography.bodyLarge,
-                    )
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = stringResource(R.string.title_coffecount),
+                            textAlign = TextAlign.Center,
 
-                    Text(
-                        text = state.coffeeCount.toString(),
-                        textAlign = TextAlign.Center,
-                        color = colorScheme.primary,
-
-                        modifier = Modifier
-                            .padding(bottom = 16.dp)
-                            .fillMaxWidth(),
-                        style = MaterialTheme.typography.titleLarge,
-
+                            style = MaterialTheme.typography.bodyLarge,
                         )
+
+                        Text(
+                            text = state.coffeeCount.toString(),
+                            textAlign = TextAlign.Center,
+                            color = colorScheme.primary,
+
+                            style = MaterialTheme.typography.titleLarge,
+                            )
+
+                    }
                 }
 
 
                 ElevatedCard(
                     modifier = Modifier
-                        .height(100.dp)
+                        .fillMaxHeight()
                         .weight(1f),
                     shape = RoundedCornerShape(16.dp),
                     colors = CardDefaults.cardColors(
@@ -100,31 +108,32 @@ fun HomeScreen(
                         contentColor = colorScheme.onSurfaceVariant
                     ),
                 ) {
-                    Text(
-                        text = stringResource(R.string.title_lastcoffe),
-                        textAlign = TextAlign.Center,
-
+                    Column(
                         modifier = Modifier
-                            .padding(8.dp)
-                            .fillMaxWidth(),
-                        style = MaterialTheme.typography.bodyLarge,
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Text(
+                            text = stringResource(R.string.title_lastcoffe),
+                            textAlign = TextAlign.Center,
+                            style = MaterialTheme.typography.bodyLarge,
 
-                        )
+                            )
 
-                    Text(
-                        text = if (state.timeLastCoffee > 0) {
-                            TimeDuration.fromTimestamp(state.timeLastCoffee).toSmartString()
-                        } else {
-                            stringResource(R.string.txt_never)
-                        },
-                        modifier = Modifier
-                            .padding(vertical = 12.dp)
-                            .fillMaxSize(),
-                        textAlign = TextAlign.Center,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = colorScheme.primary,
+                        Text(
+                            text = if (state.timeLastCoffee > 0) {
+                                TimeDuration.fromTimestamp(state.timeLastCoffee).toSmartString()
+                            } else {
+                                stringResource(R.string.txt_never)
+                            },
+                            textAlign = TextAlign.Center,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = colorScheme.primary,
 
-                        )
+                            )
+                    }
                 }
             }
             CoffeeBarChart(Modifier, state)
