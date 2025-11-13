@@ -4,7 +4,7 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21%2B-blue?logo=kotlin)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-orange?logo=jetpackcompose)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![Status](https://img.shields.io/badge/Version-3.1.4-brightgreen)
+![Status](https://img.shields.io/badge/Version-3.1.5-brightgreen)
 
 ---
 
@@ -55,11 +55,18 @@ Muestra el contador de hoy, el historial reciente de los últimos 7 días y tiem
 |--------------------|-------------------|-------------------|
 | ![Home Screenshot](screenshots/Home.png) | ![Estadistica Screenshot](screenshots/Estadisticas.png) | ![New Screenshot](screenshots/New.png) |
 
+## 📱 Darkmode
+
+
+| Pantalla principal | Estadísticas | Nuevo Cafe|
+|--------------------|-------------------|-------------------|
+| ![Home Screenshot](screenshots/HomeDark.png) | ![Estadistica Screenshot](screenshots/EstadisticasDark.png) | ![New Screenshot](screenshots/NewDark.png) |
+
 ---
 
 ## 🧪 Estado del proyecto
 
-🟢 **Versión actual:** `v3.1.4`  
+🟢 **Versión actual:** `v3.1.5`  
 🔧 Proyecto en desarrollo activo.  
 Se planifican futuras actualizaciones para:
 - Refinamiento visual.
