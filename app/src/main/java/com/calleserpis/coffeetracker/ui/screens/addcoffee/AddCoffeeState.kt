@@ -7,6 +7,7 @@ data class AddCoffeeState(
     val type: CoffeeType = CoffeeType.entries.first(),
     val notes: String = "",
     val price: Double = 0.0,
+    val priceText: String = "",
 
     val isSaving: Boolean = false,
     val isSaved: Boolean = false,

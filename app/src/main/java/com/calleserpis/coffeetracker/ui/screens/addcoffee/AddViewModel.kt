@@ -1,14 +1,9 @@
 package com.calleserpis.coffeetracker.ui.screens.addcoffee
 
-import android.R.attr.type
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
-import com.calleserpis.coffeetracker.ui.screens.home.HomeState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -39,7 +34,11 @@ class AddViewModel @Inject constructor(
             }
             is AddEvent.OnPriceChanged -> {
                 _state.update{ currentState ->
-                    currentState.copy(price = event.value.toDouble())
+                    currentState.copy(
+                        priceText = event.value,
+                        price = event.value.replace(',', '.')
+                            .toDoubleOrNull() ?: 0.0
+                    )
                 }
             }
 
