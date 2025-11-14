@@ -1,6 +1,13 @@
 package com.calleserpis.coffeetracker.ui.screens.stats
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -117,39 +124,16 @@ fun LastCoffees(state: StatsState, viewModel: StatsViewModel) {
     ElevatedCard(modifier = Modifier.fillMaxWidth()) {
         Column() {
             state.lastNCoffees.forEach { coffee ->
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(end = 8.dp),
-
-                    verticalAlignment = Alignment.CenterVertically,
-
-                    ) {
-
-                    Spacer(
-                        modifier = Modifier
-                            .width(2.dp)
-                            .height(48.dp)
-                            .background(
-                                color = coffee.type.color,
-                                shape = RoundedCornerShape(2.dp)
-                            )
-                    )
-
-                    Text(
-                        text = coffee.type.displayName + ", el " + coffee.timestamp.toFormattedDate(),
-                        modifier = Modifier.padding(start = 14.dp),
-                        style = MaterialTheme.typography.bodySmall,
-                    )
-                    Spacer(modifier = Modifier.weight(1f))
-                    IconButton(onClick = {
+                CoffeeListItem(
+                    coffee,
+                    onDelete = {
                         viewModel.showDeleteDialog(coffee)
-
-                    }) {
-                        Icon(imageVector = Icons.Filled.Delete, contentDescription = null)
-                    }
-
-                }
+                    },
+                    isExpanded = state.expandedCoffeeId == coffee.id,
+                    onToggleExpansion = {
+                        viewModel.onEvent(StatsEvent.ToggleCoffeeExpansion(coffee.id))
+                    },
+                )
                 HorizontalDivider(
                     color = colorScheme.surfaceContainer,
                 )
@@ -166,6 +150,109 @@ fun LastCoffees(state: StatsState, viewModel: StatsViewModel) {
             onDismiss = { viewModel.dismissDeleteDialog() }
         )
     }
+}
+
+@Composable
+fun CoffeeListItem(
+    coffee: Coffee,
+    onDelete: () -> Unit,
+    isExpanded: Boolean,
+    onToggleExpansion: () -> Unit
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(end = 8.dp)
+            .clickable {
+                onToggleExpansion()
+            },
+
+        verticalAlignment = Alignment.CenterVertically,
+
+        ) {
+
+        Spacer(
+            modifier = Modifier
+                .width(2.dp)
+                .height(48.dp)
+                .background(
+                    color = coffee.type.color,
+                    shape = RoundedCornerShape(2.dp)
+                )
+        )
+
+        Text(
+            text = coffee.type.displayName + ", el " + coffee.timestamp.toFormattedDate(),
+            modifier = Modifier.padding(start = 14.dp),
+            style = MaterialTheme.typography.bodySmall,
+        )
+        Spacer(modifier = Modifier.weight(1f))
+
+
+    }
+
+    AnimatedVisibility(
+        visible = isExpanded,
+        enter = expandVertically(
+            animationSpec = tween(durationMillis = 300)
+        ) + fadeIn(
+            animationSpec = tween(durationMillis = 300)
+        ),
+        exit = shrinkVertically(
+            animationSpec = tween(durationMillis = 300)
+        ) + fadeOut(
+            animationSpec = tween(durationMillis = 300)
+        )
+    ) {
+        CoffeeExpanded(
+            coffee = coffee,
+            onDelete = {
+                onDelete()
+            }
+        )
+    }
+}
+
+@Composable
+fun CoffeeExpanded(
+    coffee: Coffee,
+    modifier: Modifier = Modifier,
+    onDelete: () -> Unit,
+) {
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(colorScheme.surfaceContainerLow)
+            .padding(horizontal = 16.dp)
+    ) {
+        Row(
+            modifier = modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                text = stringResource(R.string.label_price) + " " + coffee.price.toString() + " €",
+                style = MaterialTheme.typography.bodySmall
+            )
+            Spacer(modifier = Modifier.weight(1f))
+
+           /* IconButton(onClick = {
+
+            }) {
+                Icon(imageVector = Icons.Filled.Edit, contentDescription = null)
+            }
+            */
+
+            IconButton(onClick = {
+                onDelete()
+
+            }) {
+                Icon(imageVector = Icons.Filled.Delete, contentDescription = null)
+            }
+        }
+
+    }
+
 }
 
 @Composable

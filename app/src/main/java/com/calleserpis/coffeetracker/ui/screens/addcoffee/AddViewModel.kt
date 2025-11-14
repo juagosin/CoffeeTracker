@@ -61,13 +61,14 @@ class AddViewModel @Inject constructor(
         }
         try{
             viewModelScope.launch {
+
                 coffeeUseCase.addCoffeeUseCase(
                     Coffee(
                         id = 0,
                         type = _state.value.type,
                         timestamp = _state.value.date,
                         notes = _state.value.notes,
-                        price = _state.value.price
+                        price = _state.value.price.takeIf { it > 0.0 } ?: 0.0
                     )
                 )
             }

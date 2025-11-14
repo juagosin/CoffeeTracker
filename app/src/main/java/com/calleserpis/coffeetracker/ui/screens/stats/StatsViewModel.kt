@@ -24,6 +24,22 @@ class StatsViewModel @Inject constructor(
         loadStats()
 
     }
+    fun onEvent(event: StatsEvent) {
+        when (event) {
+            is StatsEvent.ToggleCoffeeExpansion -> {
+                _state.update { currentState ->
+                    currentState.copy(
+                        expandedCoffeeId = if (currentState.expandedCoffeeId == event.coffeeId) {
+                            null // Colapsar si ya está expandido
+                        } else {
+                            event.coffeeId // Expandir el nuevo
+                        }
+                    )
+                }
+            }
+            else -> {}
+        }
+    }
     private fun loadStats(){
         getCoffeeCount()
         loadLastCoffees()
