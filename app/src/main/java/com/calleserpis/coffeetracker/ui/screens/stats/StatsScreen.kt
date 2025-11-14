@@ -25,37 +25,41 @@ import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.example.app.ui.components.BarChart
-import com.example.app.ui.components.BarData
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.calleserpis.coffeetracker.R
 import com.calleserpis.coffeetracker.domain.model.Coffee
-import com.calleserpis.coffeetracker.domain.model.CoffeeType
 import com.calleserpis.coffeetracker.domain.model.toFormattedDate
 import com.calleserpis.coffeetracker.ui.common.EmptyData
+import com.example.app.ui.components.BarChart
+import com.example.app.ui.components.BarData
 
 @Composable
 fun StatsScreen(
     viewModel: StatsViewModel = hiltViewModel()
 ) {
-    val state = viewModel.state
+    val state by viewModel.state.collectAsStateWithLifecycle()
     Column(
-        modifier = Modifier.padding(horizontal = 24.dp).verticalScroll(rememberScrollState()),
+        modifier = Modifier
+            .padding(horizontal = 24.dp)
+            .verticalScroll(rememberScrollState()),
 
         verticalArrangement = Arrangement.Center
     ) {
 
 
-        if(state.coffeeCount == 0){
+        if (state.coffeeCount == 0) {
             EmptyData()
 
-        }else{
+        } else {
             val datosPieChart = remember(state.allCoffeesStats) {
                 state.allCoffeesStats.mapIndexed { index, coffee ->
                     PieChartData(
@@ -65,16 +69,29 @@ fun StatsScreen(
                     )
                 }
             }
-        ModernPieChart(titleChart = stringResource(R.string.title_chart_historical), data = datosPieChart)
-        LastCoffees(state, viewModel)
-val datosBarChart = remember(state.last12MonthsStats){
-    state.last12MonthsStats.mapIndexed { index, coffee ->
-        BarData(
-            txtBar = coffee.monthAbbreviation,
-            value = coffee.value.toFloat()
-        )
-    }
-}
+            ModernPieChart(
+                titleChart = stringResource(R.string.title_chart_historical),
+                data = datosPieChart
+            )
+            Text(
+                text = stringResource(R.string.title_total_spent) + " " + state.moneySpent.toString() + " €",
+                textAlign = TextAlign.Right,
+                style = MaterialTheme.typography.bodySmall,
+                fontStyle = FontStyle.Italic,
+                color = colorScheme.onSurface,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(14.dp),
+            )
+            LastCoffees(state, viewModel)
+            val datosBarChart = remember(state.last12MonthsStats) {
+                state.last12MonthsStats.mapIndexed { index, coffee ->
+                    BarData(
+                        txtBar = coffee.monthAbbreviation,
+                        value = coffee.value.toFloat()
+                    )
+                }
+            }
 
             BarChart(
                 data = datosBarChart,
@@ -166,7 +183,7 @@ fun DeleteCoffeeDialog(
             Text(
                 text = stringResource(R.string.txt_delete),
 
-            )
+                )
         },
         confirmButton = {
             TextButton(
