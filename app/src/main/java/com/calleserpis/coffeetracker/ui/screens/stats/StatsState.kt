@@ -10,6 +10,7 @@ data class StatsState(
     val last12MonthsStats: List<MonthlyCoffeeStats> = emptyList(),
     val coffeeCount: Int = 0,
     val moneySpent: Double = 0.0,
+    val expandedCoffeeId: Int? = null,
     val confirmDialog: Boolean = false,
     val coffeeToDelete: Coffee? = null,
 )
