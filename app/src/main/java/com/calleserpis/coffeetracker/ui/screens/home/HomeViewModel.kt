@@ -1,8 +1,5 @@
 package com.calleserpis.coffeetracker.ui.screens.home
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calleserpis.coffeetracker.domain.model.Coffee
@@ -27,25 +24,11 @@ class HomeViewModel @Inject constructor(
     init {
         loadPhrases()
         getCoffeeCount()
-        getMoneySpent()
+
         getTimeLastCoffee()
         getLastNDaysCoffees()
     }
 
-    private fun getMoneySpent() {
-        var moneySpent:Double = 0.0
-        viewModelScope.launch {
-            try{
-                moneySpent = coffeeUseCase.getMoneySpent()
-                _state.update { currentState ->
-                    currentState.copy(moneySpent = moneySpent)
-                }
-            }catch (e:Exception){
-
-            }
-
-        }
-    }
 
     private fun getLastNDaysCoffees() {
         viewModelScope.launch {

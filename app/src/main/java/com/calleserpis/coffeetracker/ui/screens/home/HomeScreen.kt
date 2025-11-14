@@ -1,20 +1,16 @@
 package com.calleserpis.coffeetracker.ui.screens.home
 
 import TimeDuration
-import android.R.attr.fontStyle
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -46,9 +42,9 @@ fun HomeScreen(
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     Column(
-        modifier = Modifier.padding(horizontal = 24.dp).verticalScroll(rememberScrollState()),
+        modifier = Modifier.padding(24.dp).verticalScroll(rememberScrollState()),
 
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Top
     ) {
 
 
@@ -168,16 +164,7 @@ fun HomeScreen(
                     .fillMaxWidth()
                     .padding(14.dp),
             )
-            Text(
-                text = stringResource(R.string.title_total_spent) + " " + state.moneySpent.toString() + " €",
-                textAlign = TextAlign.Right,
-                style = MaterialTheme.typography.bodySmall,
-                fontStyle = FontStyle.Italic,
-                color = colorScheme.onSurface,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(14.dp),
-            )
+
         }
     }
 

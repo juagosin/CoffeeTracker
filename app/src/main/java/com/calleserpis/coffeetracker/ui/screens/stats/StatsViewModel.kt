@@ -1,14 +1,15 @@
 package com.calleserpis.coffeetracker.ui.screens.stats
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,27 +17,44 @@ import javax.inject.Inject
 class StatsViewModel @Inject constructor(
     private val coffeeUseCases: CoffeeUseCases
 ) : ViewModel() {
-    var state by mutableStateOf(StatsState())
+    private val _state = MutableStateFlow(StatsState())
+    val state: StateFlow<StatsState> = _state.asStateFlow()
     init {
 
+        loadStats()
+
+    }
+    private fun loadStats(){
         getCoffeeCount()
         loadLastCoffees()
         loadAllHistoryCoffees()
         loadLast12Months()
+        getMoneySpent()
 
-        //loadStats()
+    }
+    private fun getMoneySpent() {
+        var moneySpent:Double = 0.0
+        viewModelScope.launch {
+            try{
+                moneySpent = coffeeUseCases.getMoneySpent()
+                _state.update { currentState ->
+                    currentState.copy( moneySpent = moneySpent)
+                }
+            }catch (e:Exception){
 
+            }
+
+        }
     }
 
     private fun loadLast12Months() {
         viewModelScope.launch {
             try{
                 coffeeUseCases.getLast12MonthsStatsUseCase().collect{
+                    _state.update { currentState ->
+                    currentState.copy(last12MonthsStats = it)
 
-                    state = state.copy(
-                        last12MonthsStats = it
-                    )
-
+                    }
                 }
 
 
@@ -47,52 +65,48 @@ class StatsViewModel @Inject constructor(
         }
     }
 
-    private fun loadStats() {
-        viewModelScope.launch {
-            combine(
-                coffeeUseCases.getAllTimeTypeStatsUseCase(),
-                coffeeUseCases.getLastNCoffeesUseCase()
-            ){allStats, lastCoffees ->
-                Pair(allStats, lastCoffees)
 
-            }.collect { (allStats, lastCoffees) ->
-                val totalCount = allStats.size
-
-                state = state.copy(
-                    allCoffeesStats = allStats,
-                    lastNCoffees = lastCoffees,
-                    coffeeCount = totalCount
-                )
-
-            }
-        }
-    }
     fun showDeleteDialog(coffee: Coffee) {
-
-        state = state.copy(coffeeToDelete = coffee)
+        _state.update {
+            it.copy(coffeeToDelete = coffee)
+        }
 
     }
 
     fun dismissDeleteDialog() {
-        state = state.copy(coffeeToDelete = null)
+        _state.update {
+            it.copy(coffeeToDelete = null)
+        }
 
     }
 
     fun deleteCoffee(id: Int) {
         viewModelScope.launch {
-            coffeeUseCases.deleteCoffeeUseCase(id)
+            try{
+                coffeeUseCases.deleteCoffeeUseCase(id)
+                _state.update {
+                    it.copy(coffeeToDelete = null)
+                }
+                getCoffeeCount()
+                getMoneySpent()
+            }catch (e: Exception){
+                Log.e("StatsViewModel", "Error borrando", e)
+            }
+
+
         }
-        state = state.copy(coffeeToDelete = null)
-        getCoffeeCount()
+
+
     }
     private fun getCoffeeCount() {
         var coffeeCount:Int = 0
         viewModelScope.launch {
             try{
                 coffeeCount = coffeeUseCases.getCoffeeCount()
-                state = state.copy(
-                    coffeeCount = coffeeCount
-                )
+                _state.update { currentState ->
+                    currentState.copy( coffeeCount = coffeeCount)
+                }
+
             }catch (e:Exception){
 
             }
@@ -105,10 +119,9 @@ class StatsViewModel @Inject constructor(
         viewModelScope.launch {
             try{
                 coffeeUseCases.getAllTimeTypeStatsUseCase().collect{
-
-                    state = state.copy(
-                        allCoffeesStats = it
-                    )
+                    _state.update { currentState ->
+                        currentState.copy(allCoffeesStats = it)
+                    }
 
                 }
 
@@ -124,9 +137,9 @@ class StatsViewModel @Inject constructor(
         viewModelScope.launch {
             try{
                 coffeeUseCases.getLastNCoffeesUseCase().collect{
-                    state = state.copy(
-                        lastNCoffees = it
-                    )
+                    _state.update { currentState ->
+                        currentState.copy(lastNCoffees = it)
+                    }
                 }
             }catch (e:Exception){
 
