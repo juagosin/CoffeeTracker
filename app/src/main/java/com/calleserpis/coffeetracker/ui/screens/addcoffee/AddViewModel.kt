@@ -39,7 +39,11 @@ class AddViewModel @Inject constructor(
             }
             is AddEvent.OnPriceChanged -> {
                 _state.update{ currentState ->
-                    currentState.copy(price = event.value.toDouble())
+                    currentState.copy(
+                        priceText = event.value,
+                        price = event.value.replace(',', '.')
+                            .toDoubleOrNull() ?: 0.0
+                    )
                 }
             }
 

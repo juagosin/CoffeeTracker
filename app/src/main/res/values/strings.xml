@@ -35,5 +35,7 @@
 
     <string name="txt_never">Nunca</string>
 
+    <string name="placeholder_price">0.00</string>
+
 
 </resources>
