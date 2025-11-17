@@ -28,6 +28,11 @@ class CoffeeRepositoryImpl(
             .map { entity -> entity?.toDomain() }
     }
 
+    override fun getCoffeeById(id: Int): Flow<Coffee?> {
+        return coffeeDao.getCoffeeById(id)
+            .map { entity -> entity?.toDomain() }
+    }
+
     override suspend fun getCoffeeCount(): Int {
         return coffeeDao.getCoffeeCount()
     }

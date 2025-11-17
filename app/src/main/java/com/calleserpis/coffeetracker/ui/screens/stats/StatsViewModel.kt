@@ -81,7 +81,10 @@ class StatsViewModel @Inject constructor(
         }
     }
 
+    fun editCoffee(coffeeId: Int){
+        Log.d("StatsViewModel", "Editando café con ID: $coffeeId")
 
+    }
     fun showDeleteDialog(coffee: Coffee) {
         _state.update {
             it.copy(coffeeToDelete = coffee)

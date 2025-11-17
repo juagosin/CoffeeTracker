@@ -10,6 +10,7 @@ interface CoffeeRepository {
 
     fun getLastNCoffees(n: Int=10): Flow<List<Coffee>>
     fun getLastCoffee(): Flow<Coffee?>
+    fun getCoffeeById(id: Int): Flow<Coffee?>
     suspend fun getCoffeeCount(): Int
     suspend fun getSpentMoney(): Double
 
