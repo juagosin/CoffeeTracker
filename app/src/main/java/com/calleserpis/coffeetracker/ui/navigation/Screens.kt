@@ -27,4 +27,9 @@ sealed class Screens {
         override val route: String = "add"
         override val icon: ImageVector = Icons.Filled.Add
     }
+    @Serializable
+    data class Edit(val id:Int) : Screens() {
+        override val route: String = "edit/$id"
+        override val icon: ImageVector = Icons.Filled.Add
+    }
 }

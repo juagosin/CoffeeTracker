@@ -21,6 +21,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedCard
@@ -51,7 +52,8 @@ import com.example.app.ui.components.BarData
 
 @Composable
 fun StatsScreen(
-    viewModel: StatsViewModel = hiltViewModel()
+    viewModel: StatsViewModel = hiltViewModel(),
+    onCoffeeClicked: (coffeeId: Int) ->Unit
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     Column(
@@ -90,7 +92,7 @@ fun StatsScreen(
                     .fillMaxWidth()
                     .padding(14.dp),
             )
-            LastCoffees(state, viewModel)
+            LastCoffees(state, viewModel,onCoffeeClicked = onCoffeeClicked)
             val datosBarChart = remember(state.last12MonthsStats) {
                 state.last12MonthsStats.mapIndexed { index, coffee ->
                     BarData(
@@ -114,7 +116,7 @@ fun StatsScreen(
 }
 
 @Composable
-fun LastCoffees(state: StatsState, viewModel: StatsViewModel) {
+fun LastCoffees(state: StatsState, viewModel: StatsViewModel, onCoffeeClicked: (Int) -> Unit) {
     Text(
         text = stringResource(R.string.title_last_coffees),
         textAlign = TextAlign.Justify,
@@ -133,6 +135,11 @@ fun LastCoffees(state: StatsState, viewModel: StatsViewModel) {
                     onToggleExpansion = {
                         viewModel.onEvent(StatsEvent.ToggleCoffeeExpansion(coffee.id))
                     },
+                    onEdit = {
+                        onCoffeeClicked(coffee.id)
+                    }
+
+
                 )
                 HorizontalDivider(
                     color = colorScheme.surfaceContainer,
@@ -156,6 +163,7 @@ fun LastCoffees(state: StatsState, viewModel: StatsViewModel) {
 fun CoffeeListItem(
     coffee: Coffee,
     onDelete: () -> Unit,
+    onEdit: () -> Unit,
     isExpanded: Boolean,
     onToggleExpansion: () -> Unit
 ) {
@@ -208,6 +216,9 @@ fun CoffeeListItem(
             coffee = coffee,
             onDelete = {
                 onDelete()
+            },
+            onEdit = {
+                onEdit()
             }
         )
     }
@@ -218,6 +229,7 @@ fun CoffeeExpanded(
     coffee: Coffee,
     modifier: Modifier = Modifier,
     onDelete: () -> Unit,
+    onEdit: () -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -236,12 +248,12 @@ fun CoffeeExpanded(
             )
             Spacer(modifier = Modifier.weight(1f))
 
-           /* IconButton(onClick = {
-
+            IconButton(onClick = {
+                onEdit()
             }) {
                 Icon(imageVector = Icons.Filled.Edit, contentDescription = null)
             }
-            */
+
 
             IconButton(onClick = {
                 onDelete()
@@ -276,7 +288,7 @@ fun DeleteCoffeeDialog(
             TextButton(
                 onClick = onConfirm,
                 colors = ButtonDefaults.textButtonColors(
-                    contentColor = MaterialTheme.colorScheme.error
+                    contentColor = colorScheme.error
                 )
             ) {
                 Text(text = stringResource(R.string.btn_delete))

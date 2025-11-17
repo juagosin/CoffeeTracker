@@ -8,6 +8,7 @@
     <string name="fab_description">Añadir café</string>
 
     <string name="title_newCoffee">Nuevo Café ☕</string>
+    <string name="title_editCoffee">Editar Café ☕</string>
 
     <string name="label_notes">Notas</string>
     <string name="label_price">Precio</string>

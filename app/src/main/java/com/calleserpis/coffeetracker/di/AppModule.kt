@@ -10,6 +10,7 @@ import com.calleserpis.coffeetracker.domain.use_case.AddCoffeeUseCase
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
 import com.calleserpis.coffeetracker.domain.use_case.DeleteCoffeeUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetAllTimeTypeStatsUseCase
+import com.calleserpis.coffeetracker.domain.use_case.GetCoffeeByIdUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetCoffeeCount
 import com.calleserpis.coffeetracker.domain.use_case.GetLasCoffeeUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetLast12MonthsStatsUseCase
@@ -57,7 +58,8 @@ object AppModule {
             getAllTimeTypeStatsUseCase = GetAllTimeTypeStatsUseCase(repository),
             deleteCoffeeUseCase = DeleteCoffeeUseCase(repository),
             getLast12MonthsStatsUseCase = GetLast12MonthsStatsUseCase(repository),
-            getMoneySpent = GetMoneySpent(repository)
+            getMoneySpent = GetMoneySpent(repository),
+            getCoffeeByIdUseCase = GetCoffeeByIdUseCase(repository)
         )
     }
 
