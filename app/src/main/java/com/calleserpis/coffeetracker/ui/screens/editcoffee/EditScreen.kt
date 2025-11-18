@@ -212,7 +212,7 @@ fun EditScreen(
                     if(state.isSaving){
                         CircularProgressIndicator()
                     }else {
-                        Text(stringResource(R.string.btn_save))
+                        Text(stringResource(R.string.btn_edit))
                     }
                 }
             }
