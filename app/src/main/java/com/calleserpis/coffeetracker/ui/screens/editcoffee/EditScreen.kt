@@ -52,7 +52,7 @@ fun EditScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
     var selectedOption by remember { mutableStateOf<String?>(null) }
 
-    LaunchedEffect(coffeeId,state.coffee?.type?.displayName) {
+    LaunchedEffect(coffeeId, state.coffee?.type?.displayName) {
         viewModel.onEvent(EditEvent.LoadCoffee(coffeeId))
         selectedOption = state.coffee?.type?.displayName
     }
@@ -66,7 +66,8 @@ fun EditScreen(
 
     Column(
         modifier = Modifier
-            .padding(horizontal = 24.dp).verticalScroll(rememberScrollState()),
+            .padding(horizontal = 24.dp)
+            .verticalScroll(rememberScrollState()),
 
         verticalArrangement = Arrangement.Center,
     ) {
@@ -110,15 +111,19 @@ fun EditScreen(
 
                             onClick = {
                                 selectedOption = coffee.displayName
-                                Log.d("TAG", "EditScreen: ${coffee.displayName} - ${selectedOption}")
+                                Log.d(
+                                    "TAG",
+                                    "EditScreen: ${coffee.displayName} - ${selectedOption}"
+                                )
 
                                 viewModel.onEvent(EditEvent.OnCoffeeTypeChanged(coffee))
                             },
                             label = { Text(coffee.displayName) },
                             shape = RoundedCornerShape(16.dp),
                             colors = FilterChipDefaults.filterChipColors(
-                                selectedContainerColor = colorScheme.tertiaryContainer,
-                                selectedLabelColor = colorScheme.onTertiaryContainer,
+                                selectedContainerColor = coffee.color,
+                                selectedLabelColor = colorScheme.onPrimary,
+
 
                                 )
                         )
@@ -149,7 +154,7 @@ fun EditScreen(
                     modifier = Modifier.padding(top = 8.dp)
                 )
                 OutlinedTextField(
-                    value = state.priceText ?: "0" ,
+                    value = state.priceText ?: "0",
                     onValueChange = { newValue ->
                         if (newValue.isEmpty()) {
                             viewModel.onEvent(EditEvent.OnPriceChanged(""))
@@ -187,7 +192,7 @@ fun EditScreen(
                         unfocusedTextColor = colorScheme.onSurface,
                     ),
                     maxLines = 1,
-                    keyboardOptions = KeyboardOptions( keyboardType = KeyboardType.Decimal),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                     modifier = Modifier.fillMaxWidth(),
                     trailingIcon = {
 
@@ -209,9 +214,9 @@ fun EditScreen(
                     },
                     enabled = !state.isSaving
                 ) {
-                    if(state.isSaving){
+                    if (state.isSaving) {
                         CircularProgressIndicator()
-                    }else {
+                    } else {
                         Text(stringResource(R.string.btn_edit))
                     }
                 }
