@@ -16,6 +16,7 @@
     <string name="label_type">Tipo</string>
 
     <string name="btn_save">Guardar</string>
+    <string name="btn_edit">Editar</string>
     <string name="btn_accept">Aceptar</string>
     <string name="btn_delete">Borrar</string>
     <string name="btn_cancel">Cancelar</string>
