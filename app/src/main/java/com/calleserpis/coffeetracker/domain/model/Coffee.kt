@@ -20,7 +20,9 @@ enum class CoffeeType(val displayName: String, val emoji: String,val color: Colo
     LUNGO("Largo", "☕", Color(0xFF8B5A3C)),
     CAPPUCCINO("Capuchino", "☕", Color(0xFF6366F1)),
     DESCAFEINADO("Descafeinado", "☕", Color(0xFF10B981)),
+    CARAJILLO("Carajillo", "🥃", Color(0xFFB45309)),
     CREMAET("Cremaet", "☕", Color(0xFFFF5722)),
+
     OTROS("Otros", "🍫", Color(0xFFEF4444));
 
     companion object {
