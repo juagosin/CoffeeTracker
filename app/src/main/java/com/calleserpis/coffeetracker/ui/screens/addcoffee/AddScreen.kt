@@ -41,8 +41,7 @@ import com.calleserpis.readingAPP.presentation.common.DatePickerTextField
 
 @Composable
 fun AddScreen(
-    viewModel: AddViewModel = hiltViewModel(),
-    onCoffeeSaved: () -> Unit
+    viewModel: AddViewModel = hiltViewModel(), onCoffeeSaved: () -> Unit
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     if (state.isSuccess) {
@@ -51,7 +50,8 @@ fun AddScreen(
     var selectedOption by remember { mutableStateOf(CoffeeType.entries.first().displayName) }
     Column(
         modifier = Modifier
-            .padding(horizontal = 24.dp).verticalScroll(rememberScrollState()),
+            .padding(horizontal = 24.dp)
+            .verticalScroll(rememberScrollState()),
 
         verticalArrangement = Arrangement.Center,
     ) {
@@ -74,8 +74,7 @@ fun AddScreen(
                 Text(
                     text = stringResource(R.string.title_newCoffee),
                     textAlign = TextAlign.Start,
-                    modifier = Modifier
-                        .padding(bottom = 8.dp),
+                    modifier = Modifier.padding(bottom = 8.dp),
                     style = MaterialTheme.typography.headlineMedium,
 
                     )
@@ -100,8 +99,9 @@ fun AddScreen(
                             label = { Text(coffee.displayName) },
                             shape = RoundedCornerShape(16.dp),
                             colors = FilterChipDefaults.filterChipColors(
-                                selectedContainerColor = colorScheme.tertiaryContainer,
-                                selectedLabelColor = colorScheme.onTertiaryContainer,
+                                selectedContainerColor = coffee.color,
+                                selectedLabelColor = colorScheme.onPrimary,
+
 
                                 )
                         )
@@ -124,7 +124,7 @@ fun AddScreen(
                     label = "",
                     modifier = Modifier.fillMaxWidth(),
 
-                )
+                    )
                 Text(
                     text = stringResource(R.string.label_price),
                     style = MaterialTheme.typography.titleLarge,
@@ -148,8 +148,8 @@ fun AddScreen(
                         if (decimalSeparators <= 1) {
                             // Como mucho dejamos dos decimales
                             val parts = filtered.split('.', ',')
-                            val isValid = parts.size <= 2 &&
-                                    (parts.size == 1 || parts[1].length <= 2)
+                            val isValid =
+                                parts.size <= 2 && (parts.size == 1 || parts[1].length <= 2)
 
                             if (isValid) {
                                 viewModel.onEvent(AddEvent.OnPriceChanged(filtered))
@@ -170,30 +170,27 @@ fun AddScreen(
                         unfocusedTextColor = colorScheme.onSurface,
                     ),
                     maxLines = 1,
-                    keyboardOptions = KeyboardOptions( keyboardType = KeyboardType.Decimal),
-                        modifier = Modifier.fillMaxWidth(),
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                    modifier = Modifier.fillMaxWidth(),
                     trailingIcon = {
 
-                            Icon(
-                                imageVector = Icons.Default.AttachMoney,
-                                contentDescription = stringResource(R.string.label_price),
-                                tint = colorScheme.primary
-                            )
+                        Icon(
+                            imageVector = Icons.Default.AttachMoney,
+                            contentDescription = stringResource(R.string.label_price),
+                            tint = colorScheme.primary
+                        )
 
-                        }
-                    )
+                    })
                 Button(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(24.dp),
-                    onClick = {
+                        .padding(24.dp), onClick = {
                         viewModel.onEvent(AddEvent.SaveCoffee)
-                    },
-                    enabled = !state.isSaving
+                    }, enabled = !state.isSaving
                 ) {
-                    if(state.isSaving){
+                    if (state.isSaving) {
                         CircularProgressIndicator()
-                    }else {
+                    } else {
                         Text(stringResource(R.string.btn_save))
                     }
                 }

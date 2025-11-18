@@ -83,7 +83,7 @@ fun StatsScreen(
                 data = datosPieChart
             )
             Text(
-                text = stringResource(R.string.title_total_spent) + " " + state.moneySpent.toString() + " €",
+                text = stringResource(R.string.title_total_spent) + " " + String.format("%.2f €", state.moneySpent),
                 textAlign = TextAlign.Right,
                 style = MaterialTheme.typography.bodySmall,
                 fontStyle = FontStyle.Italic,
