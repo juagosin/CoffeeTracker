@@ -95,6 +95,7 @@ class EditViewModel @Inject constructor(
                             currentState.copy(
                                 isLoading = false,
                                 coffee = coffee,
+                                type = coffee.type,
                                 date = coffee.timestamp,
                                 priceText = coffee.price.toString(),
 
