@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -29,7 +30,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -37,6 +40,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.calleserpis.coffeetracker.R
 import com.calleserpis.coffeetracker.domain.model.CoffeeType
+import com.calleserpis.coffeetracker.ui.screens.editcoffee.EditEvent
 import com.calleserpis.readingAPP.presentation.common.DatePickerTextField
 
 @Composable
@@ -48,6 +52,7 @@ fun AddScreen(
         onCoffeeSaved()
     }
     var selectedOption by remember { mutableStateOf(CoffeeType.entries.first().displayName) }
+    val focusManager = LocalFocusManager.current
     Column(
         modifier = Modifier
             .padding(horizontal = 24.dp)
@@ -169,8 +174,19 @@ fun AddScreen(
                         focusedTextColor = colorScheme.onSurface,
                         unfocusedTextColor = colorScheme.onSurface,
                     ),
-                    maxLines = 1,
-                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                    singleLine = true,
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Decimal,
+                        imeAction = ImeAction.Send
+                    ),
+                    keyboardActions =
+                        KeyboardActions (
+                            onSend = {
+                                viewModel.onEvent(AddEvent.SaveCoffee)
+                                focusManager.clearFocus()
+                                }
+                        )
+                    ,
                     modifier = Modifier.fillMaxWidth(),
                     trailingIcon = {
 
