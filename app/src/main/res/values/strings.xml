@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CoffeeTracker</string>
+    <string name="app_name">Coffee Tracker</string>
 
     <string name="screenHome_title">Home</string>
     <string name="screenStats_title">Estadísticas</string>
@@ -38,6 +38,11 @@
     <string name="txt_never">Nunca</string>
 
     <string name="placeholder_price">0.00</string>
+
+    <string name="title_barchart">Consumo últimos 12 meses</string>
+    <string name="label_barchart">tazas</string>
+
+
 
 
 </resources>
