@@ -30,6 +30,7 @@ import kotlin.collections.forEachIndexed
 
 data class BarData(
     val txtBar: String,
+    val txtLarge: String,
     val value: Float
 )
 
@@ -70,7 +71,7 @@ fun BarChart(
 
         if (selectedIndex >= 0 && selectedIndex < data.size) {
             Text(
-                text = "${data[selectedIndex].txtBar}: ${data[selectedIndex].value.toInt()} $valueLabel",
+                text = "${data[selectedIndex].txtLarge} : ${data[selectedIndex].value.toInt()} $valueLabel",
                 style = MaterialTheme.typography.titleMedium,
                 color = Color(0xFF8B5A3C),
                 fontWeight = FontWeight.SemiBold,

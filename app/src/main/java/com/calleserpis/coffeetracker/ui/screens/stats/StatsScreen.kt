@@ -96,7 +96,8 @@ fun StatsScreen(
             val datosBarChart = remember(state.last12MonthsStats) {
                 state.last12MonthsStats.mapIndexed { index, coffee ->
                     BarData(
-                        txtBar = coffee.monthAbbreviation,
+                        txtBar = coffee.getMonthAbbreviation(),
+                        txtLarge = coffee.getMonthName(),
                         value = coffee.value.toFloat()
                     )
                 }
@@ -107,8 +108,8 @@ fun StatsScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(16.dp),
-                title = "Consumo últimos 12 meses ",
-                valueLabel = "tazas"
+                title = stringResource(R.string.title_barchart),
+                valueLabel = stringResource(R.string.label_barchart)
             )
         }
         Spacer(modifier = Modifier.height(32.dp))
