@@ -25,10 +25,9 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.stringResource
@@ -40,7 +39,6 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.calleserpis.coffeetracker.R
 import com.calleserpis.coffeetracker.domain.model.CoffeeType
-import com.calleserpis.coffeetracker.ui.screens.editcoffee.EditEvent
 import com.calleserpis.readingAPP.presentation.common.DatePickerTextField
 
 @Composable
@@ -48,10 +46,23 @@ fun AddScreen(
     viewModel: AddViewModel = hiltViewModel(), onCoffeeSaved: () -> Unit
 ) {
     val state by viewModel.state.collectAsStateWithLifecycle()
+    val lastCoffee by viewModel.lastCoffee.collectAsState()
     if (state.isSuccess) {
         onCoffeeSaved()
     }
-    var selectedOption by remember { mutableStateOf(CoffeeType.entries.first().displayName) }
+    LaunchedEffect(lastCoffee) {
+        lastCoffee?.let { lastCoffeeType ->
+            // Buscamos el últiom café tomado para dejarlo seleccionado
+            val coffeeType = CoffeeType.entries.find {
+                it.displayName == lastCoffeeType
+            } ?: CoffeeType.entries.first()
+
+            // Solo actualiza si el estado actual es diferente
+            if (state.type != coffeeType) {
+                viewModel.onEvent(AddEvent.OnCoffeeTypeChanged(coffeeType))
+            }
+        }
+    }
     val focusManager = LocalFocusManager.current
     Column(
         modifier = Modifier
@@ -95,10 +106,8 @@ fun AddScreen(
                     ) {
                     CoffeeType.entries.forEach { coffee ->
                         FilterChip(
-                            selected = selectedOption == coffee.displayName,
+                            selected = state.type == coffee,
                             onClick = {
-                                selectedOption = coffee.displayName
-
                                 viewModel.onEvent(AddEvent.OnCoffeeTypeChanged(coffee))
                             },
                             label = { Text(coffee.displayName) },
@@ -180,13 +189,12 @@ fun AddScreen(
                         imeAction = ImeAction.Send
                     ),
                     keyboardActions =
-                        KeyboardActions (
+                        KeyboardActions(
                             onSend = {
                                 viewModel.onEvent(AddEvent.SaveCoffee)
                                 focusManager.clearFocus()
-                                }
-                        )
-                    ,
+                            }
+                        ),
                     modifier = Modifier.fillMaxWidth(),
                     trailingIcon = {
 

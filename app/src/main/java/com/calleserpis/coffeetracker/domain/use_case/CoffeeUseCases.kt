@@ -10,5 +10,7 @@ data class CoffeeUseCases(
     val getAllTimeTypeStatsUseCase: GetAllTimeTypeStatsUseCase,
     val deleteCoffeeUseCase: DeleteCoffeeUseCase,
     val getLast12MonthsStatsUseCase: GetLast12MonthsStatsUseCase,
-    val getCoffeeByIdUseCase: GetCoffeeByIdUseCase
+    val getCoffeeByIdUseCase: GetCoffeeByIdUseCase,
+    val getLastCoffeePrefUseCase: GetLastCoffeePrefUseCase,
+    val saveLastCoffeePrefUseCase: SaveLastCoffeePrefUseCase
 )

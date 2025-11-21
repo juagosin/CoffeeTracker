@@ -16,8 +16,8 @@ android {
         applicationId = "com.calleserpis.coffeetracker"
         minSdk = 26
         targetSdk = 36
-        versionCode = 6
-        versionName = "3.4.1"
+        versionCode = 7
+        versionName = "3.5.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -73,4 +73,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     //Material Icons
     implementation(libs.androidx.compose.material.icons.extended)
+    //Datastore
+    implementation(libs.androidx.datastore.preferences)
 }

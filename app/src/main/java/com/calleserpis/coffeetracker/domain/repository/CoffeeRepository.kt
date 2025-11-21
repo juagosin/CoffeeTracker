@@ -1,8 +1,8 @@
 package com.calleserpis.coffeetracker.domain.repository
 
 import com.calleserpis.coffeetracker.domain.model.Coffee
-import com.calleserpis.coffeetracker.domain.model.stats.DailyCoffeeStat
 import com.calleserpis.coffeetracker.domain.model.stats.AllTimeTypeStats
+import com.calleserpis.coffeetracker.domain.model.stats.DailyCoffeeStat
 import com.calleserpis.coffeetracker.domain.model.stats.MonthlyCoffeeStats
 import kotlinx.coroutines.flow.Flow
 
@@ -23,6 +23,10 @@ interface CoffeeRepository {
     fun getAllTimeTypeStats(): Flow<List<AllTimeTypeStats>>
 
     fun getLast12MonthsStats(): Flow<List<MonthlyCoffeeStats>>
+
+    //Preferences
+    fun getLastCoffeePref(): Flow<String?>
+    suspend fun saveLastCoffeePref(coffeeType: String)
 
 }
 

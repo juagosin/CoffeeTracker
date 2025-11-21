@@ -17,7 +17,21 @@ class AddViewModel @Inject constructor(
     private val coffeeUseCase: CoffeeUseCases
 ) : ViewModel() {
     private val _state = MutableStateFlow(AddCoffeeState())
+    private val _lastCoffee = MutableStateFlow<String?>(null)
     val state: StateFlow<AddCoffeeState> = _state.asStateFlow()
+    val lastCoffee: StateFlow<String?> = _lastCoffee.asStateFlow()
+
+    init {
+        observeLastCoffee()
+    }
+
+    private fun observeLastCoffee() {
+        viewModelScope.launch {
+            coffeeUseCase.getLastCoffeePrefUseCase().collect { coffee ->
+                _lastCoffee.value = coffee
+            }
+        }
+    }
 
     fun onEvent(event: AddEvent) {
         when (event){
@@ -71,6 +85,7 @@ class AddViewModel @Inject constructor(
                         price = _state.value.price.takeIf { it > 0.0 } ?: 0.0
                     )
                 )
+                coffeeUseCase.saveLastCoffeePrefUseCase(_state.value.type.displayName)
             }
             _state.update{ currentState ->
                 currentState.copy(isSaving = false, isSuccess = true)

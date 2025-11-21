@@ -1,22 +1,23 @@
 package com.calleserpis.coffeetracker.data.repository
 
 import com.calleserpis.coffeetracker.data.dao.CoffeeDao
-
+import com.calleserpis.coffeetracker.data.datastore.CoffeePreferencesManager
 import com.calleserpis.coffeetracker.data.mapper.toDomain
 import com.calleserpis.coffeetracker.data.mapper.toDomainDailyStats
 import com.calleserpis.coffeetracker.data.mapper.toDomainMonthlyStats
 import com.calleserpis.coffeetracker.data.mapper.toEntity
 import com.calleserpis.coffeetracker.data.mapper.toTypeHistory
 import com.calleserpis.coffeetracker.domain.model.Coffee
-import com.calleserpis.coffeetracker.domain.model.stats.DailyCoffeeStat
 import com.calleserpis.coffeetracker.domain.model.stats.AllTimeTypeStats
+import com.calleserpis.coffeetracker.domain.model.stats.DailyCoffeeStat
 import com.calleserpis.coffeetracker.domain.model.stats.MonthlyCoffeeStats
 import com.calleserpis.coffeetracker.domain.repository.CoffeeRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class CoffeeRepositoryImpl(
-    private val coffeeDao: CoffeeDao
+    private val coffeeDao: CoffeeDao,
+    private val preferencesManager: CoffeePreferencesManager
 ) : CoffeeRepository {
 
     override fun getLastNCoffees(n: Int): Flow<List<Coffee>> {
@@ -65,6 +66,13 @@ class CoffeeRepositoryImpl(
             monthStats -> monthStats.toDomainMonthlyStats()
         }
     }
+
+    override fun getLastCoffeePref(): Flow<String?> = preferencesManager.lastCoffeeType
+
+    override suspend fun saveLastCoffeePref(coffeeType: String) {
+        preferencesManager.saveLastCoffee(coffeeType)
+    }
+
 
 
 }
