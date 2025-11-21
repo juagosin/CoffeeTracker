@@ -73,4 +73,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     //Material Icons
     implementation(libs.androidx.compose.material.icons.extended)
+    //Datastore
+    implementation(libs.androidx.datastore.preferences)
 }
