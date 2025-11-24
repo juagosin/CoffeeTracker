@@ -18,9 +18,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import com.calleserpis.coffeetracker.R
 import java.util.Calendar
+import java.util.TimeZone
 
 
-// ui/components/DatePickerDialog.kt
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -36,14 +36,15 @@ fun DatePickerDialogCustom(
         selectableDates = object : SelectableDates {
             override fun isSelectableDate(utcTimeMillis: Long): Boolean {
                 // Obtener la fecha de hoy a las 23:59:59
-                val today = Calendar.getInstance().apply {
+                val todayUtc = Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
+                    timeInMillis = System.currentTimeMillis()
                     set(Calendar.HOUR_OF_DAY, 23)
                     set(Calendar.MINUTE, 59)
                     set(Calendar.SECOND, 59)
                     set(Calendar.MILLISECOND, 999)
                 }.timeInMillis
 
-                return utcTimeMillis <= today
+                return utcTimeMillis <= todayUtc
             }
         }
     )
@@ -71,14 +72,22 @@ fun DatePickerDialogCustom(
             DatePicker(state = datePickerState, showModeToggle = true)
         }
     } else {
-        // --- TIME PICKER OFICIAL DE MATERIAL 3 ---
-        val calendar = Calendar.getInstance().apply {
-            timeInMillis = datePickerState.selectedDateMillis ?: System.currentTimeMillis()
+        // Convertir de UTC (DatePicker) a zona horaria local
+        val selectedDateUtc = datePickerState.selectedDateMillis ?: System.currentTimeMillis()
+
+        // Obtener la fecha seleccionada en la zona horaria local
+        val localCalendar = Calendar.getInstance().apply {
+            timeInMillis = selectedDateUtc
+            // El DatePicker devuelve medianoche UTC, ajustamos a la zona local
+            set(Calendar.HOUR_OF_DAY, get(Calendar.HOUR_OF_DAY))
+            set(Calendar.MINUTE, get(Calendar.MINUTE))
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
         }
 
         val timePickerState = rememberTimePickerState(
-            initialHour = calendar.get(Calendar.HOUR_OF_DAY),
-            initialMinute = calendar.get(Calendar.MINUTE),
+            initialHour = localCalendar.get(Calendar.HOUR_OF_DAY),
+            initialMinute = localCalendar.get(Calendar.MINUTE),
             is24Hour = true
         )
 
@@ -86,13 +95,15 @@ fun DatePickerDialogCustom(
             onDismissRequest = onDismiss,
             confirmButton = {
                 TextButton(onClick = {
-                    val combinedMillis = Calendar.getInstance().apply {
-                        timeInMillis = datePickerState.selectedDateMillis ?: System.currentTimeMillis()
+                    val finalCalendar = Calendar.getInstance().apply {
+                        timeInMillis = selectedDateUtc
                         set(Calendar.HOUR_OF_DAY, timePickerState.hour)
                         set(Calendar.MINUTE, timePickerState.minute)
-                    }.timeInMillis
+                        set(Calendar.SECOND, 0)
+                        set(Calendar.MILLISECOND, 0)
+                    }
 
-                    onDateSelected(combinedMillis)
+                    onDateSelected(finalCalendar.timeInMillis)
                     showTimePicker = false
                 }) {
                     Text(text = stringResource(R.string.btn_accept))
