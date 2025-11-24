@@ -97,6 +97,7 @@ class EditViewModel @Inject constructor(
                                 coffee = coffee,
                                 type = coffee.type,
                                 date = coffee.timestamp,
+                                price = coffee.price?.toDouble() ?: 0.0,
                                 priceText = coffee.price.toString(),
 
                             )
