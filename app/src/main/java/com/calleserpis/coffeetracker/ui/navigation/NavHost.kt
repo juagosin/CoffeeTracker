@@ -47,7 +47,7 @@ fun CoffeeNavHost(modifier: Modifier = Modifier, navController: NavHostControlle
             val coffeeId = backStackEntry.arguments?.getInt("id") ?: 0
             EditScreen(
                 onCoffeeSaved = {
-                    navController.navigate(Screens.Home.route)
+                    navController.navigate(Screens.Stats.route)
                 },
                 coffeeId = coffeeId
             )
