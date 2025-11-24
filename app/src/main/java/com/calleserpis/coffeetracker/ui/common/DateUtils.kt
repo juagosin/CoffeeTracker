@@ -3,6 +3,7 @@ package com.calleserpis.readingAPP.presentation.common
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 
 
 // util/DateUtils.kt
@@ -10,13 +11,11 @@ object DateUtils {
 
     fun getCurrentTimeMillis(): Long = System.currentTimeMillis()
 
-    fun formatDate(
-        timestamp: Long,
-        pattern: String = "dd/MM/yyyy",
-        locale: Locale = Locale.getDefault()
-    ): String {
-        val formatter = SimpleDateFormat(pattern, locale)
-        return formatter.format(Date(timestamp))
+    fun formatDate(timeInMillis: Long, pattern: String): String {
+        val formatter = SimpleDateFormat(pattern, Locale.getDefault())
+        // Importante: usar la zona horaria del sistema
+        formatter.timeZone = TimeZone.getDefault()
+        return formatter.format(Date(timeInMillis))
     }
 
     fun formatDateTime(
@@ -35,6 +34,4 @@ object DateUtils {
     fun formatShortDate(timestamp: Long): String =
         formatDate(timestamp, "dd/MM/yy")
 
-    fun formatLongDate(timestamp: Long): String =
-        formatDate(timestamp, "EEEE, dd 'de' MMMM 'de' yyyy", Locale("es", "ES"))
 }
