@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Coffee Tracker</string>
+
+    <string name="screenHome_title">Home</string>
+    <string name="screenStats_title">Statistics</string>
+
+    <string name="Main_title">Coffee Tracker</string>
+    <string name="fab_description">Add coffee</string>
+
+    <string name="title_newCoffee">New Coffee ☕</string>
+    <string name="title_editCoffee">Edit Coffee ☕</string>
+
+    <string name="label_notes">Notes</string>
+    <string name="label_price">Price</string>
+    <string name="label_date">Date</string>
+    <string name="label_type">Type</string>
+
+    <string name="btn_save">Save</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_accept">Accept</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <string name="title_nodata">There are no coffee consumption records</string>
+    <string name="title_coffecount">Coffee counter</string>
+    <string name="title_didyouknow">Did you know...</string>
+    <string name="title_total_spent">You have spent a total of </string>
+    <string name="title_lastcoffe">Last coffee</string>
+    <string name="title_last_coffees">Recent coffees</string>
+    <string name="title_lastweek">Coffees from the last week</string>
+
+    <string name="title_delete">You are about to delete this coffee</string>
+    <string name="txt_delete">Are you sure you want to delete this coffee?</string>
+
+    <string name="title_chart_historical">Historical coffee consumption</string>
+
+    <string name="txt_never">Never</string>
+
+    <string name="placeholder_price">0.00</string>
+
+    <string name="title_barchart">Consumption in the last 12 months</string>
+    <string name="label_barchart">cups</string>
+
+
+    <string-array name="coffee_phrases">
+        <item>Coffee was discovered in Ethiopia around the 9th century, according to the legend of the shepherd Kaldi.</item>
+        <item>Kaldi noticed that his goats became more active after eating the fruits of the coffee plant.</item>
+        <item>The word \'coffee\' comes from the Arabic \'qahwa\', which originally meant \'wine\'.</item>
+        <item>Coffee arrived in Europe in the 17th century and quickly became a popular drink.</item>
+        <item>Venice was one of the first European cities to open a coffeehouse in 1645.</item>
+        <item>The first English coffeehouse opened in Oxford in 1650, known as \'The Angel\'.</item>
+        <item>Coffee was banned in Mecca in 1511 for being considered stimulating and suspicious.</item>
+        <item>In 1675, King Charles II of England attempted to close coffeehouses for encouraging political debates.</item>
+        <item>Coffee became popular in America after the Boston Tea Party in 1773, when tea was boycotted.</item>
+        <item>The first coffeehouse in the United States opened in Boston in 1676.</item>
+        <item>Instant coffee was invented by the Japanese Satori Kato in 1901.</item>
+        <item>Caffeine was first isolated in 1819 by German chemist Friedlieb Runge.</item>
+        <item>It was Goethe who suggested that Runge study coffee beans.</item>
+        <item>Espresso was invented in Italy at the beginning of the 20th century.</item>
+        <item>Luigi Bezzera patented the first espresso machine in 1901.</item>
+        <item>The Italian moka pot was created by Alfonso Bialetti in 1933.</item>
+        <item>Cappuccino gets its name from the Capuchin monks, due to the color of their habit.</item>
+        <item>Brazil has been the largest coffee producer in the world for more than 150 years.</item>
+        <item>Colombia is one of the largest exporters of Arabica coffee in the world.</item>
+        <item>Arabica coffee represents approximately 60% of global production.</item>
+        <item>Robusta coffee contains nearly twice as much caffeine as Arabica.</item>
+        <item>Decaffeinated coffee is produced by extracting caffeine with water or natural solvents.</item>
+        <item>Caffeine works by blocking adenosine, a neurotransmitter that induces sleep.</item>
+        <item>The stimulating effect of coffee usually lasts between 3 and 5 hours.</item>
+        <item>Coffee was Napoleon Bonaparte\'s preferred drink.</item>
+        <item>Honoré de Balzac drank between 40 and 50 cups of coffee a day while writing.</item>
+        <item>Voltaire drank more than 30 cups of coffee daily and said it kept him lucid.</item>
+        <item>Beethoven counted exactly 60 coffee beans per cup before brewing it.</item>
+        <item>Composer Johann Sebastian Bach wrote a cantata dedicated to coffee in 1732.</item>
+        <item>Bach’s so-called \'Coffee Cantata\' jokes about his daughter\'s addiction to the drink.</item>
+        <item>Finland consumes more coffee per capita than any other country in the world.</item>
+        <item>The average Finn consumes more than 12 kilograms of coffee per year.</item>
+        <item>Italy has one of the world’s most influential coffee cultures, centered on espresso.</item>
+        <item>In Ethiopia, coffee is considered a symbol of hospitality and respect.</item>
+        <item>Coffee arrived in South America for the first time through French Guiana in the 18th century.</item>
+        <item>Coffee was a luxury drink in Europe until the 18th century.</item>
+        <item>In the 19th century, coffee became a basic product of international trade.</item>
+        <item>Coffee beans are actually the seeds of the coffee fruit, called \'cherries\'.</item>
+        <item>Each coffee cherry usually contains two beans, although some contain only one (peaberry).</item>
+        <item>Green coffee must be roasted before being ground and brewed.</item>
+        <item>The roast level affects the flavor, aroma, and acidity of the coffee.</item>
+        <item>The most expensive coffee in the world is Kopi Luwak, produced from beans digested by civets.</item>
+        <item>Kopi Luwak originated in Indonesia and can reach prices of more than 500 euros per kilo.</item>
+        <item>Turkish coffee has been an Intangible Cultural Heritage of Humanity since 2013.</item>
+        <item>In Turkey, preparing coffee is a symbolic act of friendship and hospitality.</item>
+        <item>In Vienna, traditional coffeehouses were declared cultural heritage by UNESCO in 2011.</item>
+        <item>Espresso literally means \'express\' or \'under pressure\' in Italian.</item>
+        <item>Americano coffee emerged during World War II, when soldiers diluted espresso with water.</item>
+        <item>The latte became popular in the United States in the 1980s thanks to the rise of Starbucks.</item>
+        <item>The Flat White originated in Australia or New Zealand (its exact origin is still debated).</item>
+        <item>The first capsule coffee machine was patented by Nestlé in 1986.</item>
+        <item>Caffeine is the most widely consumed psychoactive stimulant in the world.</item>
+        <item>An espresso contains less caffeine than a cup of filtered coffee, but it is more concentrated.</item>
+        <item>Coffee can improve physical performance by increasing adrenaline release.</item>
+        <item>Studies show that coffee reduces the risk of diseases such as Parkinson’s or type 2 diabetes.</item>
+        <item>Drinking coffee in moderation is associated with longer life expectancy.</item>
+        <item>The aroma of coffee comes from more than 800 different volatile compounds.</item>
+        <item>Coffee has more antioxidants than most fruits and vegetables.</item>
+        <item>In Japan, there are cafés where you can drink coffee alongside cats, owls, or even snakes.</item>
+        <item>South Korea has more coffee shops per capita than any other country in the world.</item>
+        <item>Coffee was introduced to Yemen in the 15th century, where it was exported from the port of Mocha.</item>
+        <item>The term \'mocha\' comes from the Yemeni port of Mocha, famous for its coffee.</item>
+        <item>The first coffeehouse in Paris opened in 1686, called Café Procope.</item>
+        <item>Voltaire, Rousseau, and Diderot frequented Café Procope.</item>
+        <item>Coffee helped drive the Enlightenment by serving as a meeting point for thinkers.</item>
+        <item>In the 18th century, coffeehouses in England were known as \'penny universities\'.</item>
+        <item>They were called this because for a penny you could buy a cup of coffee and converse with intellectuals.</item>
+        <item>The first modern espresso machine was developed by Achille Gaggia in 1947.</item>
+        <item>Gaggia introduced the lever system, which produced the characteristic espresso crema.</item>
+        <item>A barista is a professional specialized in the preparation and presentation of coffee.</item>
+        <item>The term \'barista\' comes from Italian and means \'barman\'.</item>
+        <item>International Coffee Day is celebrated on October 1st.</item>
+        <item>Coffee is the second most traded commodity in the world, after oil.</item>
+        <item>More than 25 million people work directly or indirectly in the coffee industry.</item>
+        <item>A single coffee tree can produce between 1 and 2 kilograms of beans per year.</item>
+        <item>Coffee trees can live more than 50 years under proper conditions.</item>
+        <item>Coffee grows best in tropical regions at altitudes between 800 and 2000 meters.</item>
+        <item>The coffee-growing region of Colombia was declared a World Heritage Site by UNESCO in 2011.</item>
+        <item>In Ethiopia, coffee is part of daily social and family ceremonies.</item>
+        <item>Ethiopians often roast, grind, and prepare the coffee in front of guests.</item>
+        <item>In Sweden, there is a tradition called \'fika\', a daily break to drink coffee and socialize.</item>
+        <item>Scandinavians consider coffee an essential part of their work culture.</item>
+        <item>Coffee contains small amounts of vitamins B2, B3, B5, and minerals such as magnesium and potassium.</item>
+        <item>Caffeine begins to take effect about 15 minutes after consumption.</item>
+        <item>Coffee has a pH between 4.5 and 6, making it slightly acidic.</item>
+        <item>The first paper coffee filters were invented by Melitta Bentz in 1908.</item>
+        <item>Melitta Bentz created her filter using blotting paper and a perforated can.</item>
+        <item>The company Melitta remains one of the main producers of coffee filters.</item>
+        <item>Irish coffee was invented in the 1940s at Foynes Airport in Ireland.</item>
+        <item>It was created by chef Joe Sheridan, who added Irish whiskey to the drink to warm travelers.</item>
+        <item>Cold brew coffee became popular in Japan centuries before it arrived in the West.</item>
+        <item>Cold brew is made with cold water and left to steep for 12 to 24 hours.</item>
+        <item>Modern baristas compete in world latte art championships.</item>
+        <item>Latte art was born in Seattle in the 1980s.</item>
+        <item>The first World Barista Championship was held in 1991.</item>
+        <item>Coffee plays a central role in the culture of many countries, from Italy to Ethiopia.</item>
+        <item>NASA developed a special cup for drinking coffee in space.</item>
+        <item>The first coffee consumed in space was in 1969 by astronaut Buzz Aldrin.</item>
+        <item>In 2015, astronauts on the International Space Station enjoyed the first espresso made in orbit.</item>
+        <item>That machine was designed by Lavazza and the Italian Space Agency.</item>
+        <item>Coffee has more than 120 known species, although only two are grown commercially: Arabica and Robusta.</item>
+        <item>Coffee first arrived in Japan in the 17th century, but did not become popular until after World War II.</item>
+        <item>In Ethiopia, the coffee ceremony can last more than an hour and includes three rounds of serving.</item>
+        <item>Coffee arrived in Brazil in 1727 thanks to Francisco de Melo Palheta, who smuggled seeds from French Guiana.</item>
+        <item>Coffee was brought to Hawaii in 1825, establishing the famous Kona growing region.</item>
+        <item>Instant coffee was popularized by Nestlé during World War II under the brand Nescafé.</item>
+        <item>The first automatic home espresso machine was launched by Gaggia in 1977.</item>
+        <item>Coffee was considered a medicine in Europe during the 16th century.</item>
+        <item>In the 18th century, Frederick the Great of Prussia tried to ban coffee to promote beer consumption.</item>
+        <item>Green coffee was used as a currency of exchange in Africa for centuries.</item>
+        <item>Coffee is Ethiopia’s most important commercial crop, representing more than 30% of its exports.</item>
+        <item>The first canned coffee was launched in Japan in 1969 by UCC Ueshima Coffee Co.</item>
+        <item>In Italy, drinking coffee at the bar is cheaper than sitting at a table.</item>
+        <item>Coffee arrived in Mexico at the end of the 18th century and quickly spread through Chiapas and Veracruz.</item>
+        <item>Jamaica Blue Mountain coffee is one of the most prized and mildest in the world.</item>
+        <item>In the 17th century, some European clerics tried to ban coffee, calling it the \'devil’s drink\'.</item>
+        <item>Pope Clement VIII approved coffee consumption in 1600, declaring it \'so delicious that it must be baptized\'.</item>
+        <item>In Yemen, coffee was considered an aid for meditation among Sufi monks.</item>
+        <item>The term \'coffee break\' became popular in the United States in the 1950s thanks to advertising campaigns.</item>
+        <item>Instant coffee became essential during World War I because of its practicality for soldiers.</item>
+        <item>80% of the coffee consumed in the world is Arabica.</item>
+        <item>In France, philosopher Montesquieu often wrote accompanied by several cups of coffee.</item>
+        <item>Specialty coffee is defined as scoring above 80 points on the SCA scale.</item>
+        <item>Ethiopian Yirgacheffe coffee is famous for its floral and citrus notes.</item>
+        <item>Coffee was introduced to India by the Sufi Baba Budan in the 17th century.</item>
+        <item>Coffee is the main source of antioxidants in the average Western diet.</item>
+        <item>An average cup of coffee contains between 80 and 120 mg of caffeine.</item>
+        <item>Black coffee without sugar contains only about 2 calories per cup.</item>
+        <item>The Guinness World Record for most cups of coffee served in one day is over 12,000, achieved in Colombia.</item>
+        <item>Roasted coffee releases carbon dioxide for several days, which is why it must rest before being packaged.</item>
+        <item>Coffees grown at higher altitudes tend to have more complex flavors and brighter acidity.</item>
+    </string-array>
+
+</resources>

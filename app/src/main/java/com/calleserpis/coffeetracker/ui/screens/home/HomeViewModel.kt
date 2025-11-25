@@ -1,11 +1,13 @@
 package com.calleserpis.coffeetracker.ui.screens.home
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.calleserpis.coffeetracker.R
 import com.calleserpis.coffeetracker.domain.model.Coffee
-import com.calleserpis.coffeetracker.domain.model.CoffeePhrases
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,7 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val coffeeUseCase: CoffeeUseCases
+    private val coffeeUseCase: CoffeeUseCases,
+    @ApplicationContext private val context: Context
 ) : ViewModel() {
 
 
@@ -84,7 +87,9 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun loadPhrases() {
-        val randomPhrase = CoffeePhrases.phrases.random()
+
+        val phrases = context.resources.getStringArray(R.array.coffee_phrases)
+        val randomPhrase = phrases.random()
         _state.update { currentState ->
             currentState.copy(randomPhrase = randomPhrase)
         }
