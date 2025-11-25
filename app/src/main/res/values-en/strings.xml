@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Coffee Tracker</string>
+
+    <string name="screenHome_title">Home</string>
+    <string name="screenStats_title">Statistics</string>
+
+    <string name="Main_title">Coffee Tracker</string>
+    <string name="fab_description">Add coffee</string>
+
+    <string name="title_newCoffee">New Coffee ☕</string>
+    <string name="title_editCoffee">Edit Coffee ☕</string>
+
+    <string name="label_notes">Notes</string>
+    <string name="label_price">Price</string>
+    <string name="label_date">Date</string>
+    <string name="label_type">Type</string>
+
+    <string name="btn_save">Save</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_accept">Accept</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <string name="title_nodata">There are no coffee consumption records</string>
+    <string name="title_coffecount">Coffee counter</string>
+    <string name="title_didyouknow">Did you know...</string>
+    <string name="title_total_spent">You have spent a total of </string>
+    <string name="title_lastcoffe">Last coffee</string>
+    <string name="title_last_coffees">Recent coffees</string>
+    <string name="title_lastweek">Coffees from the last week</string>
+
+    <string name="title_delete">You are about to delete this coffee</string>
+    <string name="txt_delete">Are you sure you want to delete this coffee?</string>
+
+    <string name="title_chart_historical">Historical coffee consumption</string>
+
+    <string name="txt_never">Never</string>
+
+    <string name="placeholder_price">0.00</string>
+
+    <string name="title_barchart">Consumption in the last 12 months</string>
+    <string name="label_barchart">cups</string>
+</resources>
