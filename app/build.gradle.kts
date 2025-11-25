@@ -16,8 +16,8 @@ android {
         applicationId = "com.calleserpis.coffeetracker"
         minSdk = 26
         targetSdk = 36
-        versionCode = 8
-        versionName = "3.5.4"
+        versionCode = 9
+        versionName = "3.5.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
