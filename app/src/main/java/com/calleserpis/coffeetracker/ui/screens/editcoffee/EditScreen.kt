@@ -13,6 +13,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AttachMoney
+import androidx.compose.material.icons.filled.ShoppingCartCheckout
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -212,7 +213,7 @@ fun EditScreen(
                     trailingIcon = {
 
                         Icon(
-                            imageVector = Icons.Default.AttachMoney,
+                            imageVector = Icons.Default.ShoppingCartCheckout,
                             contentDescription = stringResource(R.string.label_price),
                             tint = colorScheme.primary
                         )
