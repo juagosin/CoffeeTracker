@@ -31,16 +31,40 @@ fun DatePickerDialogCustom(
 ) {
     var showTimePicker by remember { mutableStateOf(false) }
 
+    // Convertir timestamp local a UTC para el DatePicker
+    val initialDateUtc = remember(initialDate) {
+        if (initialDate != null) {
+            val localCal = Calendar.getInstance().apply {
+                timeInMillis = initialDate
+            }
+            // Obtener los componentes de fecha en zona local
+            val year = localCal.get(Calendar.YEAR)
+            val month = localCal.get(Calendar.MONTH)
+            val day = localCal.get(Calendar.DAY_OF_MONTH)
+
+            // Crear la misma fecha en UTC y devolver el timeInMillis
+            Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
+                set(year, month, day, 0, 0, 0)
+                set(Calendar.MILLISECOND, 0)
+            }.timeInMillis
+        } else {
+            // Fecha actual en UTC medianoche
+            val now = Calendar.getInstance()
+            Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
+                set(now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH), 0, 0, 0)
+                set(Calendar.MILLISECOND, 0)
+            }.timeInMillis
+        }
+    }
+
     val datePickerState = rememberDatePickerState(
-        initialSelectedDateMillis = initialDate ?: System.currentTimeMillis(),
+        initialSelectedDateMillis = initialDateUtc,
         selectableDates = object : SelectableDates {
             override fun isSelectableDate(utcTimeMillis: Long): Boolean {
-                // Obtener la fecha de hoy a las 23:59:59
+                // Obtener medianoche de hoy en UTC
+                val now = Calendar.getInstance()
                 val todayUtc = Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
-                    timeInMillis = System.currentTimeMillis()
-                    set(Calendar.HOUR_OF_DAY, 23)
-                    set(Calendar.MINUTE, 59)
-                    set(Calendar.SECOND, 59)
+                    set(now.get(Calendar.YEAR), now.get(Calendar.MONTH), now.get(Calendar.DAY_OF_MONTH), 23, 59, 59)
                     set(Calendar.MILLISECOND, 999)
                 }.timeInMillis
 
@@ -72,22 +96,27 @@ fun DatePickerDialogCustom(
             DatePicker(state = datePickerState, showModeToggle = true)
         }
     } else {
-        // Convertir de UTC (DatePicker) a zona horaria local
+        // CRÍTICO: Convertir UTC del DatePicker a componentes de fecha en zona local
         val selectedDateUtc = datePickerState.selectedDateMillis ?: System.currentTimeMillis()
 
-        // Obtener la fecha seleccionada en la zona horaria local
-        val localCalendar = Calendar.getInstance().apply {
+        // Extraer año, mes, día de la fecha UTC seleccionada
+        val utcCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
             timeInMillis = selectedDateUtc
-            // El DatePicker devuelve medianoche UTC, ajustamos a la zona local
-            set(Calendar.HOUR_OF_DAY, get(Calendar.HOUR_OF_DAY))
-            set(Calendar.MINUTE, get(Calendar.MINUTE))
-            set(Calendar.SECOND, 0)
-            set(Calendar.MILLISECOND, 0)
+        }
+        val year = utcCalendar.get(Calendar.YEAR)
+        val month = utcCalendar.get(Calendar.MONTH)
+        val day = utcCalendar.get(Calendar.DAY_OF_MONTH)
+
+        // Obtener hora actual o de initialDate si existe
+        val currentTime = Calendar.getInstance().apply {
+            if (initialDate != null) {
+                timeInMillis = initialDate
+            }
         }
 
         val timePickerState = rememberTimePickerState(
-            initialHour = localCalendar.get(Calendar.HOUR_OF_DAY),
-            initialMinute = localCalendar.get(Calendar.MINUTE),
+            initialHour = currentTime.get(Calendar.HOUR_OF_DAY),
+            initialMinute = currentTime.get(Calendar.MINUTE),
             is24Hour = true
         )
 
@@ -95,11 +124,9 @@ fun DatePickerDialogCustom(
             onDismissRequest = onDismiss,
             confirmButton = {
                 TextButton(onClick = {
+                    // Crear fecha en zona local con los componentes extraídos
                     val finalCalendar = Calendar.getInstance().apply {
-                        timeInMillis = selectedDateUtc
-                        set(Calendar.HOUR_OF_DAY, timePickerState.hour)
-                        set(Calendar.MINUTE, timePickerState.minute)
-                        set(Calendar.SECOND, 0)
+                        set(year, month, day, timePickerState.hour, timePickerState.minute, 0)
                         set(Calendar.MILLISECOND, 0)
                     }
 

@@ -12,10 +12,14 @@ object DateUtils {
     fun getCurrentTimeMillis(): Long = System.currentTimeMillis()
 
     fun formatDate(timeInMillis: Long, pattern: String): String {
-        val formatter = SimpleDateFormat(pattern, Locale.getDefault())
-        // Importante: usar la zona horaria del sistema
-        formatter.timeZone = TimeZone.getDefault()
-        return formatter.format(Date(timeInMillis))
+        return try {
+            val sdf = SimpleDateFormat(pattern, Locale.getDefault())
+            // IMPORTANTE: Usar zona horaria del sistema
+            sdf.timeZone = TimeZone.getDefault()
+            sdf.format(Date(timeInMillis))
+        } catch (e: Exception) {
+            ""
+        }
     }
 
     fun formatDateTime(
