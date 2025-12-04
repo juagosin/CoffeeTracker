@@ -1,0 +1,220 @@
+<resources>
+    <string name="app_name">Coffee Tracker</string>
+
+    <string name="screenHome_title">Home</string>
+    <string name="screenStats_title">Statistiche</string>
+
+    <string name="Main_title">Coffee Tracker</string>
+    <string name="fab_description">Aggiungi caffè</string>
+
+    <string name="title_newCoffee">Nuovo Caffè ☕</string>
+    <string name="title_editCoffee">Modifica Caffè ☕</string>
+
+    <string name="label_notes">Note</string>
+    <string name="label_price">Prezzo</string>
+    <string name="label_date">Data</string>
+    <string name="label_type">Tipo</string>
+
+    <!-- Coffee Types -->
+    <string name="coffee_type_cortado">Macchiato</string>
+    <string name="coffee_type_latte">Latte</string>
+    <string name="coffee_type_espresso">Espresso</string>
+    <string name="coffee_type_lungo">Lungo</string>
+    <string name="coffee_type_cappuccino">Cappuccino</string>
+    <string name="coffee_type_descafeinado">Decaffeinato</string>
+    <string name="coffee_type_carajillo">Corretto</string>
+    <string name="coffee_type_cremaet">Shakerato</string>
+    <string name="coffee_type_otros">Altri</string>
+
+    <!-- Plurali per i giorni -->
+    <plurals name="time_days">
+        <item quantity="one">%d giorno</item>
+        <item quantity="other">%d giorni</item>
+    </plurals>
+
+    <!-- Plurali per le ore -->
+    <plurals name="time_hours">
+        <item quantity="one">%d ora</item>
+        <item quantity="other">%d ore</item>
+    </plurals>
+
+    <!-- Plurali per i minuti -->
+    <plurals name="time_minutes">
+        <item quantity="one">%d minuto</item>
+        <item quantity="other">%d minuti</item>
+    </plurals>
+
+    <!-- Plurali per i secondi -->
+    <plurals name="time_seconds">
+        <item quantity="one">%d secondo</item>
+        <item quantity="other">%d secondi</item>
+    </plurals>
+
+    <!-- Strings simples -->
+    <string name="time_now">Un momento fa</string>
+    <string name="time_just_now">Proprio adesso</string>
+    <string name="time_short_now">Adesso</string>
+    <string name="time_ago">%s fa</string>
+    <string name="time_connector_and">e</string>
+
+    <string name="btn_save">Salva</string>
+    <string name="btn_edit">Modifica</string>
+    <string name="btn_accept">Accetta</string>
+    <string name="btn_delete">Elimina</string>
+    <string name="btn_cancel">Annulla</string>
+
+    <string name="title_nodata">Non ci sono registrazioni di consumo di caffè</string>
+    <string name="title_coffecount">Contatore di caffè</string>
+    <string name="title_didyouknow">Lo sapevi che...</string>
+    <string name="title_total_spent">Hai speso un totale di </string>
+    <string name="title_lastcoffe">Ultimo caffè</string>
+    <string name="title_last_coffees">Ultimi caffè</string>
+    <string name="title_lastweek">Caffè dell’ultima settimana</string>
+
+    <string name="title_delete">Stai per eliminare il caffè</string>
+    <string name="txt_delete">Sei sicuro di voler eliminare il caffè?</string>
+
+    <string name="title_chart_historical">Storico del consumo di caffè</string>
+
+    <string name="txt_never">Mai</string>
+
+    <string name="placeholder_price">0.00</string>
+
+    <string name="title_barchart">Consumo degli ultimi 12 mesi</string>
+    <string name="label_barchart">tazze</string>
+
+    <string-array name="coffee_phrases">
+        <item>Il caffè fu scoperto in Etiopia intorno al IX secolo, secondo la leggenda del pastore Kaldi.</item>
+        <item>Kaldi notò che le sue capre diventavano più attive dopo aver mangiato i frutti del caffeto.</item>
+        <item>La parola \'caffè\' deriva dall’arabo \'qahwa\', che originariamente significava \'vino\'.</item>
+        <item>Il caffè arrivò in Europa nel XVII secolo e divenne rapidamente una bevanda popolare.</item>
+        <item>Venezia fu una delle prime città europee ad aprire una caffetteria nel 1645.</item>
+        <item>La prima caffetteria inglese aprì a Oxford nel 1650, conosciuta come \'The Angel\'.</item>
+        <item>Il caffè fu proibito alla Mecca nel 1511 perché considerato stimolante e sospetto.</item>
+        <item>Nel 1675, il re Carlo II d’Inghilterra cercò di chiudere le caffetterie perché favorivano i dibattiti politici.</item>
+        <item>Il caffè divenne popolare in America dopo il Boston Tea Party del 1773, quando il tè fu boicottato.</item>
+        <item>La prima caffetteria negli Stati Uniti aprì a Boston nel 1676.</item>
+        <item>Il caffè istantaneo fu inventato dal giapponese Satori Kato nel 1901.</item>
+        <item>La caffeina fu isolata per la prima volta nel 1819 dal chimico tedesco Friedlieb Runge.</item>
+        <item>Fu Goethe a suggerire a Runge di studiare i chicchi di caffè.</item>
+        <item>L’espresso fu inventato in Italia all’inizio del XX secolo.</item>
+        <item>Luigi Bezzera brevettò la prima macchina per espresso nel 1901.</item>
+        <item>La caffettiera italiana o moka fu creata da Alfonso Bialetti nel 1933.</item>
+        <item>Il cappuccino prende il nome dai monaci cappuccini, per il colore del loro saio.</item>
+        <item>Il Brasile è il maggior produttore di caffè al mondo da oltre 150 anni.</item>
+        <item>La Colombia è uno dei maggiori esportatori di caffè arabica.</item>
+        <item>L’arabica rappresenta circa il 60% della produzione mondiale.</item>
+        <item>Il robusta contiene quasi il doppio della caffeina rispetto all’arabica.</item>
+        <item>Il caffè decaffeinato viene prodotto estraendo la caffeina con acqua o solventi naturali.</item>
+        <item>La caffeina agisce bloccando l’adenosina, un neurotrasmettitore che induce il sonno.</item>
+        <item>L’effetto stimolante del caffè dura generalmente tra 3 e 5 ore.</item>
+        <item>Il caffè era la bevanda preferita da Napoleone Bonaparte.</item>
+        <item>Honoré de Balzac beveva tra 40 e 50 tazze di caffè al giorno mentre scriveva.</item>
+        <item>Voltaire beveva più di 30 tazze di caffè al giorno e diceva che lo manteneva lucido.</item>
+        <item>Beethoven contava esattamente 60 chicchi di caffè per ogni tazza.</item>
+        <item>Il compositore Johann Sebastian Bach scrisse una cantata dedicata al caffè nel 1732.</item>
+        <item>La \'Cantata del Caffè\' di Bach scherza sulla dipendenza della figlia dalla bevanda.</item>
+        <item>In Finlandia si consuma più caffè pro capite che in qualsiasi altro paese.</item>
+        <item>Un finlandese medio consuma oltre 12 kg di caffè all’anno.</item>
+        <item>L’Italia ha una delle culture del caffè più influenti al mondo, incentrata sull’espresso.</item>
+        <item>In Etiopia, il caffè è considerato un simbolo di ospitalità e rispetto.</item>
+        <item>Il caffè arrivò per la prima volta in Sud America tramite la Guyana Francese nel XVIII secolo.</item>
+        <item>Il caffè fu una bevanda di lusso in Europa fino al XVIII secolo.</item>
+        <item>Nel XIX secolo, il caffè divenne un prodotto chiave nel commercio internazionale.</item>
+        <item>I chicchi di caffè sono in realtà semi del frutto del caffeto, chiamati \'ciliegie\'.</item>
+        <item>Ogni ciliegia di caffè contiene normalmente due semi, anche se alcune ne hanno uno solo (peaberry).</item>
+        <item>Il caffè verde deve essere tostato prima di essere macinato e preparato.</item>
+        <item>Il livello di tostatura influenza sapore, aroma e acidità.</item>
+        <item>Il caffè più caro del mondo è il Kopi Luwak, prodotto con chicchi digeriti dalle civette.</item>
+        <item>Il Kopi Luwak ha origine in Indonesia e può raggiungere prezzi superiori ai 500 euro al chilo.</item>
+        <item>Il caffè turco è Patrimonio Culturale Immateriale dell’Umanità dal 2013.</item>
+        <item>In Turchia, preparare il caffè è un atto simbolico di amicizia e ospitalità.</item>
+        <item>A Vienna, le caffetterie tradizionali sono patrimonio culturale UNESCO dal 2011.</item>
+        <item>Espresso significa letteralmente \'espresso\' o \'a pressione\' in italiano.</item>
+        <item>Il caffè americano nacque durante la Seconda Guerra Mondiale quando i soldati diluivano l’espresso con acqua.</item>
+        <item>Il latte si è popolarizzato negli Stati Uniti negli anni \'80 grazie a Starbucks.</item>
+        <item>Il Flat White nacque in Australia o Nuova Zelanda (le origini sono ancora discusse).</item>
+        <item>La prima macchina da caffè a capsule fu brevettata da Nestlé nel 1986.</item>
+        <item>La caffeina è lo stimolante psicoattivo più consumato al mondo.</item>
+        <item>Un espresso contiene meno caffeina di un caffè filtrato, ma è più concentrato.</item>
+        <item>Il caffè può migliorare le prestazioni fisiche aumentando il rilascio di adrenalina.</item>
+        <item>Studi dimostrano che il caffè riduce il rischio di malattie come il Parkinson o il diabete di tipo 2.</item>
+        <item>Bere caffè con moderazione è associato a una maggiore aspettativa di vita.</item>
+        <item>L’aroma del caffè deriva da oltre 800 composti volatili diversi.</item>
+        <item>Il caffè contiene più antiossidanti della maggior parte di frutta e verdura.</item>
+        <item>In Giappone esistono caffetterie dove si può bere caffè accanto a gatti, gufi o persino serpenti.</item>
+        <item>In Corea del Sud ci sono più caffetterie pro capite che in qualsiasi altro paese.</item>
+        <item>Il caffè fu introdotto in Yemen nel XV secolo, da dove veniva esportato dal porto di Moka.</item>
+        <item>Il termine \'mocha\' deriva dal porto yemenita di Moka, famoso per il suo caffè.</item>
+        <item>La prima caffetteria di Parigi aprì nel 1686, chiamata Café Procope.</item>
+        <item>Voltaire, Rousseau e Diderot frequentavano il Café Procope.</item>
+        <item>Il caffè contribuì all’Illuminismo fornendo un luogo di incontro per i pensatori.</item>
+        <item>Nel XVIII secolo, le caffetterie erano chiamate \'università da un penny\' in Inghilterra.</item>
+        <item>Si chiamavano così perché con un penny si poteva comprare un caffè e conversare con intellettuali.</item>
+        <item>La prima macchina moderna per espresso fu sviluppata da Achille Gaggia nel 1947.</item>
+        <item>Gaggia introdusse il sistema a leva, che permise di creare la crema caratteristica dell’espresso.</item>
+        <item>Il barista è il professionista specializzato nella preparazione del caffè.</item>
+        <item>Il termine \'barista\' deriva dall’italiano e significa \'barman\'.</item>
+        <item>La Giornata Internazionale del Caffè si celebra il 1° ottobre.</item>
+        <item>Il caffè è la seconda merce più commercializzata al mondo, dopo il petrolio.</item>
+        <item>Più di 25 milioni di persone lavorano direttamente o indirettamente nell’industria del caffè.</item>
+        <item>Un singolo albero di caffè può produrre tra 1 e 2 kg di chicchi all’anno.</item>
+        <item>I caffeti possono vivere più di 50 anni in condizioni adeguate.</item>
+        <item>Il caffè cresce meglio in regioni tropicali a un’altitudine tra 800 e 2000 metri.</item>
+        <item>La zona del caffè in Colombia è Patrimonio dell’Umanità UNESCO dal 2011.</item>
+        <item>In Etiopia, il caffè fa parte delle cerimonie sociali e familiari quotidiane.</item>
+        <item>Gli etiopi spesso tostano, macinano e preparano il caffè davanti agli ospiti.</item>
+        <item>In Svezia esiste la tradizione del \'fika\', una pausa quotidiana per il caffè e la conversazione.</item>
+        <item>Gli scandinavi considerano il caffè una parte essenziale della loro cultura lavorativa.</item>
+        <item>Il caffè contiene piccole quantità di vitamine B2, B3, B5 e minerali come magnesio e potassio.</item>
+        <item>La caffeina inizia a fare effetto circa 15 minuti dopo essere stata ingerita.</item>
+        <item>Il caffè ha un pH tra 4,5 e 6, leggermente acido.</item>
+        <item>I primi filtri di carta per caffè furono inventati da Melitta Bentz nel 1908.</item>
+        <item>Melitta Bentz creò il suo filtro usando carta assorbente e una scatola perforata.</item>
+        <item>L’azienda Melitta è ancora uno dei principali produttori di filtri per caffè.</item>
+        <item>Il caffè irlandese fu inventato negli anni \'40 all’aeroporto di Foynes, in Irlanda.</item>
+        <item>Fu creato dallo chef Joe Sheridan, che aggiunse whisky irlandese per riscaldare i viaggiatori.</item>
+        <item>Il caffè freddo o \'cold brew\' si era diffuso in Giappone secoli prima di arrivare in Occidente.</item>
+        <item>Il cold brew si prepara con acqua fredda e si lascia in infusione per 12–24 ore.</item>
+        <item>I baristi moderni competono in campionati mondiali di latte art.</item>
+        <item>La latte art nacque a Seattle negli anni \'80.</item>
+        <item>Nel 1991 si svolse il primo Campionato Mondiale di Baristi.</item>
+        <item>Il caffè occupa un posto centrale nella cultura di molte nazioni, dall’Italia all’Etiopia.</item>
+        <item>La NASA ha sviluppato una tazza speciale per bere caffè nello spazio.</item>
+        <item>Il primo caffè bevuto nello spazio fu nel 1969 dall’astronauta Buzz Aldrin.</item>
+        <item>Nel 2015, gli astronauti della Stazione Spaziale Internazionale bevvero il primo espresso in orbita.</item>
+        <item>Quella macchina fu progettata da Lavazza e dall’Agenzia Spaziale Italiana.</item>
+        <item>Il caffè ha più di 120 specie note, ma solo due vengono coltivate commercialmente: arabica e robusta.</item>
+        <item>Il caffè arrivò in Giappone nel XVII secolo, ma non divenne popolare fino al dopoguerra.</item>
+        <item>In Etiopia, la cerimonia del caffè può durare più di un’ora e prevede tre round di servizio.</item>
+        <item>Il caffè arrivò in Brasile nel 1727 grazie a Francisco de Melo Palheta, che contrabbandò semi dalla Guyana Francese.</item>
+        <item>Il caffè fu portato alle Hawaii nel 1825, dove nacque la famosa regione del Kona.</item>
+        <item>Il caffè solubile fu reso popolare da Nestlé durante la Seconda Guerra Mondiale con la marca Nescafé.</item>
+        <item>La prima macchina domestica per espresso automatica fu lanciata da Gaggia nel 1977.</item>
+        <item>Il caffè fu considerato una medicina in Europa durante il XVI secolo.</item>
+        <item>Nel XVIII secolo, Federico il Grande di Prussia tentò di vietare il caffè per promuovere il consumo di birra.</item>
+        <item>Il caffè verde fu usato come valuta di scambio in Africa per secoli.</item>
+        <item>Il caffè è la coltura commerciale più importante dell’Etiopia, rappresentando oltre il 30% delle esportazioni.</item>
+        <item>Il primo caffè in lattina fu lanciato in Giappone nel 1969 dalla UCC Ueshima Coffee Co.</item>
+        <item>In Italia, prendere il caffè al banco costa meno che sedersi al tavolo.</item>
+        <item>Il caffè arrivò in Messico alla fine del XVIII secolo e si diffuse rapidamente a Chiapas e Veracruz.</item>
+        <item>Il caffè Jamaica Blue Mountain è uno dei più apprezzati e delicati al mondo.</item>
+        <item>Nel XVII secolo, alcuni religiosi europei tentarono di vietare il caffè chiamandolo \'bevanda del diavolo\'.</item>
+        <item>Il Papa Clemente VIII approvò il consumo di caffè nel 1600, dicendo che era \'così delizioso da dover essere battezzato\'.</item>
+        <item>In Yemen, il caffè era considerato un aiuto alla meditazione tra i monaci sufi.</item>
+        <item>Il termine \'coffee break\' si diffuse negli Stati Uniti negli anni \'50 grazie alla pubblicità.</item>
+        <item>Il caffè istantaneo divenne indispensabile durante la Prima Guerra Mondiale per la sua praticità.</item>
+        <item>L’80% del caffè consumato nel mondo è di tipo arabica.</item>
+        <item>In Francia, il filosofo Montesquieu scriveva accompagnato da molte tazze di caffè.</item>
+        <item>Il caffè di specialità è definito da un punteggio superiore a 80 nella scala della Specialty Coffee Association.</item>
+        <item>Il caffè etiope Yirgacheffe è famoso per le sue note floreali e agrumate.</item>
+        <item>Il caffè fu introdotto in India dal sufi Baba Budan nel XVII secolo.</item>
+        <item>Il caffè è la principale fonte di antiossidanti nella dieta occidentale media.</item>
+        <item>Una tazza media di caffè contiene tra 80 e 120 mg di caffeina.</item>
+        <item>Il caffè nero senza zucchero contiene solo circa 2 calorie per tazza.</item>
+        <item>Il Guinness World Record per il maggior numero di tazze di caffè servite in un giorno è superiore a 12.000, ottenuto in Colombia.</item>
+        <item>Il caffè tostato rilascia anidride carbonica per diversi giorni, motivo per cui deve riposare prima del confezionamento.</item>
+        <item>I caffè coltivati ad alta quota hanno generalmente sapori più complessi e una maggiore acidità.</item>
+    </string-array>
+
+</resources>

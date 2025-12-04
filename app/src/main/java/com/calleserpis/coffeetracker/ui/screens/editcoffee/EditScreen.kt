@@ -57,9 +57,9 @@ fun EditScreen(
     var selectedOption by remember { mutableStateOf<String?>(null) }
     val focusManager = LocalFocusManager.current
 
-    LaunchedEffect(coffeeId, state.coffee?.type?.displayName) {
+    LaunchedEffect(coffeeId, state.coffee?.type?.name) {
         viewModel.onEvent(EditEvent.LoadCoffee(coffeeId))
-        selectedOption = state.coffee?.type?.displayName
+        selectedOption = state.coffee?.type?.name
     }
 
     if (state.isSuccess) {
@@ -112,18 +112,18 @@ fun EditScreen(
                     ) {
                     CoffeeType.entries.forEach { coffee ->
                         FilterChip(
-                            selected = selectedOption == coffee.displayName,
+                            selected = selectedOption == coffee.name,
 
                             onClick = {
-                                selectedOption = coffee.displayName
+                                selectedOption = coffee.name
                                 Log.d(
                                     "TAG",
-                                    "EditScreen: ${coffee.displayName} - ${selectedOption}"
+                                    "EditScreen: ${coffee.name} - ${selectedOption}"
                                 )
 
                                 viewModel.onEvent(EditEvent.OnCoffeeTypeChanged(coffee))
                             },
-                            label = { Text(coffee.displayName) },
+                            label = { Text(stringResource(coffee.displayNameRes)) },
                             shape = RoundedCornerShape(16.dp),
                             colors = FilterChipDefaults.filterChipColors(
                                 selectedContainerColor = coffee.color,
