@@ -15,6 +15,49 @@
     <string name="label_date">Fecha</string>
     <string name="label_type">Tipo</string>
 
+    <!-- Coffee Types -->
+    <string name="coffee_type_cortado">Cortado</string>
+    <string name="coffee_type_latte">Con Leche</string>
+    <string name="coffee_type_espresso">Solo</string>
+    <string name="coffee_type_lungo">Largo</string>
+    <string name="coffee_type_cappuccino">Capuchino</string>
+    <string name="coffee_type_descafeinado">Descafeinado</string>
+    <string name="coffee_type_carajillo">Carajillo</string>
+    <string name="coffee_type_cremaet">Cremaet</string>
+    <string name="coffee_type_otros">Otros</string>
+
+    <!-- Time text -->
+    <!-- Plurales para días -->
+    <plurals name="time_days">
+        <item quantity="one">%d día</item>
+        <item quantity="other">%d días</item>
+    </plurals>
+
+    <!-- Plurales para horas -->
+    <plurals name="time_hours">
+        <item quantity="one">%d hora</item>
+        <item quantity="other">%d horas</item>
+    </plurals>
+
+    <!-- Plurales para minutos -->
+    <plurals name="time_minutes">
+        <item quantity="one">%d minuto</item>
+        <item quantity="other">%d minutos</item>
+    </plurals>
+
+    <!-- Plurales para segundos -->
+    <plurals name="time_seconds">
+        <item quantity="one">%d segundo</item>
+        <item quantity="other">%d segundos</item>
+    </plurals>
+
+    <!-- Strings simples -->
+    <string name="time_now">Hace un momento</string>
+    <string name="time_just_now">Justo ahora</string>
+    <string name="time_short_now">Ahora</string>
+    <string name="time_ago">Hace %s</string>
+    <string name="time_connector_and">y</string>
+
     <string name="btn_save">Guardar</string>
     <string name="btn_edit">Editar</string>
     <string name="btn_accept">Aceptar</string>

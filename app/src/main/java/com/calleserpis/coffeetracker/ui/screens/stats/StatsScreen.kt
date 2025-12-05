@@ -72,7 +72,7 @@ fun StatsScreen(
             val datosPieChart = remember(state.allCoffeesStats) {
                 state.allCoffeesStats.mapIndexed { index, coffee ->
                     PieChartData(
-                        label = coffee.coffeeType.displayName,
+                        label =  coffee.coffeeType.displayNameRes,
                         value = coffee.value,
                         color = coffee.coffeeType.color,
                     )
@@ -191,7 +191,7 @@ fun CoffeeListItem(
         )
 
         Text(
-            text = coffee.type.displayName + ", el " + coffee.timestamp.toFormattedDate(),
+            text = stringResource( coffee.type.displayNameRes) + ", el " + coffee.timestamp.toFormattedDate(),
             modifier = Modifier.padding(start = 14.dp),
             style = MaterialTheme.typography.bodySmall,
         )

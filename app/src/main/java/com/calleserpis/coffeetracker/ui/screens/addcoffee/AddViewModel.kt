@@ -85,7 +85,7 @@ class AddViewModel @Inject constructor(
                         price = _state.value.price.takeIf { it > 0.0 } ?: 0.0
                     )
                 )
-                coffeeUseCase.saveLastCoffeePrefUseCase(_state.value.type.displayName)
+                coffeeUseCase.saveLastCoffeePrefUseCase(_state.value.type.name)
             }
             _state.update{ currentState ->
                 currentState.copy(isSaving = false, isSuccess = true)

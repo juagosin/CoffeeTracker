@@ -53,10 +53,10 @@ fun AddScreen(
         onCoffeeSaved()
     }
     LaunchedEffect(lastCoffee) {
-        lastCoffee?.let { lastCoffeeType ->
+        lastCoffee?.let { lastCoffeeTypeName  ->
             // Buscamos el últiom café tomado para dejarlo seleccionado
             val coffeeType = CoffeeType.entries.find {
-                it.displayName == lastCoffeeType
+                it.name  == lastCoffeeTypeName
             } ?: CoffeeType.entries.first()
 
             // Solo actualiza si el estado actual es diferente
@@ -112,7 +112,7 @@ fun AddScreen(
                             onClick = {
                                 viewModel.onEvent(AddEvent.OnCoffeeTypeChanged(coffee))
                             },
-                            label = { Text(coffee.displayName) },
+                            label = { Text(stringResource( coffee.displayNameRes)) },
                             shape = RoundedCornerShape(16.dp),
                             colors = FilterChipDefaults.filterChipColors(
                                 selectedContainerColor = coffee.color,

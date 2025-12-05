@@ -32,6 +32,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
@@ -46,7 +47,7 @@ import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
 data class PieChartData(
-    val label: String,
+    val label: Int,
     val value: Float,
     val color: Color
 )
@@ -106,7 +107,7 @@ fun ModernPieChart(titleChart: String,data: List<PieChartData>) {
         ) {
             data.forEachIndexed { index, item ->
                 LegendItem(
-                    label = item.label,
+                    label = stringResource( item.label),
                     value = item.value,
                     color = item.color,
                     isSelected = selectedIndex == index
