@@ -1,0 +1,216 @@
+<resources>
+    <string name="app_name">Coffee Tracker</string>
+
+    <string name="screenHome_title">Inici</string>
+    <string name="screenStats_title">Estadístiques</string>
+
+    <string name="Main_title">Coffee Tracker</string>
+    <string name="fab_description">Afegir cafè</string>
+
+    <string name="title_newCoffee">Cafè nou ☕</string>
+    <string name="title_editCoffee">Editar cafè ☕</string>
+
+    <string name="label_notes">Notes</string>
+    <string name="label_price">Preu</string>
+    <string name="label_date">Data</string>
+    <string name="label_type">Tipus</string>
+
+    <!-- Coffee Types -->
+    <string name="coffee_type_cortado">Tallat</string>
+    <string name="coffee_type_latte">Amb llet</string>
+    <string name="coffee_type_espresso">Sol</string>
+    <string name="coffee_type_lungo">Llarg</string>
+    <string name="coffee_type_cappuccino">Caputxino</string>
+    <string name="coffee_type_descafeinado">Descafeïnat</string>
+    <string name="coffee_type_carajillo">Cigaló</string>
+    <string name="coffee_type_cremaet">Trifàsic</string>
+    <string name="coffee_type_otros">Altres</string>
+
+    <!-- Time text -->
+    <plurals name="time_days">
+        <item quantity="one">%d dia</item>
+        <item quantity="other">%d dies</item>
+    </plurals>
+
+    <plurals name="time_hours">
+        <item quantity="one">%d hora</item>
+        <item quantity="other">%d hores</item>
+    </plurals>
+
+    <plurals name="time_minutes">
+        <item quantity="one">%d minut</item>
+        <item quantity="other">%d minuts</item>
+    </plurals>
+
+    <plurals name="time_seconds">
+        <item quantity="one">%d segon</item>
+        <item quantity="other">%d segons</item>
+    </plurals>
+
+    <!-- Strings simples -->
+    <string name="time_now">Fa un moment</string>
+    <string name="time_just_now">Ara mateix</string>
+    <string name="time_short_now">Ara</string>
+    <string name="time_ago">Fa %s</string>
+    <string name="time_connector_and">i</string>
+
+    <string name="btn_save">Guardar</string>
+    <string name="btn_edit">Editar</string>
+    <string name="btn_accept">Acceptar</string>
+    <string name="btn_delete">Esborrar</string>
+    <string name="btn_cancel">Cancel·lar</string>
+
+    <string name="title_nodata">No hi ha registres de consum de cafè</string>
+    <string name="title_coffecount">Comptador de cafès</string>
+    <string name="title_didyouknow">Sabies que...</string>
+    <string name="title_total_spent">Portes gastat un total de </string>
+    <string name="title_lastcoffe">Últim cafè</string>
+    <string name="title_last_coffees">Últims cafès</string>
+    <string name="title_lastweek">Cafès de l’última setmana</string>
+
+    <string name="title_delete">Esborraràs el cafè</string>
+    <string name="txt_delete">Estàs segur que vols esborrar el cafè?</string>
+
+    <string name="title_chart_historical">Històric de consum de cafè</string>
+
+    <string name="txt_never">Mai</string>
+
+    <string name="placeholder_price">0.00</string>
+
+    <string name="title_barchart">Consum dels darrers 12 mesos</string>
+    <string name="label_barchart">tasses</string>
+
+    <string-array name="coffee_phrases">
+        <item>El cafè va ser descobert a Etiòpia al voltant del segle IX, segons la llegenda del pastor Kaldi.</item>
+        <item>En Kaldi va notar que les seves cabres es tornaven més actives després de menjar els fruits del cafeto.</item>
+        <item>La paraula \'cafè\' prové de l´àrab \'qahwa\', que originalment significava \'vi\'.</item>
+        <item>El cafè va arribar a Europa al segle XVII i ràpidament es va convertir en una beguda popular.</item>
+        <item>Venècia va ser una de les primeres ciutats europees a obrir una cafeteria el 1645.</item>
+        <item>La primera cafeteria anglesa va obrir a Oxford el 1650, coneguda com ‘The Angel’.</item>
+        <item>El cafè va ser prohibit a La Meca l’any 1511 per considerar-se estimulant i sospitós.</item>
+        <item>El 1675, el rei Carles II d’Anglaterra va intentar tancar les cafeteries per fomentar debats polítics.</item>
+        <item>El cafè es va popularitzar a Amèrica després del Boston Tea Party de 1773, quan el te va ser boicotejat.</item>
+        <item>La primera cafeteria als Estats Units va obrir a Boston el 1676.</item>
+        <item>El cafè instantani va ser inventat pel japonès Satori Kato el 1901.</item>
+        <item>La cafeïna va ser aïllada per primera vegada el 1819 pel químic alemany Friedlieb Runge.</item>
+        <item>Goethe va suggerir a Runge que estudiés els grans de cafè.</item>
+        <item>L’espresso va ser inventat a Itàlia a començaments del segle XX.</item>
+        <item>Luigi Bezzera va patentar la primera màquina d’espresso el 1901.</item>
+        <item>La cafetera italiana o moka va ser creada per Alfonso Bialetti el 1933.</item>
+        <item>El caputxino rep el seu nom dels monjos caputxins, pel color de l’hàbit.</item>
+        <item>El Brasil és el major productor de cafè del món des de fa més de 150 anys.</item>
+        <item>Colòmbia és un dels principals exportadors de cafè aràbica del món.</item>
+        <item>El cafè aràbica representa aproximadament el 60% de la producció mundial.</item>
+        <item>El cafè robusta conté gairebé el doble de cafeïna que l’aràbica.</item>
+        <item>El cafè descafeïnat s’obté extraient la cafeïna amb aigua o dissolvents naturals.</item>
+        <item>La cafeïna actua bloquejant l’adenosina, un neurotransmissor que indueix la son.</item>
+        <item>L’efecte estimulant del cafè sol durar entre 3 i 5 hores.</item>
+        <item>El cafè era la beguda preferida de Napoleó Bonaparte.</item>
+        <item>Honoré de Balzac bevia entre 40 i 50 tasses de cafè al dia mentre escrivia.</item>
+        <item>Voltaire bevia més de 30 tasses de cafè diàries i deia que el mantenia lúcid.</item>
+        <item>Beethoven comptava exactament 60 grans de cafè per tassa abans de preparar-la.</item>
+        <item>El compositor Johann Sebastian Bach va escriure una cantata dedicada al cafè el 1732.</item>
+        <item>La denominada ‘Cantata del Cafè’ de Bach fa broma sobre l’addicció de la seva filla a aquesta beguda.</item>
+        <item>A Finlàndia es consumeix més cafè per càpita que en qualsevol altre país del món.</item>
+        <item>Un finlandès mitjà consumeix més de 12 quilos de cafè l’any.</item>
+        <item>Itàlia produeix una de les cultures del cafè més influents del món, centrada en l’espresso.</item>
+        <item>A Etiòpia, el cafè és considerat un símbol d’hospitalitat i respecte.</item>
+        <item>El cafè va arribar a Sud-amèrica per primera vegada a través de la Guaiana Francesa al segle XVIII.</item>
+        <item>El cafè va ser una beguda de luxe a Europa fins al segle XVIII.</item>
+        <item>Al segle XIX, el cafè es va convertir en un producte bàsic del comerç internacional.</item>
+        <item>Els grans de cafè són en realitat les llavors del fruit del cafeto, anomenades ‘cireres’.</item>
+        <item>Cada cirera de cafè conté normalment dos grans, encara que algunes en tenen només un (peaberry).</item>
+        <item>El cafè verd s’ha de torrar abans de moldre’l i preparar-lo.</item>
+        <item>El nivell de torrat afecta el sabor, aroma i acidesa del cafè.</item>
+        <item>El cafè més car del món és el Kopi Luwak, produït amb grans digerits per civetes.</item>
+        <item>El Kopi Luwak s’origina a Indonèsia i pot arribar a superar els 500 euros per quilo.</item>
+        <item>El cafè turc és Patrimoni Cultural Immaterial de la Humanitat des del 2013.</item>
+        <item>A Turquia, preparar cafè és un acte simbòlic d’amistat i hospitalitat.</item>
+        <item>A Viena, les cafeteries tradicionals van ser declarades patrimoni cultural per la UNESCO el 2011.</item>
+        <item>L’espresso significa literalment ‘exprés’ o ‘a pressió’ en italià.</item>
+        <item>El cafè americà va sorgir durant la Segona Guerra Mundial, quan els soldats diluïen l’espresso amb aigua.</item>
+        <item>El latte es va popularitzar als Estats Units als anys 80 gràcies a l’auge de Starbucks.</item>
+        <item>El Flat White va néixer a Austràlia o Nova Zelanda (el seu origen exacte encara es discuteix).</item>
+        <item>La primera màquina de cafè per càpsules va ser patentada per Nestlé el 1986.</item>
+        <item>La cafeïna és l’estimulant psicoactiu més consumit del món.</item>
+        <item>Un espresso conté menys cafeïna que una tassa de cafè filtrat, però és més concentrat.</item>
+        <item>El cafè pot millorar el rendiment físic augmentant l’alliberament d’adrenalina.</item>
+        <item>Estudis demostren que el cafè redueix el risc de malalties com el Parkinson o la diabetis tipus 2.</item>
+        <item>Beure cafè amb moderació s’associa amb una major esperança de vida.</item>
+        <item>L’aroma del cafè prové de més de 800 compostos volàtils diferents.</item>
+        <item>El cafè té més antioxidants que la majoria de fruites i verdures.</item>
+        <item>Al Japó existeixen cafeteries on es pot prendre cafè amb gats, mussols o fins i tot serps.</item>
+        <item>A Corea del Sud hi ha més cafeteries per habitant que en qualsevol altre país del món.</item>
+        <item>El cafè va ser introduït al Iemen al segle XV, des d’on s’exportava pel port de Moka.</item>
+        <item>El terme ‘mocha’ prové del port iemenita de Moka, famós pel seu cafè.</item>
+        <item>La primera cafeteria de París va obrir el 1686, anomenada Café Procope.</item>
+        <item>Voltaire, Rousseau i Diderot freqüentaven el Café Procope.</item>
+        <item>El cafè va ajudar a impulsar la Il·lustració servint com a punt de trobada de pensadors.</item>
+        <item>Al segle XVIII, les cafeteries eren conegudes com a ‘penny universities’ a Anglaterra.</item>
+        <item>S’anomenaven així perquè per un penic es podia comprar una tassa de cafè i conversar amb intel·lectuals.</item>
+        <item>La primera màquina moderna d’espresso va ser desenvolupada per Achille Gaggia el 1947.</item>
+        <item>Gaggia va introduir el sistema de palanca, que va permetre crear la crema característica de l’espresso.</item>
+        <item>El barista és el professional especialitzat en la preparació i presentació del cafè.</item>
+        <item>El terme ‘barista’ prové de l’italià i significa literalment ‘barman’.</item>
+        <item>El Dia Internacional del Cafè se celebra l’1 d’octubre.</item>
+        <item>El cafè és la segona mercaderia més comercialitzada del món, després del petroli.</item>
+        <item>Més de 25 milions de persones treballen directament o indirectament en la indústria del cafè.</item>
+        <item>Un sol arbre de cafè pot produir entre 1 i 2 quilos de grans a l’any.</item>
+        <item>Els cafetos poden viure més de 50 anys en condicions adequades.</item>
+        <item>El cafè creix millor en regions tropicals amb altituds entre 800 i 2000 metres.</item>
+        <item>La zona cafetera de Colòmbia va ser declarada Patrimoni de la Humanitat per la UNESCO el 2011.</item>
+        <item>A Etiòpia, el cafè forma part de cerimònies socials i familiars diàries.</item>
+        <item>Els etíops solen torrar, moldre i preparar el cafè davant dels convidats.</item>
+        <item>A Suècia existeix la tradició del ‘fika’, una pausa diària per prendre cafè i conversar.</item>
+        <item>Els escandinaus consideren el cafè una part essencial de la seva cultura laboral.</item>
+        <item>El cafè conté petites quantitats de vitamines B2, B3, B5 i minerals com magnesi i potassi.</item>
+        <item>La cafeïna comença a fer efecte uns 15 minuts després de ser ingerida.</item>
+        <item>El cafè té un pH d’entre 4,5 i 6, lleugerament àcid.</item>
+        <item>Els primers filtres de cafè de paper van ser inventats per Melitta Bentz el 1908.</item>
+        <item>Melitta Bentz va crear el seu filtre usant paper secant i una llauna perforada.</item>
+        <item>L’empresa Melitta continua sent una de les principals productores de filtres de cafè.</item>
+        <item>El cafè irlandès es va inventar als anys 40 a l’aeroport de Foynes, Irlanda.</item>
+        <item>Va ser creat pel xef Joe Sheridan, que hi va afegir whisky irlandès per escalfar els viatgers.</item>
+        <item>El cafè fred o ‘cold brew’ es va popularitzar al Japó segles abans d’arribar a Occident.</item>
+        <item>El cold brew es prepara amb aigua freda i es deixa reposar entre 12 i 24 hores.</item>
+        <item>Els baristes moderns competeixen en campionats mundials de latte art.</item>
+        <item>El latte art va néixer a Seattle a la dècada de 1980.</item>
+        <item>El 1991 es va celebrar el primer Campionat Mundial de Baristes.</item>
+        <item>El cafè ocupa un lloc central en la cultura de molts països, des d’Itàlia fins a Etiòpia.</item>
+        <item>La NASA va desenvolupar una tassa especial per beure cafè a l’espai.</item>
+        <item>El primer cafè pres a l’espai va ser el 1969 per l’astronauta Buzz Aldrin.</item>
+        <item>El 2015, els astronautes de l’Estació Espacial Internacional van gaudir del primer espresso fet en òrbita.</item>
+        <item>Aquesta màquina va ser dissenyada per Lavazza i l’Agència Espacial Italiana.</item>
+        <item>El cafè té més de 120 espècies conegudes, encara que només dues es conreen comercialment: aràbica i robusta.</item>
+        <item>El cafè va arribar per primera vegada al Japó al segle XVII, però no es va popularitzar fins després de la Segona Guerra Mundial.</item>
+        <item>A Etiòpia, la cerimònia del cafè pot durar més d’una hora i inclou tres rondes de servei.</item>
+        <item>El cafè va arribar al Brasil el 1727 gràcies a Francisco de Melo Palheta, que va contrabanar llavors des de la Guaiana Francesa.</item>
+        <item>El cafè va ser portat a Hawaii el 1825, on es va establir la famosa regió productora de Kona.</item>
+        <item>El cafè soluble va ser popularitzat per Nestlé durant la Segona Guerra Mundial sota la marca Nescafé.</item>
+        <item>La primera màquina automàtica d’espresso domèstica va ser llançada per Gaggia el 1977.</item>
+        <item>El cafè va ser considerat una medicina a Europa durant el segle XVI.</item>
+        <item>Al segle XVIII, Frederic el Gran de Prússia va intentar prohibir el cafè per promoure el consum de cervesa.</item>
+        <item>El cafè verd va ser utilitzat com a moneda de canvi a l’Àfrica durant segles.</item>
+        <item>El cafè és el cultiu comercial més important de Etiòpia, representant més del 30% de les seves exportacions.</item>
+        <item>El primer cafè en llauna va ser llançat al Japó el 1969 per l’empresa UCC Ueshima Coffee Co.</item>
+        <item>A Itàlia, prendre un cafè a la barra és més barat que asseure’s en una taula.</item>
+        <item>El cafè va arribar a Mèxic a finals del segle XVIII i es va estendre ràpidament per Chiapas i Veracruz.</item>
+        <item>El cafè Jamaica Blue Mountain és un dels més apreciats i suaus del món.</item>
+        <item>Al segle XVII, alguns clergues europeus van intentar prohibir el cafè anomenant-lo ‘beguda del dimoni’.</item>
+        <item>El Papa Climent VIII va aprovar el consum de cafè el 1600, declarant que era ‘tan deliciós que havia de ser batejat’.</item>
+        <item>Al Iemen, el cafè era considerat una ajuda per a la meditació entre els monjos sufís.</item>
+        <item>El terme ‘coffee break’ es va popularitzar als Estats Units als anys 50 gràcies a campanyes publicitàries.</item>
+        <item>El cafè instantani es va tornar indispensable durant la Primera Guerra Mundial per la seva practicitat per als soldats.</item>
+        <item>El 80% del cafè consumit al món és del tipus aràbica.</item>
+        <item>A França, el filòsof Montesquieu acostumava a escriure acompanyat de diverses tasses de cafè.</item>
+        <item>El cafè d’especialitat es defineix per obtenir més de 80 punts a l’escala de la Specialty Coffee Association.</item>
+        <item>El cafè etiòpic Yirgacheffe és famós per les seves notes florals i cítriques.</item>
+        <item>El cafè va ser introduït a l’Índia pel sufí Baba Budan al segle XVII.</item>
+        <item>El cafè és la principal font d’antioxidants en la dieta occidental mitjana.</item>
+        <item>Una tassa mitjana de cafè conté entre 80 i 120 mg de cafeïna.</item>
+        <item>El cafè negre sense sucre conté només unes 2 calories per tassa.</item>
+        <item>El rècord Guinness del major nombre de tasses de cafè servides en un dia és de més de 12.000, aconseguit a Colòmbia.</item>
+        <item>El cafè torrat allibera diòxid de carboni durant diversos dies, per això ha de reposar abans d’envasar-se.</item>
+        <item>Els cafès cultivats a més altitud solen tenir sabors més complexos i una acidesa més brillant.</item>
+    </string-array>
+</resources>
