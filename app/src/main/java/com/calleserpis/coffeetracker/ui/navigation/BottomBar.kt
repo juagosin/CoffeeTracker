@@ -8,6 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.stringResource
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.calleserpis.coffeetracker.R
@@ -25,7 +26,15 @@ fun CoffeeBottomBar(navController: NavHostController){
                     },
             selected = currentRoute == Screens.Home.route,
             onClick = {
-                navController.navigate(Screens.Home.route)
+                navController.navigate(Screens.Home.route){
+                    popUpTo(navController.graph.findStartDestination().id) {
+                        saveState = true
+                    }
+
+                    launchSingleTop = true
+
+                    restoreState = true
+                }
             },
             icon = {
                 Icon( Screens.Home.icon, contentDescription = "")
@@ -38,7 +47,15 @@ fun CoffeeBottomBar(navController: NavHostController){
                     },
             selected = currentRoute == Screens.Stats.route,
             onClick = {
-                navController.navigate(Screens.Stats.route)
+                navController.navigate(Screens.Stats.route){
+                    popUpTo(navController.graph.findStartDestination().id) {
+                        saveState = true
+                    }
+
+                    launchSingleTop = true
+
+                    restoreState = true
+                }
             },
             icon = {
                 Icon( Screens.Stats.icon, contentDescription = "")
