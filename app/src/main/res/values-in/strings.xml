@@ -1,0 +1,222 @@
+<resources>
+    <string name="app_name">Coffee Tracker</string>
+
+    <string name="screenHome_title">Beranda</string>
+    <string name="screenStats_title">Statistik</string>
+
+    <string name="Main_title">Coffee Tracker</string>
+    <string name="fab_description">Tambah kopi</string>
+
+    <string name="title_newCoffee">Kopi Baru ☕</string>
+    <string name="title_editCoffee">Edit Kopi ☕</string>
+
+    <string name="label_notes">Catatan</string>
+    <string name="label_price">Harga</string>
+    <string name="label_date">Tanggal</string>
+    <string name="label_type">Jenis</string>
+
+    <!-- Coffee Types -->
+    <string name="coffee_type_cortado">Cortado</string>
+    <string name="coffee_type_latte">Dengan Susu</string>
+    <string name="coffee_type_espresso">Espresso</string>
+    <string name="coffee_type_lungo">Lungo</string>
+    <string name="coffee_type_cappuccino">Cappuccino</string>
+    <string name="coffee_type_descafeinado">Tanpa Kafein</string>
+    <string name="coffee_type_carajillo">Yogyakarta</string>
+    <string name="coffee_type_cremaet">Kopi Luwak</string>
+    <string name="coffee_type_otros">Lainnya</string>
+
+    <!-- Time text -->
+    <!-- Plurals untuk hari -->
+    <plurals name="time_days">
+        <item quantity="one">%d hari</item>
+        <item quantity="other">%d hari</item>
+    </plurals>
+
+    <!-- Plurals untuk jam -->
+    <plurals name="time_hours">
+        <item quantity="one">%d jam</item>
+        <item quantity="other">%d jam</item>
+    </plurals>
+
+    <!-- Plurals untuk menit -->
+    <plurals name="time_minutes">
+        <item quantity="one">%d menit</item>
+        <item quantity="other">%d menit</item>
+    </plurals>
+
+    <!-- Plurals untuk detik -->
+    <plurals name="time_seconds">
+        <item quantity="one">%d detik</item>
+        <item quantity="other">%d detik</item>
+    </plurals>
+
+    <!-- Strings sederhana -->
+    <string name="time_now">Beberapa saat yang lalu</string>
+    <string name="time_just_now">Baru saja</string>
+    <string name="time_short_now">Sekarang</string>
+    <string name="time_ago">%s yang lalu</string>
+    <string name="time_connector_and">dan</string>
+
+    <string name="btn_save">Simpan</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_accept">Terima</string>
+    <string name="btn_delete">Hapus</string>
+    <string name="btn_cancel">Batal</string>
+
+    <string name="title_nodata">Belum ada catatan konsumsi kopi</string>
+    <string name="title_coffecount">Penghitung kopi</string>
+    <string name="title_didyouknow">Tahukah kamu...</string>
+    <string name="title_total_spent">Total pengeluaran Anda adalah </string>
+    <string name="title_lastcoffe">Kopi terakhir</string>
+    <string name="title_last_coffees">Kopi terakhir</string>
+    <string name="title_lastweek">Kopi dalam minggu terakhir</string>
+
+    <string name="title_delete">Anda akan menghapus kopi</string>
+    <string name="txt_delete">Apakah Anda yakin ingin menghapus kopi ini?</string>
+
+    <string name="title_chart_historical">Riwayat konsumsi kopi</string>
+
+    <string name="txt_never">Tidak pernah</string>
+
+    <string name="placeholder_price">0.00</string>
+
+    <string name="title_barchart">Konsumsi 12 bulan terakhir</string>
+    <string name="label_barchart">cangkir</string>
+    <string-array name="coffee_phrases">
+        <item>Kopi ditemukan di Etiopia sekitar abad ke-9, menurut legenda penggembala bernama Kaldi.</item>
+        <item>Kaldi menyadari bahwa kambing-kambingnya menjadi lebih aktif setelah memakan buah tanaman kopi.</item>
+        <item>Kata \'kopi\' berasal dari bahasa Arab \'qahwa\', yang awalnya berarti 'anggur'.</item>
+        <item>Kopi tiba di Eropa pada abad ke-17 dan dengan cepat menjadi minuman populer.</item>
+        <item>Venesia adalah salah satu kota pertama di Eropa yang membuka kedai kopi pada tahun 1645.</item>
+        <item>Kedai kopi pertama di Inggris dibuka di Oxford pada tahun 1650, dikenal sebagai \'The Angel\'.</item>
+        <item>Kopi dilarang di Mekah pada tahun 1511 karena dianggap sebagai stimulan yang mencurigakan.</item>
+        <item>Pada tahun 1675, Raja Charles II dari Inggris mencoba menutup kedai kopi karena mendorong debat politik.</item>
+        <item>Kopi menjadi populer di Amerika setelah Boston Tea Party tahun 1773, ketika teh diboikot.</item>
+        <item>Kedai kopi pertama di Amerika Serikat dibuka di Boston pada tahun 1676.</item>
+        <item>Kopi instan ditemukan oleh orang Jepang Satori Kato pada tahun 1901.</item>
+        <item>Kafein pertama kali diisolasi pada tahun 1819 oleh ahli kimia Jerman Friedlieb Runge.</item>
+        <item>Goethe yang menyarankan kepada Runge untuk meneliti biji kopi.</item>
+        <item>Espresso ditemukan di Italia pada awal abad ke-20.</item>
+        <item>Luigi Bezzera mematenkan mesin espresso pertama pada tahun 1901.</item>
+        <item>Mesin kopi Italia atau moka diciptakan oleh Alfonso Bialetti pada tahun 1933.</item>
+        <item>Cappuccino mendapatkan namanya dari para biarawan Kapusin karena warna jubah mereka.</item>
+        <item>Brasil telah menjadi produsen kopi terbesar di dunia selama lebih dari 150 tahun.</item>
+        <item>Kolombia adalah salah satu eksportir kopi arabika terbesar di dunia.</item>
+        <item>Kopi arabika mewakili sekitar 60% produksi dunia.</item>
+        <item>Kopi robusta mengandung hampir dua kali lebih banyak kafein dibanding arabika.</item>
+        <item>Kopi tanpa kafein diproduksi dengan mengekstraksi kafein menggunakan air atau pelarut alami.</item>
+        <item>Kafein bekerja dengan memblokir adenosin, neurotransmiter yang memicu rasa kantuk.</item>
+        <item>Efek stimulan kopi biasanya berlangsung antara 3 hingga 5 jam.</item>
+        <item>Kopi adalah minuman favorit Napoleon Bonaparte.</item>
+        <item>Honoré de Balzac minum antara 40 hingga 50 cangkir kopi per hari saat menulis.</item>
+        <item>Voltaire minum lebih dari 30 cangkir kopi setiap hari dan mengatakan itu membuatnya tetap tajam.</item>
+        <item>Beethoven menghitung tepat 60 biji kopi per cangkir sebelum menyeduhnya.</item>
+        <item>Komposer Johann Sebastian Bach menulis sebuah kantata yang didedikasikan untuk kopi pada tahun 1732.</item>
+        <item>\'Kantata Kopi\' karya Bach bercanda tentang kecanduan putrinya terhadap minuman ini.</item>
+        <item>Di Finlandia, konsumsi kopi per kapita lebih tinggi daripada negara mana pun di dunia.</item>
+        <item>Rata-rata orang Finlandia mengonsumsi lebih dari 12 kilogram kopi per tahun.</item>
+        <item>Italia memiliki salah satu budaya kopi paling berpengaruh di dunia, yang berpusat pada espresso.</item>
+        <item>Di Etiopia, kopi dianggap sebagai simbol keramahan dan rasa hormat.</item>
+        <item>Kopi pertama kali tiba di Amerika Selatan melalui Guyana Prancis pada abad ke-18.</item>
+        <item>Kopi merupakan minuman mewah di Eropa hingga abad ke-18.</item>
+        <item>Pada abad ke-19, kopi menjadi komoditas penting dalam perdagangan internasional.</item>
+        <item>Biji kopi sebenarnya adalah benih dari buah tanaman kopi yang disebut \'ceri\'.</item>
+        <item>Setiap ceri kopi biasanya mengandung dua biji, meskipun beberapa hanya memiliki satu (peaberry).</item>
+        <item>Kopi hijau harus disangrai sebelum digiling dan diseduh.</item>
+        <item>Tingkat sangrai memengaruhi rasa, aroma, dan keasaman kopi.</item>
+        <item>Kopi termahal di dunia adalah Kopi Luwak, yang diproduksi dari biji yang dicerna oleh musang.</item>
+        <item>Kopi Luwak berasal dari Indonesia dan dapat mencapai harga lebih dari 500 euro per kilogram.</item>
+        <item>Kopi Turki telah menjadi Warisan Budaya Takbenda UNESCO sejak 2013.</item>
+        <item>Di Turki, menyiapkan kopi adalah tindakan simbolis persahabatan dan keramahan.</item>
+        <item>Di Wina, kedai kopi tradisional dinyatakan sebagai warisan budaya oleh UNESCO pada tahun 2011.</item>
+        <item>Espresso secara harfiah berarti \'ekspres\' atau 'bertekanan' dalam bahasa Italia.</item>
+        <item>Kopi Amerika muncul selama Perang Dunia II ketika tentara mengencerkan espresso dengan air.</item>
+        <item>Latte menjadi populer di Amerika Serikat pada tahun 1980-an berkat kebangkitan Starbucks.</item>
+        <item>Flat White lahir di Australia atau Selandia Baru (asal pastinya masih diperdebatkan).</item>
+        <item>Mesin kopi kapsul pertama dipatenkan oleh Nestlé pada tahun 1986.</item>
+        <item>Kafein adalah zat stimulan psikoaktif yang paling banyak dikonsumsi di dunia.</item>
+        <item>Satu espresso mengandung lebih sedikit kafein daripada secangkir kopi saring, tetapi lebih pekat.</item>
+        <item>Kopi dapat meningkatkan performa fisik dengan meningkatkan pelepasan adrenalin.</item>
+        <item>Studi menunjukkan bahwa kopi mengurangi risiko penyakit seperti Parkinson dan diabetes tipe 2.</item>
+        <item>Minum kopi dalam jumlah sedang dikaitkan dengan harapan hidup yang lebih panjang.</item>
+        <item>Aroma kopi berasal dari lebih dari 800 senyawa volatil yang berbeda.</item>
+        <item>Kopi memiliki lebih banyak antioksidan dibandingkan sebagian besar buah dan sayuran.</item>
+        <item>Di Jepang terdapat kedai kopi tempat orang dapat minum kopi bersama kucing, burung hantu, bahkan ular.</item>
+        <item>Di Korea Selatan terdapat lebih banyak kedai kopi per kapita dibandingkan negara mana pun di dunia.</item>
+        <item>Kopi diperkenalkan ke Yaman pada abad ke-15, dari mana kopi diekspor melalui pelabuhan Moka.</item>
+        <item>Istilah \'mocha\' berasal dari pelabuhan Yaman, Moka, yang terkenal dengan kopinya.</item>
+        <item>Kedai kopi pertama di Paris dibuka pada tahun 1686, bernama Café Procope.</item>
+        <item>Voltaire, Rousseau, dan Diderot sering mengunjungi Café Procope.</item>
+        <item>Kopi membantu mendorong Zaman Pencerahan dengan menjadi tempat berkumpulnya para pemikir.</item>
+        <item>Pada abad ke-18, kedai kopi dikenal sebagai \'penny universities\' di Inggris.</item>
+        <item>Disebut demikian karena dengan satu penny orang bisa membeli secangkir kopi dan berdiskusi dengan kaum intelektual.</item>
+        <item>Mesin espresso modern pertama dikembangkan oleh Achille Gaggia pada tahun 1947.</item>
+        <item>Gaggia memperkenalkan sistem tuas yang memungkinkan terciptanya crema khas espresso.</item>
+        <item>Barista adalah profesional yang ahli dalam persiapan dan penyajian kopi.</item>
+        <item>Istilah \'barista\' berasal dari bahasa Italia dan secara harfiah berarti 'bartender'.</item>
+        <item>Hari Kopi Internasional dirayakan pada tanggal 1 Oktober.</item>
+        <item>Kopi adalah komoditas yang paling banyak diperdagangkan kedua di dunia setelah minyak bumi.</item>
+        <item>Lebih dari 25 juta orang bekerja secara langsung maupun tidak langsung di industri kopi.</item>
+        <item>Satu pohon kopi dapat menghasilkan antara 1 hingga 2 kilogram biji per tahun.</item>
+        <item>Tanaman kopi dapat hidup lebih dari 50 tahun dalam kondisi yang tepat.</item>
+        <item>Kopi tumbuh paling baik di daerah tropis dengan ketinggian antara 800 hingga 2000 meter.</item>
+        <item>Wilayah kopi Kolombia dinyatakan sebagai Situs Warisan Dunia UNESCO pada tahun 2011.</item>
+        <item>Di Etiopia, kopi merupakan bagian dari upacara sosial dan keluarga setiap hari.</item>
+        <item>Orang Etiopia biasanya memanggang, menggiling, dan menyeduh kopi di depan para tamu.</item>
+        <item>Di Swedia terdapat tradisi \'fika\', yaitu jeda harian untuk minum kopi dan berbincang.</item>
+        <item>Orang Skandinavia menganggap kopi sebagai bagian penting dari budaya kerja mereka.</item>
+        <item>Kopi mengandung sejumlah kecil vitamin B2, B3, B5 serta mineral seperti magnesium dan kalium.</item>
+        <item>Kafein mulai bekerja sekitar 15 menit setelah dikonsumsi.</item>
+        <item>Kopi memiliki pH antara 4,5 hingga 6, sedikit bersifat asam.</item>
+        <item>Filter kopi kertas pertama ditemukan oleh Melitta Bentz pada tahun 1908.</item>
+        <item>Melitta Bentz membuat filternya menggunakan kertas penyerap dan kaleng berlubang.</item>
+        <item>Perusahaan Melitta masih menjadi salah satu produsen filter kopi utama.</item>
+        <item>Kopi Irlandia ditemukan pada tahun 1940-an di bandara Foynes, Irlandia.</item>
+        <item>Diciptakan oleh koki Joe Sheridan, yang menambahkan wiski Irlandia untuk menghangatkan para pelancong.</item>
+        <item>Kopi dingin atau \'cold brew\' menjadi populer di Jepang berabad-abad sebelum sampai ke Barat.</item>
+        <item>Cold brew disiapkan dengan air dingin dan dibiarkan selama 12 hingga 24 jam.</item>
+        <item>Barista modern berkompetisi dalam kejuaraan dunia latte art.</item>
+        <item>Latte art lahir di Seattle pada dekade 1980-an.</item>
+        <item>Pada tahun 1991 diselenggarakan Kejuaraan Dunia Barista pertama.</item>
+        <item>Kopi menempati posisi penting dalam budaya banyak negara, dari Italia hingga Etiopia.</item>
+        <item>NASA mengembangkan cangkir khusus untuk minum kopi di luar angkasa.</item>
+        <item>Kopi pertama yang diminum di luar angkasa terjadi pada tahun 1969 oleh astronot Buzz Aldrin.</item>
+        <item>Pada tahun 2015, astronot Stasiun Luar Angkasa Internasional menikmati espresso pertama yang dibuat di orbit.</item>
+        <item>Mesin tersebut dirancang oleh Lavazza dan Badan Antariksa Italia.</item>
+        <item>Kopi memiliki lebih dari 120 spesies yang dikenal, meskipun hanya dua yang dibudidayakan secara komersial: arabika dan robusta.</item>
+        <item>Kopi pertama kali tiba di Jepang pada abad ke-17, tetapi baru populer setelah Perang Dunia II.</item>
+        <item>Di Etiopia, upacara kopi dapat berlangsung lebih dari satu jam dan mencakup tiga putaran penyajian.</item>
+        <item>Kopi tiba di Brasil pada tahun 1727 berkat Francisco de Melo Palheta, yang menyelundupkan benih dari Guyana Prancis.</item>
+        <item>Kopi dibawa ke Hawaii pada tahun 1825, tempat wilayah produksi terkenal Kona kemudian berkembang.</item>
+        <item>Kopi instan dipopulerkan oleh Nestlé selama Perang Dunia II dengan merek Nescafé.</item>
+        <item>Mesin espresso otomatis rumahan pertama diluncurkan oleh Gaggia pada tahun 1977.</item>
+        <item>Kopi dianggap sebagai obat di Eropa selama abad ke-16.</item>
+        <item>Pada abad ke-18, Frederick Agung dari Prusia mencoba melarang kopi untuk mendorong konsumsi bir.</item>
+        <item>Kopi hijau digunakan sebagai alat tukar di Afrika selama berabad-abad.</item>
+        <item>Kopi adalah tanaman komersial terpenting di Etiopia, mewakili lebih dari 30% ekspornya.</item>
+        <item>Kopi kalengan pertama diluncurkan di Jepang pada tahun 1969 oleh perusahaan UCC Ueshima Coffee Co.</item>
+        <item>Di Italia, minum kopi di bar lebih murah daripada duduk di meja.</item>
+        <item>Kopi tiba di Meksiko pada akhir abad ke-18 dan dengan cepat menyebar ke Chiapas dan Veracruz.</item>
+        <item>Kopi Jamaica Blue Mountain adalah salah satu yang paling dihargai dan paling lembut di dunia.</item>
+        <item>Pada abad ke-17, beberapa rohaniwan Eropa mencoba melarang kopi dengan menyebutnya \'minuman setan\'.</item>
+        <item>Paus Klemens VIII menyetujui konsumsi kopi pada tahun 1600, menyatakan bahwa minuman itu \'sangat lezat sehingga harus dibaptis\'.</item>
+        <item>Di Yaman, kopi dianggap membantu meditasi di kalangan biksu sufi.</item>
+        <item>Istilah \'coffee break\' menjadi populer di Amerika Serikat pada tahun 1950-an berkat kampanye iklan.</item>
+        <item>Kopi instan menjadi sangat penting selama Perang Dunia I karena praktis bagi para tentara.</item>
+        <item>80% kopi yang dikonsumsi di dunia adalah jenis arabika.</item>
+        <item>Di Prancis, filsuf Montesquieu biasa menulis ditemani beberapa cangkir kopi.</item>
+        <item>Kopi spesialti didefinisikan sebagai kopi yang memperoleh lebih dari 80 poin pada skala Specialty Coffee Association.</item>
+        <item>Kopi Etiopia Yirgacheffe terkenal dengan nada floral dan sitrusnya.</item>
+        <item>Kopi diperkenalkan ke India oleh sufi Baba Budan pada abad ke-17.</item>
+        <item>Kopi adalah sumber utama antioksidan dalam pola makan Barat rata-rata.</item>
+        <item>Secangkir kopi rata-rata mengandung antara 80 hingga 120 mg kafein.</item>
+        <item>Kopi hitam tanpa gula hanya mengandung sekitar 2 kalori per cangkir.</item>
+        <item>Rekor Guinness untuk jumlah cangkir kopi terbanyak yang disajikan dalam satu hari adalah lebih dari 12.000, dicapai di Kolombia.</item>
+        <item>Kopi sangrai melepaskan karbon dioksida selama beberapa hari, sehingga perlu didiamkan sebelum dikemas.</item>
+        <item>Kopi yang ditanam di ketinggian lebih tinggi biasanya memiliki rasa lebih kompleks dan keasaman yang lebih cerah.</item>
+    </string-array>
+
+
+
+</resources>
