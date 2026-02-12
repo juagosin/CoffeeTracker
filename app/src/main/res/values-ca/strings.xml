@@ -3,6 +3,7 @@
 
     <string name="screenHome_title">Inici</string>
     <string name="screenStats_title">Estadístiques</string>
+    <string name="screenAchievements_title">Logros</string>
 
     <string name="Main_title">Coffee Tracker</string>
     <string name="fab_description">Afegir cafè</string>

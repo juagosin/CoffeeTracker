@@ -2,6 +2,7 @@ package com.calleserpis.coffeetracker.ui.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Assistant
 import androidx.compose.material.icons.filled.BarChart
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -31,5 +32,11 @@ sealed class Screens {
     data class Edit(val id:Int) : Screens() {
         override val route: String = "edit/$id"
         override val icon: ImageVector = Icons.Filled.Add
+    }
+
+    @Serializable
+    data object Achievements: Screens() {
+        override val route: String = "achievements"
+        override val icon: ImageVector = Icons.Filled.Assistant
     }
 }

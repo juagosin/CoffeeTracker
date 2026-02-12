@@ -3,6 +3,7 @@
 
     <string name="screenHome_title">Beranda</string>
     <string name="screenStats_title">Statistik</string>
+    <string name="screenAchievements_title">Achievements</string>
 
     <string name="Main_title">Coffee Tracker</string>
     <string name="fab_description">Tambah kopi</string>

@@ -4,6 +4,7 @@
 
     <string name="screenHome_title">Home</string>
     <string name="screenStats_title">Statistics</string>
+    <string name="screenAchievements_title">Achievements</string>
 
     <string name="Main_title">Coffee Tracker</string>
     <string name="fab_description">Add coffee</string>
