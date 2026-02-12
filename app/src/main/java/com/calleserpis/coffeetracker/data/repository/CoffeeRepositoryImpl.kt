@@ -1,5 +1,6 @@
 package com.calleserpis.coffeetracker.data.repository
 
+import com.calleserpis.coffeetracker.data.dao.AchievementDao
 import com.calleserpis.coffeetracker.data.dao.CoffeeDao
 import com.calleserpis.coffeetracker.data.datastore.CoffeePreferencesManager
 import com.calleserpis.coffeetracker.data.mapper.toDomain
@@ -7,6 +8,7 @@ import com.calleserpis.coffeetracker.data.mapper.toDomainDailyStats
 import com.calleserpis.coffeetracker.data.mapper.toDomainMonthlyStats
 import com.calleserpis.coffeetracker.data.mapper.toEntity
 import com.calleserpis.coffeetracker.data.mapper.toTypeHistory
+import com.calleserpis.coffeetracker.domain.model.Achievement
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.model.stats.AllTimeTypeStats
 import com.calleserpis.coffeetracker.domain.model.stats.DailyCoffeeStat
@@ -17,6 +19,7 @@ import kotlinx.coroutines.flow.map
 
 class CoffeeRepositoryImpl(
     private val coffeeDao: CoffeeDao,
+    private val achievementDao: AchievementDao,
     private val preferencesManager: CoffeePreferencesManager
 ) : CoffeeRepository {
 
@@ -73,6 +76,26 @@ class CoffeeRepositoryImpl(
         preferencesManager.saveLastCoffee(coffeeType)
     }
 
+    override fun getAllUnlockedAchievements(): Flow<List<Achievement>> {
+        return achievementDao.getAllUnlocked()
+            .map { achievements -> achievements.map { it.toDomain() } }
+    }
+
+    override suspend fun getAchievementById(id: String): Achievement {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun insertAchievement(achievement: Achievement) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun deleteAchievement(achievementId: String) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun deleteAllAchievements() {
+        TODO("Not yet implemented")
+    }
 
 
 }

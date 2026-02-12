@@ -82,6 +82,10 @@
 
     <string name="title_barchart">Consumo degli ultimi 12 mesi</string>
     <string name="label_barchart">tazze</string>
+    <!-- LOGROS -->
+    <string name="achievement_first_coffee_title">Primer café</string>
+    <string name="achievement_first_coffee_description">Enhorabuena, has comenzado a tomar café.</string>
+
 
     <string-array name="coffee_phrases">
         <item>Il caffè fu scoperto in Etiopia intorno al IX secolo, secondo la leggenda del pastore Kaldi.</item>

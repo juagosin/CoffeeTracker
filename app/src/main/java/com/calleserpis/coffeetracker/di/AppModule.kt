@@ -5,6 +5,7 @@ import android.content.Context
 import androidx.room.Room
 import com.calleserpis.coffeetracker.data.CoffeeDatabase
 import com.calleserpis.coffeetracker.data.MIGRATION_1_2
+import com.calleserpis.coffeetracker.data.MIGRATION_2_3
 import com.calleserpis.coffeetracker.data.datastore.CoffeePreferencesManager
 import com.calleserpis.coffeetracker.data.notification.NotificationHelper
 import com.calleserpis.coffeetracker.data.repository.CoffeeRepositoryImpl
@@ -42,7 +43,8 @@ object AppModule {
             CoffeeDatabase::class.java,
             "coffee_db"
         )
-            .addMigrations(MIGRATION_1_2)
+            //.addMigrations(MIGRATION_1_2)
+            .addMigrations(MIGRATION_2_3)
             .build()
     }
     @Provides
@@ -57,7 +59,7 @@ object AppModule {
     @Singleton
     fun provideCoffeeRepository(db: CoffeeDatabase,
                                 preferencesManager: CoffeePreferencesManager): CoffeeRepository {
-        return CoffeeRepositoryImpl(db.coffeeDao, preferencesManager)
+        return CoffeeRepositoryImpl(db.coffeeDao,db.achievementDao, preferencesManager)
     }
 
     @Provides

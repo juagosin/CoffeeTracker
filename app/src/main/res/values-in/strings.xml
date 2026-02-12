@@ -83,6 +83,10 @@
 
     <string name="title_barchart">Konsumsi 12 bulan terakhir</string>
     <string name="label_barchart">cangkir</string>
+    <!-- LOGROS -->
+    <string name="achievement_first_coffee_title">Primer café</string>
+    <string name="achievement_first_coffee_description">Enhorabuena, has comenzado a tomar café.</string>
+
     <string-array name="coffee_phrases">
         <item>Kopi ditemukan di Etiopia sekitar abad ke-9, menurut legenda penggembala bernama Kaldi.</item>
         <item>Kaldi menyadari bahwa kambing-kambingnya menjadi lebih aktif setelah memakan buah tanaman kopi.</item>
