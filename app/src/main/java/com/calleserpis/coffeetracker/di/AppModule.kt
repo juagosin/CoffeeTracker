@@ -10,9 +10,11 @@ import com.calleserpis.coffeetracker.data.datastore.CoffeePreferencesManager
 import com.calleserpis.coffeetracker.data.notification.NotificationHelper
 import com.calleserpis.coffeetracker.data.repository.CoffeeRepositoryImpl
 import com.calleserpis.coffeetracker.domain.repository.CoffeeRepository
+import com.calleserpis.coffeetracker.domain.use_case.AddAchievementUseCase
 import com.calleserpis.coffeetracker.domain.use_case.AddCoffeeUseCase
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
 import com.calleserpis.coffeetracker.domain.use_case.DeleteCoffeeUseCase
+import com.calleserpis.coffeetracker.domain.use_case.GetAllAchievementsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetAllTimeTypeStatsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetCoffeeByIdUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetCoffeeCount
@@ -43,7 +45,7 @@ object AppModule {
             CoffeeDatabase::class.java,
             "coffee_db"
         )
-            //.addMigrations(MIGRATION_1_2)
+            .addMigrations(MIGRATION_1_2)
             .addMigrations(MIGRATION_2_3)
             .build()
     }
@@ -78,7 +80,9 @@ object AppModule {
             getCoffeeByIdUseCase = GetCoffeeByIdUseCase(repository),
             getLastCoffeePrefUseCase = GetLastCoffeePrefUseCase(repository),
             saveLastCoffeePrefUseCase = SaveLastCoffeePrefUseCase(repository),
-            showNotificationUseCase = ShowNotificationUseCase(notificationHelper)
+            showNotificationUseCase = ShowNotificationUseCase(notificationHelper),
+            getAllAchievementsUseCase = GetAllAchievementsUseCase(repository),
+            addAchievementUseCase = AddAchievementUseCase(repository)
         )
     }
 

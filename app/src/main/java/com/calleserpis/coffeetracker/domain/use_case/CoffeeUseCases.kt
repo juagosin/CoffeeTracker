@@ -13,5 +13,7 @@ data class CoffeeUseCases(
     val getCoffeeByIdUseCase: GetCoffeeByIdUseCase,
     val getLastCoffeePrefUseCase: GetLastCoffeePrefUseCase,
     val saveLastCoffeePrefUseCase: SaveLastCoffeePrefUseCase,
-    val showNotificationUseCase: ShowNotificationUseCase
+    val showNotificationUseCase: ShowNotificationUseCase,
+    val getAllAchievementsUseCase: GetAllAchievementsUseCase,
+    val addAchievementUseCase: AddAchievementUseCase,
 )

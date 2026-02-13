@@ -7,6 +7,6 @@ import androidx.room.PrimaryKey
 data class AchievementEntity(
     @PrimaryKey
     val id: String,
-    val unlockedAt: Long,
+    val unlockedAt: Long?,
     val progress: Int = 0
 )

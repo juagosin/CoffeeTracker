@@ -23,10 +23,21 @@ sealed class AchievementDefinition (
         checkCondition = { coffees -> coffees.size >= 1 }
 
     )
+    data object Coffee50  : AchievementDefinition(
+        id = "coffee_50",
+        type = AchievementType.FIRST_COFFEE,
+        threshold = 1,
+        titleRes = R.string.achievement_first_coffee_title,
+        descriptionRes = R.string.achievement_first_coffee_description,
+        iconRes = R.drawable.ic_achievement_first,
+        checkCondition = { coffees -> coffees.size >= 50 }
+
+    )
 
     companion object {
         val ALL = listOf(
-            FirstCoffee
+            FirstCoffee,
+            Coffee50
         )
     }
 }

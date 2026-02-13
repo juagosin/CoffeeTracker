@@ -86,7 +86,7 @@ class CoffeeRepositoryImpl(
     }
 
     override suspend fun insertAchievement(achievement: Achievement) {
-        TODO("Not yet implemented")
+        achievementDao.insert(achievement.toEntity())
     }
 
     override suspend fun deleteAchievement(achievementId: String) {

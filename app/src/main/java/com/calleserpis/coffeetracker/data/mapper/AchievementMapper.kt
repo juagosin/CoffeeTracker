@@ -2,7 +2,6 @@ package com.calleserpis.coffeetracker.data.mapper
 
 import com.calleserpis.coffeetracker.data.entity.AchievementEntity
 import com.calleserpis.coffeetracker.domain.model.Achievement
-import com.calleserpis.coffeetracker.domain.model.AchievementDefinition.FirstCoffee.threshold
 import com.calleserpis.coffeetracker.domain.model.AchievementType
 
 
@@ -20,8 +19,8 @@ fun AchievementEntity.toDomain(): Achievement {
 fun Achievement.toEntity(): AchievementEntity {
     return AchievementEntity(
         id = this.id,
-        unlockedAt = TODO(),
-        progress = TODO()
+        unlockedAt = this.unlockedAt,
+        progress = this.progress
     )
 }
 fun List<AchievementEntity>.toDomain(): List<Achievement> {
