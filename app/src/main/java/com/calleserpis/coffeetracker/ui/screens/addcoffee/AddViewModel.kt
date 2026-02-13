@@ -1,6 +1,9 @@
 package com.calleserpis.coffeetracker.ui.screens.addcoffee
 
+import android.R
+import android.content.Context
 import android.util.Log
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calleserpis.coffeetracker.data.entity.AchievementEntity
@@ -9,6 +12,7 @@ import com.calleserpis.coffeetracker.domain.model.AchievementDefinition
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,10 +20,12 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import okio.`-DeprecatedOkio`.source
 import javax.inject.Inject
 
 @HiltViewModel
 class AddViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val coffeeUseCase: CoffeeUseCases
 ) : ViewModel() {
     private val _state = MutableStateFlow(AddCoffeeState())
@@ -117,27 +123,43 @@ class AddViewModel @Inject constructor(
             val AllAchievements = coffeeUseCase.getAllAchievementsUseCase()
             val AllUnlockedAchievements = AllAchievements.first()
 
-            AchievementDefinition.ALL.forEach {
+            AchievementDefinition.ALL.forEach { achievementDefinition ->
                 Log.d(
                     "AddViewModel",
-                    "Achievement check condition: ${it.checkCondition(coffeeList)}"
+                    "Achievement check condition: ${achievementDefinition.checkCondition(coffeeList)}"
                 )
-                if (it.checkCondition(coffeeList)) {
-                    Log.d("AddViewModel", "Checking achievement: ${it.id}")
-                    Log.d("AddViewModel", "Achievement check condition: ${coffeeList}")
-                    if ((AllUnlockedAchievements.isEmpty()) || (!AllUnlockedAchievements.any { it.id == it.id })) {
-                        Log.d("AddViewModel", "AllUnlockedAchievements: ${AllUnlockedAchievements}")
+                if (achievementDefinition.checkCondition(coffeeList)) {
+                    Log.d("AddViewModel", "AllUnlockedAchievements: ${AllUnlockedAchievements}")
+                    Log.d("AddViewModel", "Checking achievement: ${achievementDefinition.id}")
+
+                    Log.d(
+                        "AddViewModel",
+                        "Condicion: ${AllUnlockedAchievements.none { achievementDefinition.id == it.id }}"
+                    )
+
+
+                    if ((AllUnlockedAchievements.isEmpty()) || (AllUnlockedAchievements.none  { achievementDefinition.id == it.id })) {
+
+                        Log.d(
+                            "AddViewModel",
+                            "Entra en el if: AllUnlockedAchievements: ${achievementDefinition.id}"
+                        )
                         var newAchievement: Achievement = Achievement(
-                            id = it.id,
-                            type = it.type,
-                            threshold = it.threshold,
+                            id = achievementDefinition.id,
+                            type = achievementDefinition.type,
+                            threshold = achievementDefinition.threshold,
                             unlockedAt = System.currentTimeMillis(),
                             isUnlocked = true
 
-                            )
+                        )
+
+
+
                         coffeeUseCase.addAchievementUseCase(newAchievement)
-
-
+                        coffeeUseCase.showNotificationUseCase(
+                            context.getString(achievementDefinition.titleRes),
+                            context.getString(achievementDefinition.descriptionRes)
+                        )
                     }
 
 

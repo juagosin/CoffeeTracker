@@ -25,12 +25,12 @@ sealed class AchievementDefinition (
     )
     data object Coffee50  : AchievementDefinition(
         id = "coffee_50",
-        type = AchievementType.FIRST_COFFEE,
+        type = AchievementType.TOTAL_COFFEES_50,
         threshold = 1,
-        titleRes = R.string.achievement_first_coffee_title,
-        descriptionRes = R.string.achievement_first_coffee_description,
-        iconRes = R.drawable.ic_achievement_first,
-        checkCondition = { coffees -> coffees.size >= 50 }
+        titleRes = R.string.achievement_fifty_coffee_title,
+        descriptionRes = R.string.achievement_fifty_coffee_description,
+        iconRes = R.drawable.ic_achievement_fifty,
+        checkCondition = { coffees -> coffees.size >= 5 }
 
     )
 

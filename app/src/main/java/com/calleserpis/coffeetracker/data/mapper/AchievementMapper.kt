@@ -9,10 +9,10 @@ fun AchievementEntity.toDomain(): Achievement {
     return Achievement(
         id = this.id,
         type = AchievementType.fromString(this.id),
-        threshold = TODO(),
-        isUnlocked = TODO(),
-        unlockedAt = TODO(),
-        progress = TODO()
+        unlockedAt = this.unlockedAt,
+        progress = this.progress,
+        threshold = 0
+
     )
 }
 

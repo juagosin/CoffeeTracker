@@ -88,6 +88,8 @@
     <!-- LOGROS -->
     <string name="achievement_first_coffee_title">Primer café</string>
     <string name="achievement_first_coffee_description">Enhorabuena, has comenzado a tomar café.</string>
+    <string name="achievement_fifty_coffee_title">50 cafés</string>
+    <string name="achievement_fifty_coffee_description">Bueno, parece que eres algo aficionado al café.</string>
 
     <string-array name="coffee_phrases">
         <item>Coffee was discovered in Ethiopia around the 9th century, according to the legend of the shepherd Kaldi.</item>
