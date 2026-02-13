@@ -85,10 +85,16 @@
     <string name="title_barchart">Konsumsi 12 bulan terakhir</string>
     <string name="label_barchart">cangkir</string>
     <!-- LOGROS -->
-    <string name="achievement_first_coffee_title">Primer café</string>
-    <string name="achievement_first_coffee_description">Enhorabuena, has comenzado a tomar café.</string>
+    <string name="achievement_first_coffee_title">Kopi pertama</string>
+    <string name="achievement_first_coffee_description">Selamat, kamu sudah mulai minum kopi.</string>
     <string name="achievement_fifty_coffee_title">50 cafés</string>
-    <string name="achievement_fifty_coffee_description">Bueno, parece que eres algo aficionado al café.</string>
+    <string name="achievement_fifty_coffee_description">Eh bien, on dirait que tu es un peu amateur de café.</string>
+    <string name="achievement_hundred_coffee_title">100 cafés</string>
+    <string name="achievement_hundred_coffee_description">Parfait, on peut maintenant considérer que tu aimes vraiment le café.</string>
+    <string name="achievement_daily_5_coffee_title">5 kopi dalam satu hari</string>
+    <string name="achievement_daily_5_coffee_description">Wow, santai saja. Jangan terlalu banyak mengonsumsi kafein</string>
+
+
 
     <string-array name="coffee_phrases">
         <item>Kopi ditemukan di Etiopia sekitar abad ke-9, menurut legenda penggembala bernama Kaldi.</item>

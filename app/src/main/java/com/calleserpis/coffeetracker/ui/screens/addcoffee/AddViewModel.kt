@@ -124,13 +124,10 @@ class AddViewModel @Inject constructor(
             val AllUnlockedAchievements = AllAchievements.first()
 
             AchievementDefinition.ALL.forEach { achievementDefinition ->
-                Log.d(
-                    "AddViewModel",
-                    "Achievement check condition: ${achievementDefinition.checkCondition(coffeeList)}"
-                )
+                Log.d("AddViewModel", "Checking achievement: ${achievementDefinition.id} : Condicion ${achievementDefinition.checkCondition(coffeeList)}")
                 if (achievementDefinition.checkCondition(coffeeList)) {
                     Log.d("AddViewModel", "AllUnlockedAchievements: ${AllUnlockedAchievements}")
-                    Log.d("AddViewModel", "Checking achievement: ${achievementDefinition.id}")
+
 
                     Log.d(
                         "AddViewModel",

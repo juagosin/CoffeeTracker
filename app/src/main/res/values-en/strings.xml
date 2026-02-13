@@ -86,10 +86,16 @@
     <string name="title_barchart">Consumption in the last 12 months</string>
     <string name="label_barchart">cups</string>
     <!-- LOGROS -->
-    <string name="achievement_first_coffee_title">Primer café</string>
-    <string name="achievement_first_coffee_description">Enhorabuena, has comenzado a tomar café.</string>
-    <string name="achievement_fifty_coffee_title">50 cafés</string>
-    <string name="achievement_fifty_coffee_description">Bueno, parece que eres algo aficionado al café.</string>
+    <string name="achievement_first_coffee_title">First coffee</string>
+    <string name="achievement_first_coffee_description">Congratulations, you’ve started drinking coffee.</string>
+    <string name="achievement_fifty_coffee_title">50 coffees</string>
+    <string name="achievement_fifty_coffee_description">Well, it seems you’re somewhat of a coffee enthusiast.</string>
+    <string name="achievement_hundred_coffee_title">100 coffees</string>
+    <string name="achievement_hundred_coffee_description">Perfect, we can now consider that you really like coffee.</string>
+    <string name="achievement_daily_5_coffee_title">5 coffees in one day</string>
+    <string name="achievement_daily_5_coffee_description">Wow, take it easy. Don´t overdo the caffeine</string>
+
+
 
     <string-array name="coffee_phrases">
         <item>Coffee was discovered in Ethiopia around the 9th century, according to the legend of the shepherd Kaldi.</item>

@@ -15,7 +15,8 @@ enum class AchievementType {
     TOTAL_COFFEES_50,
     TOTAL_COFFEES_100,
     TOTAL_COFFEES_500,
-    WEEKLY_COFFEES_20;
+    WEEKLY_COFFEES_20,
+    DAILY_COFFEES_5;
 
     companion object {
         fun fromString(value: String): AchievementType {

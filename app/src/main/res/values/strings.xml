@@ -91,6 +91,10 @@
     <string name="achievement_first_coffee_description">Enhorabuena, has comenzado a tomar café.</string>
     <string name="achievement_fifty_coffee_title">50 cafés</string>
     <string name="achievement_fifty_coffee_description">Bueno, parece que eres algo aficionado al café.</string>
+    <string name="achievement_hundred_coffee_title">100 cafés</string>
+    <string name="achievement_hundred_coffee_description">Perfecto, ya podemos considerar que te gusta el café.</string>
+    <string name="achievement_daily_5_coffee_title">5 cafés en un día</string>
+    <string name="achievement_daily_5_coffee_description">Wow, tómatelo con calma. No abuses de la cafeína</string>
 
 
     <string-array name="coffee_phrases">
