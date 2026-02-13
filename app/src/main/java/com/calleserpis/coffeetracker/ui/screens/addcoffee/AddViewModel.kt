@@ -135,7 +135,7 @@ class AddViewModel @Inject constructor(
                             isUnlocked = true
 
                             )
-                        //coffeeUseCase.addAchievementUseCase(newAchievement)
+                        coffeeUseCase.addAchievementUseCase(newAchievement)
 
 
                     }

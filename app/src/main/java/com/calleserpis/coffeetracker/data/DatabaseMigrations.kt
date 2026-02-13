@@ -15,7 +15,7 @@ val MIGRATION_2_3 = object : Migration(2, 3) {
         db.execSQL("""
             CREATE TABLE IF NOT EXISTS achievements (
                 id TEXT NOT NULL PRIMARY KEY,
-                unlockedAt INTEGER NOT NULL,
+                unlockedAt INTEGER,
                 progress INTEGER NOT NULL DEFAULT 0
             )
         """)
