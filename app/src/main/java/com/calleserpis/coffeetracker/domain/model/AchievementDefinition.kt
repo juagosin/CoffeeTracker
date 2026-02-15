@@ -7,7 +7,7 @@ import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 
-sealed class AchievementDefinition (
+sealed class AchievementDefinition(
     val id: String,
     val type: AchievementType,
     val threshold: Int,
@@ -15,7 +15,7 @@ sealed class AchievementDefinition (
     @StringRes val descriptionRes: Int,
     @DrawableRes val iconRes: Int,
     val checkCondition: (List<Coffee>) -> Boolean
-){
+) {
     data object FirstCoffee : AchievementDefinition(
         id = "first_coffee",
         type = AchievementType.FIRST_COFFEE,
@@ -26,7 +26,8 @@ sealed class AchievementDefinition (
         checkCondition = { coffees -> coffees.isNotEmpty() }
 
     )
-    data object Coffee50  : AchievementDefinition(
+
+    data object Coffee50 : AchievementDefinition(
         id = "coffee_50",
         type = AchievementType.TOTAL_COFFEES_50,
         threshold = 1,
@@ -36,7 +37,8 @@ sealed class AchievementDefinition (
         checkCondition = { coffees -> coffees.size >= 50 }
 
     )
-    data object Coffee100  : AchievementDefinition(
+
+    data object Coffee100 : AchievementDefinition(
         id = "coffee_100",
         type = AchievementType.TOTAL_COFFEES_100,
         threshold = 1,
@@ -46,7 +48,19 @@ sealed class AchievementDefinition (
         checkCondition = { coffees -> coffees.size >= 100 }
 
     )
-    data object DailyAddict5  : AchievementDefinition(
+
+    data object Coffee500 : AchievementDefinition(
+        id = "coffee_500",
+        type = AchievementType.TOTAL_COFFEES_500,
+        threshold = 1,
+        titleRes = R.string.achievement_fifty_hundred_coffee_title,
+        descriptionRes = R.string.achievement_fifty_hundred_coffee_description,
+        iconRes = R.drawable.ic_achievement_fifty_hundred,
+        checkCondition = { coffees -> coffees.size >= 500 }
+
+    )
+
+    data object DailyAddict5 : AchievementDefinition(
         id = "daily_5",
         type = AchievementType.DAILY_COFFEES_5,
         threshold = 1,
@@ -69,6 +83,7 @@ sealed class AchievementDefinition (
             FirstCoffee,
             Coffee50,
             Coffee100,
+            Coffee500,
             DailyAddict5
         )
     }

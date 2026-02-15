@@ -90,6 +90,8 @@
     <string name="achievement_fifty_coffee_description">Beh, sembra che tu sia un po´ un appassionato di caffè.</string>
     <string name="achievement_hundred_coffee_title">100 caffè</string>
     <string name="achievement_hundred_coffee_description">Perfetto, ora possiamo considerare che ti piace davvero il caffè.</string>
+    <string name="achievement_fifty_hundred_coffee_title">500 cafés</string>
+    <string name="achievement_fifty_hundred_coffee_description">Bueno, parece que eres algo aficionado al café.</string>
     <string name="achievement_daily_5_coffee_title">5 caffè in un giorno</string>
     <string name="achievement_daily_5_coffee_description">Wow, prendila con calma. Non abusare della caffeina</string>
 

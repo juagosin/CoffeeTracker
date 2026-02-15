@@ -88,6 +88,8 @@
     <string name="achievement_fifty_coffee_description">Bé, sembla que ets una mica aficionat al cafè.</string>
     <string name="achievement_hundred_coffee_title">100 cafès</string>
     <string name="achievement_hundred_coffee_description">Perfecte, ja podem considerar que t´agrada el cafè.</string>
+    <string name="achievement_fifty_hundred_coffee_title">500 cafés</string>
+    <string name="achievement_fifty_hundred_coffee_description">Bueno, parece que eres algo aficionado al café.</string>
     <string name="achievement_daily_5_coffee_title">5 cafès en un dia</string>
     <string name="achievement_daily_5_coffee_description">Uau, pren-t´ho amb calma. No abusis de la cafeïna</string>
 
