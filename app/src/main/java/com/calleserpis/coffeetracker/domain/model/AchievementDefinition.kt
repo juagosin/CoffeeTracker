@@ -186,7 +186,7 @@ sealed class AchievementDefinition(
         threshold = 1,
         titleRes = R.string.achievement_monday_morning_title,
         descriptionRes = R.string.achievement_monday_morning_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_monday_morning,
         checkCondition = { coffees ->
             coffees.any { it.timestamp.toLocalDateTime().isMondayMorning() }
         }
@@ -197,7 +197,7 @@ sealed class AchievementDefinition(
         threshold = 5,
         titleRes = R.string.achievement_decaf_morning_title,
         descriptionRes = R.string.achievement_decaf_morning_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_decaf_morning,
         checkCondition = { coffees ->
             coffees.count {
                 it.type == CoffeeType.DESCAFEINADO &&
@@ -211,7 +211,7 @@ sealed class AchievementDefinition(
         threshold = 1,
         titleRes = R.string.achievement_last_minute_title,
         descriptionRes = R.string.achievement_last_minute_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_las_minute,
         checkCondition = { coffees ->
             coffees.any { it.timestamp.toLocalDateTime().isLastMinute() }
         }
@@ -262,7 +262,7 @@ sealed class AchievementDefinition(
         threshold = CoffeeType.entries.size,
         titleRes = R.string.achievement_explorer_title,
         descriptionRes = R.string.achievement_explorer_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_coffee_explorer,
         checkCondition = { coffees ->
             val triedTypes = coffees.map { it.type }.distinct()
             triedTypes.size >= CoffeeType.entries.size
