@@ -88,7 +88,7 @@ sealed class AchievementDefinition(
         threshold = 1,
         titleRes = R.string.achievement_spaceodyssey_coffee_title,
         descriptionRes = R.string.achievement_spaceodyssey_coffee_description,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_spaceodyssey,
         checkCondition = { coffees -> coffees.size >= 2001 }
 
     )
@@ -114,7 +114,7 @@ sealed class AchievementDefinition(
         threshold = 1,
         titleRes = R.string.achievement_daily_10_coffee_title,
         descriptionRes = R.string.achievement_daily_10_coffee_description,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_daily_10,
         checkCondition = { coffees ->
             val today = LocalDate.now()
             coffees.count {
@@ -142,7 +142,7 @@ sealed class AchievementDefinition(
         threshold = 1,
         titleRes = R.string.achievement_new_year_title,
         descriptionRes = R.string.achievement_new_year_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_new_year,
         checkCondition = { coffees ->
             coffees.any { it.timestamp.toLocalDateTime().isNewYear() }
         }
@@ -164,7 +164,7 @@ sealed class AchievementDefinition(
         threshold = 1,
         titleRes = R.string.achievement_halloween_title,
         descriptionRes = R.string.achievement_halloween_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_halloween,
         checkCondition = { coffees ->
             coffees.any { it.timestamp.toLocalDate().isHalloween() }
         }
@@ -175,7 +175,7 @@ sealed class AchievementDefinition(
         threshold = 1,
         titleRes = R.string.achievement_leap_year_title,
         descriptionRes = R.string.achievement_leap_year_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_leap_year,
         checkCondition = { coffees ->
             coffees.any { it.timestamp.toLocalDate().LeapYear() }
         }
@@ -246,7 +246,7 @@ sealed class AchievementDefinition(
         threshold = 7,
         titleRes = R.string.achievement_swiss_watch_title,
         descriptionRes = R.string.achievement_swiss_watch_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_swiss_watch,
         checkCondition = { coffees ->
             coffees.map { it.timestamp }.hasSameTimeInDifferentDays(
                 occurrences = 7,
