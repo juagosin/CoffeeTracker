@@ -33,6 +33,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.calleserpis.coffeetracker.R
 import com.calleserpis.coffeetracker.domain.model.Achievement
 import com.calleserpis.coffeetracker.domain.model.AchievementDefinition
+import com.calleserpis.coffeetracker.domain.model.toFormattedDate
 import com.calleserpis.coffeetracker.ui.common.EmptyData
 
 @Composable
@@ -59,7 +60,7 @@ fun AchievementsScreen(
                 ElevatedCard(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 20.dp),
+                        .padding(top = 16.dp),
                     shape = RoundedCornerShape(16.dp),
                     colors = CardDefaults.cardColors(
                         containerColor = colorScheme.surfaceContainerLow,
@@ -84,12 +85,22 @@ fun AchievementsScreen(
                         color = colorScheme.onSurface,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(14.dp),
+                            .padding(top = 6.dp, start = 14.dp, end = 0.dp),
                     )
                     Image(
                         painter = painterResource(id = logro!!.iconRes),
                         contentDescription = null,
-                        modifier = Modifier.padding(16.dp)
+                        modifier = Modifier.padding(8.dp)
+                    )
+                    Text(
+                        text = "Conseguido el " + achievement.unlockedAt!!.toFormattedDate(),
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.labelSmall,
+                        fontStyle = FontStyle.Italic,
+                        color = colorScheme.onSurface,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 4.dp, start = 0.dp, end = 14.dp, bottom = 8.dp),
                     )
 
                 }
