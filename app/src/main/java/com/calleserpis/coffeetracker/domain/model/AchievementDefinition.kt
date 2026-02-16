@@ -222,7 +222,7 @@ sealed class AchievementDefinition(
         threshold = 365,
         titleRes = R.string.achievement_year_streak_title,
         descriptionRes = R.string.achievement_year_streak_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_year_streak,
         checkCondition = { coffees ->
             val timestamps = coffees.map { it.timestamp }
             timestamps.hasConsecutiveDaysStreak(365)
