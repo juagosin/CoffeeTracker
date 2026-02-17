@@ -112,7 +112,7 @@
     <string name="achievement_halloween_title">Café o Truco</string>
     <string name="achievement_halloween_desc">Has tomado café en Halloween… ahora no sabemos si estás más despierto por la cafeína o por los sustos.</string>
     <string name="achievement_leap_year_title">Edición limitada</string>
-    <string name="achievement_leap_year_desc">Has tomado café en Halloween… ahora no sabemos si estás más despierto por la cafeína o por los sustos.</string>
+    <string name="achievement_leap_year_desc">Has tomado un café en el día que solo aparece cada cuatro años… más exclusivo que tu espresso favorito.</string>
     <string name="achievement_year_streak_title">Leyenda del Café</string>
     <string name="achievement_year_streak_desc">Toma café todos los días durante un año completo.</string>
     <string name="achievement_perfect_detox_title">Detox Perfecto</string>
@@ -125,8 +125,11 @@
     <string name="achievement_last_minute_desc">Siempre al filo del día… como tu sistema nervioso.</string>
     <string name="achievement_explorer_title">Explorador</string>
     <string name="achievement_explorer_desc">Enhorabuena, has probado todo tipo de cafés</string>
-    <string name="achievement_decaf_morning_title">Descafeinado lover</string>
-    <string name="achievement_decaf_morning_desc">Enhorabuena, has probado todo tipo de cafés</string>
+    <string name="achievement_decaf_morning_title">Maestro del Autocontrol</string>
+    <string name="achievement_decaf_morning_desc">Has sobrevivido 7 mañanas seguidas con descafeinado… demostrando que el verdadero poder no siempre necesita cafeína.</string>
+
+    <string name="achievement_groundhog_title">Día de la marmota</string>
+    <string name="achievement_groundhog_desc">Café exactamente a la misma hora durante 30 días. Vives atrapado en un loop temporal.</string>
 
 
 

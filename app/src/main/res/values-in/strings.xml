@@ -85,46 +85,68 @@
     <string name="title_barchart">Konsumsi 12 bulan terakhir</string>
     <string name="label_barchart">cangkir</string>
     <!-- LOGROS -->
-    <string name="achievement_first_coffee_title">Kopi pertama</string>
+    <string name="achievement_first_coffee_title">Kopi Pertama</string>
     <string name="achievement_first_coffee_description">Selamat, kamu sudah mulai minum kopi.</string>
-    <string name="achievement_fifty_coffee_title">50 cafés</string>
-    <string name="achievement_fifty_coffee_description">Eh bien, on dirait que tu es un peu amateur de café.</string>
-    <string name="achievement_hundred_coffee_title">100 cafés</string>
-    <string name="achievement_hundred_coffee_description">Parfait, on peut maintenant considérer que tu aimes vraiment le café.</string>
+
+    <string name="achievement_fifty_coffee_title">50 kopi</string>
+    <string name="achievement_fifty_coffee_description">Yah, sepertinya kamu cukup penggemar kopi.</string>
+
+    <string name="achievement_hundred_coffee_title">100 kopi</string>
+    <string name="achievement_hundred_coffee_description">Sempurna, sekarang kita bisa mengatakan bahwa kamu benar-benar menyukai kopi.</string>
+
     <string name="achievement_fifty_hundred_coffee_title">500 kopi</string>
     <string name="achievement_fifty_hundred_coffee_description">Yah, sepertinya kamu cukup penggemar kopi.</string>
+
     <string name="achievement_666_coffee_title">666 kopi</string>
-    <string name="achievement_666_coffee_description">Kamu telah mencapai 666 kopi… secara resmi iblis telah menambahkanmu ke daftar VIP pelanggan berkafein abadi.</string>
-    <string name="achievement_spaceodyssey_coffee_title">Odisea en el Café</string>
-    <string name="achievement_spaceodyssey_coffee_description">Has alcanzado 2001 cafés… HAL 9000 empieza a preocuparse porque tu nivel de cafeína supera cualquier misión espacial conocida.</string>
-    <string name="achievement_daily_5_coffee_title">5 cafés en un día</string>
-    <string name="achievement_daily_5_coffee_description">Wow, tómatelo con calma. No abuses de la cafeína</string>
-    <string name="achievement_daily_10_coffee_title">Límite legal superado</string>
-    <string name="achievement_daily_10_coffee_description">10 cafés en un día...Tu corazón pidió vacaciones</string>
-    <string name="achievement_christmas_title">Café Navideño</string>
-    <string name="achievement_christmas_desc">Disfruta de un café el día de Navidad.</string>
-    <string name="achievement_new_year_title">Nuevo Año, Nuevo Café</string>
-    <string name="achievement_new_year_desc">Empieza el año con un café</string>
-    <string name="achievement_valentines_title">Café Amoroso</string>
-    <string name="achievement_valentines_desc">Te has tomado un café en San Valentín… porque tu verdadera cita nunca te falla y siempre viene en taza caliente.</string>
-    <string name="achievement_halloween_title">Café o Truco</string>
-    <string name="achievement_halloween_desc">Has tomado café en Halloween… ahora no sabemos si estás más despierto por la cafeína o por los sustos.</string>
-    <string name="achievement_leap_year_title">Edición limitada</string>
-    <string name="achievement_leap_year_desc">Has tomado café en Halloween… ahora no sabemos si estás más despierto por la cafeína o por los sustos.</string>
-    <string name="achievement_year_streak_title">Leyenda del Café</string>
-    <string name="achievement_year_streak_desc">Toma café todos los días durante un año completo.</string>
-    <string name="achievement_perfect_detox_title">Detox Perfecto</string>
-    <string name="achievement_perfect_detox_desc">Un día sin café después de 30 días consecutivos.</string>
-    <string name="achievement_monday_morning_title">Lunes guerrero</string>
-    <string name="achievement_monday_morning_desc">Empieza el lunes con un café antes de las 6 de la mañana</string>
-    <string name="achievement_swiss_watch_title">Reloj Suizo</string>
-    <string name="achievement_swiss_watch_desc">Toma café a la misma hora exacta en 7 días diferentes</string>
-    <string name="achievement_last_minute_title">Al límite</string>
-    <string name="achievement_last_minute_desc">Siempre al filo del día… como tu sistema nervioso.</string>
-    <string name="achievement_explorer_title">Explorador</string>
-    <string name="achievement_explorer_desc">Enhorabuena, has probado todo tipo de cafés</string>
-    <string name="achievement_decaf_morning_title">Descafeinado lover</string>
-    <string name="achievement_decaf_morning_desc">Enhorabuena, has probado todo tipo de cafés</string>
+    <string name="achievement_666_coffee_description">Kamu telah mencapai 666 kopi… secara resmi iblis telah menambahkanmu ke daftar VIP pelanggan dengan kafein abadi.</string>
+
+    <string name="achievement_spaceodyssey_coffee_title">Odisea Kopi</string>
+    <string name="achievement_spaceodyssey_coffee_description">Kamu telah mencapai 2001 kopi… HAL 9000 mulai khawatir karena tingkat kafeinmu melampaui misi luar angkasa mana pun yang pernah ada.</string>
+
+    <string name="achievement_daily_5_coffee_title">5 kopi dalam sehari</string>
+    <string name="achievement_daily_5_coffee_description">Wow, santai saja. Jangan berlebihan dengan kafein.</string>
+
+    <string name="achievement_daily_10_coffee_title">Batas legal terlampaui</string>
+    <string name="achievement_daily_10_coffee_description">10 kopi dalam sehari... Jantungmu minta liburan.</string>
+
+    <string name="achievement_christmas_title">Kopi Natal</string>
+    <string name="achievement_christmas_desc">Nikmati secangkir kopi di Hari Natal.</string>
+
+    <string name="achievement_new_year_title">Tahun Baru, Kopi Baru</string>
+    <string name="achievement_new_year_desc">Mulai tahun dengan secangkir kopi.</string>
+
+    <string name="achievement_valentines_title">Kopi Penuh Cinta</string>
+    <string name="achievement_valentines_desc">Kamu minum kopi di Hari Valentine… karena pasangan sejati tidak pernah mengecewakan dan selalu datang dalam cangkir hangat.</string>
+
+    <string name="achievement_halloween_title">Kopi atau Permen</string>
+    <string name="achievement_halloween_desc">Kamu minum kopi saat Halloween… sekarang kita tidak tahu apakah kamu lebih terjaga karena kafein atau karena ketakutan.</string>
+
+    <string name="achievement_leap_year_title">Edisi Terbatas</string>
+    <string name="achievement_leap_year_desc">Kamu minum kopi di hari yang hanya muncul setiap empat tahun… lebih eksklusif daripada espresso favoritmu.</string>
+
+    <string name="achievement_year_streak_title">Legenda Kopi</string>
+    <string name="achievement_year_streak_desc">Minum kopi setiap hari selama satu tahun penuh.</string>
+
+    <string name="achievement_perfect_detox_title">Detoks Sempurna</string>
+    <string name="achievement_perfect_detox_desc">Satu hari tanpa kopi setelah 30 hari berturut-turut.</string>
+
+    <string name="achievement_monday_morning_title">Pejuang Senin</string>
+    <string name="achievement_monday_morning_desc">Mulai hari Senin dengan kopi sebelum jam 6 pagi.</string>
+
+    <string name="achievement_swiss_watch_title">Jam Swiss</string>
+    <string name="achievement_swiss_watch_desc">Minum kopi pada jam yang persis sama selama 7 hari yang berbeda.</string>
+
+    <string name="achievement_last_minute_title">Di Ujung Batas</string>
+    <string name="achievement_last_minute_desc">Selalu di ujung hari… seperti sistem sarafmu.</string>
+
+    <string name="achievement_explorer_title">Penjelajah</string>
+    <string name="achievement_explorer_desc">Selamat, kamu telah mencoba semua jenis kopi.</string>
+
+    <string name="achievement_decaf_morning_title">Master Pengendalian Diri</string>
+    <string name="achievement_decaf_morning_desc">Kamu berhasil melewati 7 pagi berturut-turut dengan kopi tanpa kafein… membuktikan bahwa kekuatan sejati tidak selalu membutuhkan kafein.</string>
+
+    <string name="achievement_groundhog_title">Hari Marmot</string>
+    <string name="achievement_groundhog_desc">Kopi tepat pada jam yang sama selama 30 hari. Kamu terjebak dalam lingkaran waktu.</string>
 
 
 

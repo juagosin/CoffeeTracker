@@ -234,7 +234,7 @@ sealed class AchievementDefinition(
         threshold = 30,
         titleRes = R.string.achievement_perfect_detox_title,
         descriptionRes = R.string.achievement_perfect_detox_desc,
-        iconRes = R.drawable.ic_achievement_valentine, //TODO change to correct icon
+        iconRes = R.drawable.ic_achievement_perfect_detox,
         checkCondition = { coffees ->
             coffees.map { it.timestamp }.hasRestDayAfterStreak(streakDays = 30,
                 windowDays = 35)
@@ -251,6 +251,21 @@ sealed class AchievementDefinition(
             coffees.map { it.timestamp }.hasSameTimeInDifferentDays(
                 occurrences = 7,
                 exactMinute = true,
+                debug = false
+            )
+        }
+    )
+    data object Groundhog  : AchievementDefinition(
+        id = "groundhog_day",
+        type = AchievementType.PRECISION,
+        threshold = 30,
+        titleRes = R.string.achievement_groundhog_title,
+        descriptionRes = R.string.achievement_groundhog_desc,
+        iconRes = R.drawable.ic_achievement_groundhog,
+        checkCondition = { coffees ->
+            coffees.map { it.timestamp }.hasSameTimeInDifferentDays(
+                occurrences = 30,
+                exactMinute = false,
                 debug = false
             )
         }
@@ -287,6 +302,7 @@ sealed class AchievementDefinition(
             PerfectDetox,
             MondayMorning,
             SwissWatch,
+            Groundhog,
             LastMinute,
             CoffeeExplorer,
             DecafMorning
