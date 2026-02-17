@@ -51,11 +51,11 @@ object AchievementHelpers {
                 this.minute == minute &&
                 isRecent(maxDaysOld)
     }
-    fun LocalDate.isChristmas(maxDaysOld: Int = 3): Boolean {
+    fun LocalDate.isChristmas(maxDaysOld: Int = 2): Boolean {
         return isSpecialDateRecent(25, Month.DECEMBER, maxDaysOld)
     }
 
-    fun LocalDateTime.isNewYear(maxDaysOld: Int = 3): Boolean {
+    fun LocalDateTime.isNewYear(maxDaysOld: Int = 2): Boolean {
         val isCorrectDateTime = dayOfMonth == 1 &&
                 month == Month.JANUARY &&
                 hour < 6
@@ -66,18 +66,18 @@ object AchievementHelpers {
         return isSpecialDateTimeRecent( 23, 59, maxDaysOld)
     }
 
-    fun LocalDate.isValentines(maxDaysOld: Int = 3): Boolean {
+    fun LocalDate.isValentines(maxDaysOld: Int = 2): Boolean {
         return isSpecialDateRecent(14, Month.FEBRUARY, maxDaysOld)
     }
 
-    fun LocalDate.isHalloween(maxDaysOld: Int = 3): Boolean {
+    fun LocalDate.isHalloween(maxDaysOld: Int = 2): Boolean {
         return isSpecialDateRecent(31, Month.OCTOBER, maxDaysOld)
     }
-    fun LocalDate.LeapYear(maxDaysOld: Int = 3): Boolean {
+    fun LocalDate.LeapYear(maxDaysOld: Int = 2): Boolean {
         return isSpecialDateRecent(29, Month.FEBRUARY, maxDaysOld)
     }
 
-    fun LocalDateTime.isMondayMorning(maxDaysOld: Int = 3): Boolean {
+    fun LocalDateTime.isMondayMorning(maxDaysOld: Int = 2): Boolean {
 
         val isCorrectDateTime = dayOfWeek == DayOfWeek.MONDAY && hour < 6
 
