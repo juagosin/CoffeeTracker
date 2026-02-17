@@ -62,6 +62,27 @@ fun CoffeeBottomBar(navController: NavHostController){
             },
 
             )
+        NavigationBarItem(
+            label = {
+                Text(text = stringResource(R.string.screenAchievements_title))
+            },
+            selected = currentRoute == Screens.Achievements.route,
+            onClick = {
+                navController.navigate(Screens.Achievements.route){
+                    popUpTo(navController.graph.findStartDestination().id) {
+                        saveState = true
+                    }
+
+                    launchSingleTop = true
+
+                    restoreState = true
+                }
+            },
+            icon = {
+                Icon( Screens.Achievements.icon, contentDescription = "")
+            },
+
+            )
 
     }
 }

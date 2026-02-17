@@ -5,12 +5,16 @@ import android.content.Context
 import androidx.room.Room
 import com.calleserpis.coffeetracker.data.CoffeeDatabase
 import com.calleserpis.coffeetracker.data.MIGRATION_1_2
+import com.calleserpis.coffeetracker.data.MIGRATION_2_3
 import com.calleserpis.coffeetracker.data.datastore.CoffeePreferencesManager
+import com.calleserpis.coffeetracker.data.notification.NotificationHelper
 import com.calleserpis.coffeetracker.data.repository.CoffeeRepositoryImpl
 import com.calleserpis.coffeetracker.domain.repository.CoffeeRepository
+import com.calleserpis.coffeetracker.domain.use_case.AddAchievementUseCase
 import com.calleserpis.coffeetracker.domain.use_case.AddCoffeeUseCase
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
 import com.calleserpis.coffeetracker.domain.use_case.DeleteCoffeeUseCase
+import com.calleserpis.coffeetracker.domain.use_case.GetAllAchievementsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetAllTimeTypeStatsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetCoffeeByIdUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetCoffeeCount
@@ -21,6 +25,7 @@ import com.calleserpis.coffeetracker.domain.use_case.GetLastNCoffeesUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetLastNDaysStatsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetMoneySpent
 import com.calleserpis.coffeetracker.domain.use_case.SaveLastCoffeePrefUseCase
+import com.calleserpis.coffeetracker.domain.use_case.ShowNotificationUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -41,6 +46,7 @@ object AppModule {
             "coffee_db"
         )
             .addMigrations(MIGRATION_1_2)
+            .addMigrations(MIGRATION_2_3)
             .build()
     }
     @Provides
@@ -55,12 +61,12 @@ object AppModule {
     @Singleton
     fun provideCoffeeRepository(db: CoffeeDatabase,
                                 preferencesManager: CoffeePreferencesManager): CoffeeRepository {
-        return CoffeeRepositoryImpl(db.coffeeDao, preferencesManager)
+        return CoffeeRepositoryImpl(db.coffeeDao,db.achievementDao, preferencesManager)
     }
 
     @Provides
     @Singleton
-    fun provideCoffeeUseCases(repository: CoffeeRepository): CoffeeUseCases {
+    fun provideCoffeeUseCases(repository: CoffeeRepository,notificationHelper: NotificationHelper): CoffeeUseCases {
         return CoffeeUseCases(
             addCoffeeUseCase = AddCoffeeUseCase(repository),
             getCoffeeCount = GetCoffeeCount(repository),
@@ -73,7 +79,10 @@ object AppModule {
             getMoneySpent = GetMoneySpent(repository),
             getCoffeeByIdUseCase = GetCoffeeByIdUseCase(repository),
             getLastCoffeePrefUseCase = GetLastCoffeePrefUseCase(repository),
-            saveLastCoffeePrefUseCase = SaveLastCoffeePrefUseCase(repository)
+            saveLastCoffeePrefUseCase = SaveLastCoffeePrefUseCase(repository),
+            showNotificationUseCase = ShowNotificationUseCase(notificationHelper),
+            getAllAchievementsUseCase = GetAllAchievementsUseCase(repository),
+            addAchievementUseCase = AddAchievementUseCase(repository)
         )
     }
 

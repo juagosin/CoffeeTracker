@@ -30,6 +30,11 @@ class HomeViewModel @Inject constructor(
 
         getTimeLastCoffee()
         getLastNDaysCoffees()
+        // Mostrar notificación
+//        coffeeUseCase.showNotificationUseCase(
+//            title = "¡Café registrado!",
+//            message = "Se ha añadido un cafe a tu registro"
+//        )
     }
 
 

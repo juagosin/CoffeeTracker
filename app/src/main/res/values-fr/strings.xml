@@ -3,6 +3,7 @@
 
     <string name="screenHome_title">Accueil</string>
     <string name="screenStats_title">Statistiques</string>
+    <string name="screenAchievements_title">Achievements</string>
 
     <string name="Main_title">Coffee Tracker</string>
     <string name="fab_description">Ajouter un café</string>
@@ -78,6 +79,71 @@
 
     <string name="title_barchart">Consommation des 12 derniers mois</string>
     <string name="label_barchart">tasses</string>
+    <!-- LOGROS -->
+    <string name="achievement_first_coffee_title">Premier café</string>
+    <string name="achievement_first_coffee_description">Félicitations, vous avez commencé à boire du café.</string>
+
+    <string name="achievement_fifty_coffee_title">50 cafés</string>
+    <string name="achievement_fifty_coffee_description">Eh bien, on dirait que vous êtes plutôt amateur de café.</string>
+
+    <string name="achievement_hundred_coffee_title">100 cafés</string>
+    <string name="achievement_hundred_coffee_description">Parfait, nous pouvons désormais considérer que vous aimez le café.</string>
+
+    <string name="achievement_fifty_hundred_coffee_title">500 cafés</string>
+    <string name="achievement_fifty_hundred_coffee_description">Eh bien, on dirait que vous êtes plutôt amateur de café.</string>
+
+    <string name="achievement_666_coffee_title">666 cafés</string>
+    <string name="achievement_666_coffee_description">Vous avez atteint 666 cafés… officiellement le démon vous a ajouté à sa liste VIP de clients à la caféine éternelle.</string>
+
+    <string name="achievement_spaceodyssey_coffee_title">Odyssée du Café</string>
+    <string name="achievement_spaceodyssey_coffee_description">Vous avez atteint 2001 cafés… HAL 9000 commence à s’inquiéter car votre niveau de caféine dépasse toute mission spatiale connue.</string>
+
+    <string name="achievement_daily_5_coffee_title">5 cafés en une journée</string>
+    <string name="achievement_daily_5_coffee_description">Wow, allez-y doucement. N’abusez pas de la caféine.</string>
+
+    <string name="achievement_daily_10_coffee_title">Limite légale dépassée</string>
+    <string name="achievement_daily_10_coffee_description">10 cafés en une journée... Votre cœur a demandé des vacances.</string>
+
+    <string name="achievement_christmas_title">Café de Noël</string>
+    <string name="achievement_christmas_desc">Savourez un café le jour de Noël.</string>
+
+    <string name="achievement_new_year_title">Nouvelle Année, Nouveau Café</string>
+    <string name="achievement_new_year_desc">Commencez l’année avec un café.</string>
+
+    <string name="achievement_valentines_title">Café Amoureux</string>
+    <string name="achievement_valentines_desc">Vous avez pris un café le jour de la Saint-Valentin… parce que votre véritable rendez-vous ne vous déçoit jamais et arrive toujours dans une tasse chaude.</string>
+
+    <string name="achievement_halloween_title">Café ou Friandise</string>
+    <string name="achievement_halloween_desc">Vous avez pris un café à Halloween… maintenant, on ne sait pas si vous êtes plus réveillé par la caféine ou par les frayeurs.</string>
+
+    <string name="achievement_leap_year_title">Édition Limitée</string>
+    <string name="achievement_leap_year_desc">Vous avez pris un café le jour qui n’apparaît que tous les quatre ans… plus exclusif que votre espresso préféré.</string>
+
+    <string name="achievement_year_streak_title">Légende du Café</string>
+    <string name="achievement_year_streak_desc">Buvez du café tous les jours pendant une année complète.</string>
+
+    <string name="achievement_perfect_detox_title">Détox Parfaite</string>
+    <string name="achievement_perfect_detox_desc">Une journée sans café après 30 jours consécutifs.</string>
+
+    <string name="achievement_monday_morning_title">Guerrier du Lundi</string>
+    <string name="achievement_monday_morning_desc">Commencez le lundi avec un café avant 6 h du matin.</string>
+
+    <string name="achievement_swiss_watch_title">Montre Suisse</string>
+    <string name="achievement_swiss_watch_desc">Buvez un café à la même heure exacte pendant 7 jours différents.</string>
+
+    <string name="achievement_last_minute_title">À la Limite</string>
+    <string name="achievement_last_minute_desc">Toujours au bord de la journée… comme votre système nerveux.</string>
+
+    <string name="achievement_explorer_title">Explorateur</string>
+    <string name="achievement_explorer_desc">Félicitations, vous avez goûté tous les types de café.</string>
+
+    <string name="achievement_decaf_morning_title">Maître de l’Autocontrôle</string>
+    <string name="achievement_decaf_morning_desc">Vous avez survécu à 7 matinées consécutives avec du décaféiné… prouvant que le véritable pouvoir n’a pas toujours besoin de caféine.</string>
+
+    <string name="achievement_groundhog_title">Un jour sans fin</string>
+    <string name="achievement_groundhog_desc">Café exactement à la même heure pendant 30 jours. Vous êtes coincé dans une boucle temporelle.</string>
+
+
 
     <string-array name="coffee_phrases">
         <item>Le café aurait été découvert en Éthiopie vers le IXe siècle, selon la légende du berger Kaldi.</item>

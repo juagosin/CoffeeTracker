@@ -155,7 +155,7 @@ class StatsViewModel @Inject constructor(
     private fun loadLastCoffees() {
         viewModelScope.launch {
             try{
-                coffeeUseCases.getLastNCoffeesUseCase().collect{
+                coffeeUseCases.getLastNCoffeesUseCase(10).collect{
                     _state.update { currentState ->
                         currentState.copy(lastNCoffees = it)
                     }

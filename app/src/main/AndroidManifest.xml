@@ -24,5 +24,6 @@
             </intent-filter>
         </activity>
     </application>
-
+    <!-- Para Android 13+ (API 33+) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 </manifest>

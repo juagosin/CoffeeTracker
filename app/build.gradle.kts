@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -16,8 +17,8 @@ android {
         applicationId = "com.calleserpis.coffeetracker"
         minSdk = 26
         targetSdk = 36
-        versionCode = 14
-        versionName = "3.8.2"
+        versionCode = 16
+        versionName = "4.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -75,4 +76,7 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.extended)
     //Datastore
     implementation(libs.androidx.datastore.preferences)
+    // Firebase BoM
+    implementation(platform(libs.firebase.bom))
+    implementation("com.google.firebase:firebase-analytics")
 }

@@ -4,6 +4,7 @@
 
     <string name="screenHome_title">Home</string>
     <string name="screenStats_title">Statistics</string>
+    <string name="screenAchievements_title">Achievements</string>
 
     <string name="Main_title">Coffee Tracker</string>
     <string name="fab_description">Add coffee</string>
@@ -84,6 +85,70 @@
 
     <string name="title_barchart">Consumption in the last 12 months</string>
     <string name="label_barchart">cups</string>
+    <!-- LOGROS -->
+    <string name="achievement_first_coffee_title">First coffee</string>
+    <string name="achievement_first_coffee_description">Congratulations, you´ve started drinking coffee.</string>
+
+    <string name="achievement_fifty_coffee_title">50 coffees</string>
+    <string name="achievement_fifty_coffee_description">Well, it seems you´re somewhat of a coffee enthusiast.</string>
+
+    <string name="achievement_hundred_coffee_title">100 coffees</string>
+    <string name="achievement_hundred_coffee_description">Perfect, we can now officially say you like coffee.</string>
+
+    <string name="achievement_fifty_hundred_coffee_title">500 coffees</string>
+    <string name="achievement_fifty_hundred_coffee_description">Well, it seems you´re somewhat of a coffee enthusiast.</string>
+
+    <string name="achievement_666_coffee_title">666 coffees</string>
+    <string name="achievement_666_coffee_description">You´ve reached 666 coffees… officially the devil has added you to his VIP list of eternally caffeinated customers.</string>
+
+    <string name="achievement_spaceodyssey_coffee_title">Coffee Odyssey</string>
+    <string name="achievement_spaceodyssey_coffee_description">You´ve reached 2001 coffees… HAL 9000 is starting to worry because your caffeine levels exceed any known space mission.</string>
+
+    <string name="achievement_daily_5_coffee_title">5 coffees in one day</string>
+    <string name="achievement_daily_5_coffee_description">Wow, take it easy. Don’t overdo the caffeine.</string>
+
+    <string name="achievement_daily_10_coffee_title">Legal limit exceeded</string>
+    <string name="achievement_daily_10_coffee_description">10 coffees in one day... Your heart asked for a vacation.</string>
+
+    <string name="achievement_christmas_title">Christmas Coffee</string>
+    <string name="achievement_christmas_desc">Enjoy a coffee on Christmas Day.</string>
+
+    <string name="achievement_new_year_title">New Year, New Coffee</string>
+    <string name="achievement_new_year_desc">Start the year with a coffee.</string>
+
+    <string name="achievement_valentines_title">Love Coffee</string>
+    <string name="achievement_valentines_desc">You had a coffee on Valentine’s Day… because your true date never fails and always comes in a hot cup.</string>
+
+    <string name="achievement_halloween_title">Coffee or Treat</string>
+    <string name="achievement_halloween_desc">You had coffee on Halloween… now we’re not sure if you’re more awake from the caffeine or the scares.</string>
+
+    <string name="achievement_leap_year_title">Limited Edition</string>
+    <string name="achievement_leap_year_desc">You had a coffee on the day that only appears every four years… more exclusive than your favorite espresso.</string>
+
+    <string name="achievement_year_streak_title">Coffee Legend</string>
+    <string name="achievement_year_streak_desc">Drink coffee every day for a full year.</string>
+
+    <string name="achievement_perfect_detox_title">Perfect Detox</string>
+    <string name="achievement_perfect_detox_desc">One day without coffee after 30 consecutive days.</string>
+
+    <string name="achievement_monday_morning_title">Monday Warrior</string>
+    <string name="achievement_monday_morning_desc">Start Monday with a coffee before 6 AM.</string>
+
+    <string name="achievement_swiss_watch_title">Swiss Watch</string>
+    <string name="achievement_swiss_watch_desc">Drink coffee at the exact same time on 7 different days.</string>
+
+    <string name="achievement_last_minute_title">Right on the Edge</string>
+    <string name="achievement_last_minute_desc">Always at the edge of the day… just like your nervous system.</string>
+
+    <string name="achievement_explorer_title">Explorer</string>
+    <string name="achievement_explorer_desc">Congratulations, you´ve tried every type of coffee.</string>
+
+    <string name="achievement_decaf_morning_title">Master of Self-Control</string>
+    <string name="achievement_decaf_morning_desc">You´ve survived 7 consecutive mornings with decaf… proving that true power doesn’t always need caffeine.</string>
+
+    <string name="achievement_groundhog_title">Groundhog Day</string>
+    <string name="achievement_groundhog_desc">Coffee at exactly the same time for 30 days. You´re stuck in a time loop.</string>
+
 
 
     <string-array name="coffee_phrases">

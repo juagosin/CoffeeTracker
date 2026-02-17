@@ -3,6 +3,7 @@
 
     <string name="screenHome_title">Inici</string>
     <string name="screenStats_title">Estadístiques</string>
+    <string name="screenAchievements_title">Logros</string>
 
     <string name="Main_title">Coffee Tracker</string>
     <string name="fab_description">Afegir cafè</string>
@@ -79,6 +80,73 @@
 
     <string name="title_barchart">Consum dels darrers 12 mesos</string>
     <string name="label_barchart">tasses</string>
+
+    <!-- LOGROS -->
+    <string name="achievement_first_coffee_title">Primer cafè</string>
+    <string name="achievement_first_coffee_description">Enhorabona, has començat a prendre cafè.</string>
+
+    <string name="achievement_fifty_coffee_title">50 cafès</string>
+    <string name="achievement_fifty_coffee_description">Bé, sembla que ets una mica aficionat al cafè.</string>
+
+    <string name="achievement_hundred_coffee_title">100 cafès</string>
+    <string name="achievement_hundred_coffee_description">Perfecte, ja podem considerar que t’agrada el cafè.</string>
+
+    <string name="achievement_fifty_hundred_coffee_title">500 cafès</string>
+    <string name="achievement_fifty_hundred_coffee_description">Bé, sembla que ets una mica aficionat al cafè.</string>
+
+    <string name="achievement_666_coffee_title">666 cafès</string>
+    <string name="achievement_666_coffee_description">Has arribat als 666 cafès… oficialment el dimoni t’ha afegit a la seva llista VIP de clients amb cafeïna eterna.</string>
+
+    <string name="achievement_spaceodyssey_coffee_title">Odissea en el Cafè</string>
+    <string name="achievement_spaceodyssey_coffee_description">Has arribat als 2001 cafès… HAL 9000 comença a preocupar-se perquè el teu nivell de cafeïna supera qualsevol missió espacial coneguda.</string>
+
+    <string name="achievement_daily_5_coffee_title">5 cafès en un dia</string>
+    <string name="achievement_daily_5_coffee_description">Uau, pren-t’ho amb calma. No abusis de la cafeïna.</string>
+
+    <string name="achievement_daily_10_coffee_title">Límit legal superat</string>
+    <string name="achievement_daily_10_coffee_description">10 cafès en un dia... El teu cor va demanar vacances.</string>
+
+    <string name="achievement_christmas_title">Cafè de Nadal</string>
+    <string name="achievement_christmas_desc">Gaudeix d’un cafè el dia de Nadal.</string>
+
+    <string name="achievement_new_year_title">Nou Any, Nou Cafè</string>
+    <string name="achievement_new_year_desc">Comença l’any amb un cafè.</string>
+
+    <string name="achievement_valentines_title">Cafè Amorós</string>
+    <string name="achievement_valentines_desc">T’has pres un cafè per Sant Valentí… perquè la teva veritable cita mai falla i sempre ve en tassa calenta.</string>
+
+    <string name="achievement_halloween_title">Cafè o Truc</string>
+    <string name="achievement_halloween_desc">Has pres cafè per Halloween… ara no sabem si estàs més despert per la cafeïna o pels ensurts.</string>
+
+    <string name="achievement_leap_year_title">Edició limitada</string>
+    <string name="achievement_leap_year_desc">Has pres un cafè el dia que només apareix cada quatre anys… més exclusiu que el teu espresso preferit.</string>
+
+    <string name="achievement_year_streak_title">Llegenda del Cafè</string>
+    <string name="achievement_year_streak_desc">Pren cafè cada dia durant un any complet.</string>
+
+    <string name="achievement_perfect_detox_title">Detox Perfecte</string>
+    <string name="achievement_perfect_detox_desc">Un dia sense cafè després de 30 dies consecutius.</string>
+
+    <string name="achievement_monday_morning_title">Dilluns guerrer</string>
+    <string name="achievement_monday_morning_desc">Comença el dilluns amb un cafè abans de les 6 del matí.</string>
+
+    <string name="achievement_swiss_watch_title">Rellotge Suís</string>
+    <string name="achievement_swiss_watch_desc">Pren cafè a la mateixa hora exacta en 7 dies diferents.</string>
+
+    <string name="achievement_last_minute_title">Al límit</string>
+    <string name="achievement_last_minute_desc">Sempre al límit del dia… com el teu sistema nerviós.</string>
+
+    <string name="achievement_explorer_title">Explorador</string>
+    <string name="achievement_explorer_desc">Enhorabona, has provat tot tipus de cafès.</string>
+
+    <string name="achievement_decaf_morning_title">Mestre de l’Autocontrol</string>
+    <string name="achievement_decaf_morning_desc">Has sobreviscut 7 matins seguits amb descafeïnat… demostrant que el veritable poder no sempre necessita cafeïna.</string>
+
+    <string name="achievement_groundhog_title">Dia de la marmota</string>
+    <string name="achievement_groundhog_desc">Cafè exactament a la mateixa hora durant 30 dies. Vius atrapat en un bucle temporal.</string>
+
+
+
 
     <string-array name="coffee_phrases">
         <item>El cafè va ser descobert a Etiòpia al voltant del segle IX, segons la llegenda del pastor Kaldi.</item>

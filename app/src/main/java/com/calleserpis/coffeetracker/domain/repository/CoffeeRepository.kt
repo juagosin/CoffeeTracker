@@ -1,5 +1,6 @@
 package com.calleserpis.coffeetracker.domain.repository
 
+import com.calleserpis.coffeetracker.domain.model.Achievement
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.model.stats.AllTimeTypeStats
 import com.calleserpis.coffeetracker.domain.model.stats.DailyCoffeeStat
@@ -27,6 +28,18 @@ interface CoffeeRepository {
     //Preferences
     fun getLastCoffeePref(): Flow<String?>
     suspend fun saveLastCoffeePref(coffeeType: String)
+
+    //ACHIEVEMENTS
+    fun getAllUnlockedAchievements(): Flow<List<Achievement>>
+
+    suspend fun getAchievementById(id: String): Achievement
+
+    suspend fun insertAchievement(achievement: Achievement)
+
+    suspend fun deleteAchievement(achievementId: String)
+
+    suspend fun deleteAllAchievements()
+
 
 }
 

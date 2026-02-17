@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 class GetLastNCoffeesUseCase(
     private val coffeeRepository: CoffeeRepository
 ) {
-    operator fun invoke(): Flow<List<Coffee>> {
-        return coffeeRepository.getLastNCoffees()
+    operator fun invoke(id: Int): Flow<List<Coffee>> {
+        return coffeeRepository.getLastNCoffees(id)
     }
 }
