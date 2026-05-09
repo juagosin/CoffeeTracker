@@ -24,6 +24,11 @@ class StatsViewModel @Inject constructor(
         loadStats()
 
     }
+    fun refreshSummaryStats() {
+        getCoffeeCount()
+        getMoneySpent()
+    }
+
     fun onEvent(event: StatsEvent) {
         when (event) {
             is StatsEvent.ToggleCoffeeExpansion -> {

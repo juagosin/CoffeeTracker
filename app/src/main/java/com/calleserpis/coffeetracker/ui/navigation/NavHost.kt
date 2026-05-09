@@ -2,6 +2,7 @@ package com.calleserpis.coffeetracker.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -36,7 +37,15 @@ fun CoffeeNavHost(modifier: Modifier = Modifier, navController: NavHostControlle
         composable(Screens.Add.route){
             AddScreen(
                 onCoffeeSaved = {
-                    navController.navigate(Screens.Home.route)
+                    val popped = navController.popBackStack()
+                    if (!popped) {
+                        navController.navigate(Screens.Home.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                inclusive = true
+                            }
+                            launchSingleTop = true
+                        }
+                    }
                 },
             )
         }
@@ -48,7 +57,15 @@ fun CoffeeNavHost(modifier: Modifier = Modifier, navController: NavHostControlle
             val coffeeId = backStackEntry.arguments?.getInt("id") ?: 0
             EditScreen(
                 onCoffeeSaved = {
-                    navController.navigate(Screens.Stats.route)
+                    val popped = navController.popBackStack()
+                    if (!popped) {
+                        navController.navigate(Screens.Home.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                inclusive = true
+                            }
+                            launchSingleTop = true
+                        }
+                    }
                 },
                 coffeeId = coffeeId
             )
