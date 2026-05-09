@@ -4,7 +4,7 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21%2B-blue?logo=kotlin)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-orange?logo=jetpackcompose)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![Status](https://img.shields.io/badge/Version-4.0.0-brightgreen)
+![Status](https://img.shields.io/badge/Version-4.1.0-brightgreen)
 [![Get it on Google Play](https://img.shields.io/badge/Google_Play-Get_it_on-brightgreen?logo)](https://play.google.com/store/apps/details?id=com.calleserpis.coffeetracker)
 [![GitHub](https://img.shields.io/badge/GitHub-juagosin-black?logo=github)](https://github.com/juagosin)
 ---
@@ -77,11 +77,18 @@ Muestra el contador de hoy, el historial reciente de los últimos 7 días y tiem
 
 ## 🧪 Estado del proyecto
 
-🟢 **Versión actual:** `v4.0.0`  
+🟢 **Versión actual:** `v4.1.0`  
 🔧 Proyecto en desarrollo activo.  
 Se planifican futuras actualizaciones para:
 - Refinamiento visual.
 - 📊 Nuevas estadísticas
+
+### Novedades en v4.1.0
+
+- Navegación mejorada al usar botón atrás:
+  - Desde `Home`, el botón atrás cierra la app.
+  - Desde otras pantallas, vuelve a la pantalla anterior (o `Home` como fallback).
+- Corrección en `Stats` para refrescar métricas resumen al volver a la pantalla y evitar mostrar datos vacíos cuando ya existen cafés registrados.
 ---
 
 ## 📝 Licencia
