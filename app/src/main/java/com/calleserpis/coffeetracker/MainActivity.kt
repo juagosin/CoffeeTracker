@@ -8,8 +8,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
+import android.content.Intent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.core.content.ContextCompat
 import com.calleserpis.coffeetracker.ui.navigation.CoffeeScaffold
@@ -19,6 +22,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+
+    private val openAddState = mutableStateOf(false)
+
+    companion object {
+        const val EXTRA_OPEN_ADD = "com.calleserpis.coffeetracker.extra.OPEN_ADD"
+    }
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted: Boolean ->
@@ -32,14 +41,25 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        openAddState.value = intent.getBooleanExtra(EXTRA_OPEN_ADD, false)
         enableEdgeToEdge()
         setContent {
             CoffeeTheme {
-                CoffeeScaffold(modifier = Modifier.fillMaxSize())
-
+                val openAddOnLaunch by openAddState
+                CoffeeScaffold(
+                    modifier = Modifier.fillMaxSize(),
+                    openAddOnLaunch = openAddOnLaunch,
+                    onOpenAddConsumed = { openAddState.value = false }
+                )
             }
         }
         requestNotificationPermission()
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        openAddState.value = intent.getBooleanExtra(EXTRA_OPEN_ADD, false)
     }
     private fun requestNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

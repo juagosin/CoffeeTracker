@@ -267,7 +267,10 @@
         <item>Los cafés cultivados a mayor altitud suelen tener sabores más complejos y una acidez más brillante.</item>
     </string-array>
 
-
-
+    <!-- Home screen widget -->
+    <string name="widget_description">Resumen de cafés y acceso rápido para añadir uno nuevo.</string>
+    <string name="widget_total_caption">Total</string>
+    <string name="widget_today_line">Hoy: %d</string>
+    <string name="widget_tap_to_add">Toca aquí para añadir café</string>
 
 </resources>

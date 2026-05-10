@@ -285,4 +285,9 @@
         <item>Coffees grown at higher altitudes tend to have more complex flavors and brighter acidity.</item>
     </string-array>
 
+    <string name="widget_description">Coffee summary and a quick shortcut to add a new one.</string>
+    <string name="widget_total_caption">Total</string>
+    <string name="widget_today_line">Today: %d</string>
+    <string name="widget_tap_to_add">Tap here to add coffee</string>
+
 </resources>

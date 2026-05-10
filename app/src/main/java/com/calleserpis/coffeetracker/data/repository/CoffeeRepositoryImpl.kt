@@ -41,6 +41,10 @@ class CoffeeRepositoryImpl(
         return coffeeDao.getCoffeeCount()
     }
 
+    override suspend fun getCoffeeCountToday(): Int {
+        return coffeeDao.getCoffeeCountToday()
+    }
+
     override suspend fun getSpentMoney(): Double {
         return coffeeDao.getSpentMoney()
     }

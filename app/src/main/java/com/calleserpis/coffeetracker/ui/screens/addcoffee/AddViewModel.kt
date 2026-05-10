@@ -11,6 +11,7 @@ import com.calleserpis.coffeetracker.domain.model.Achievement
 import com.calleserpis.coffeetracker.domain.model.AchievementDefinition
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
+import com.calleserpis.coffeetracker.ui.widget.CoffeeWidgetUpdater
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
@@ -99,6 +100,7 @@ class AddViewModel @Inject constructor(
                     )
                 )
                 coffeeUseCase.saveLastCoffeePrefUseCase(_state.value.type.name)
+                CoffeeWidgetUpdater.requestUpdate(context)
 
                 checkAchievements()
             }

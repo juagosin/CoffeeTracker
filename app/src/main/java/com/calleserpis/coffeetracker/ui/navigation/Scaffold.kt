@@ -7,6 +7,7 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -20,12 +21,27 @@ import com.calleserpis.coffeetracker.R
 
 @Composable
 fun CoffeeScaffold(
-    modifier: Modifier
+    modifier: Modifier,
+    openAddOnLaunch: Boolean = false,
+    onOpenAddConsumed: () -> Unit = {}
 ) {
     val navController = rememberNavController()
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute: String? = navBackStackEntry?.destination?.route
     val isAddRoute = currentRoute?.contains("add") == true
+
+    LaunchedEffect(openAddOnLaunch) {
+        if (openAddOnLaunch) {
+            navController.navigate(Screens.Add.route) {
+                popUpTo(navController.graph.findStartDestination().id) {
+                    saveState = true
+                }
+                launchSingleTop = true
+                restoreState = true
+            }
+            onOpenAddConsumed()
+        }
+    }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),

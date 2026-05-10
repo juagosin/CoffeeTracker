@@ -1,11 +1,14 @@
 package com.calleserpis.coffeetracker.ui.screens.stats
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
+import com.calleserpis.coffeetracker.ui.widget.CoffeeWidgetUpdater
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -15,6 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class StatsViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val coffeeUseCases: CoffeeUseCases
 ) : ViewModel() {
     private val _state = MutableStateFlow(StatsState())
@@ -111,6 +115,7 @@ class StatsViewModel @Inject constructor(
                 _state.update {
                     it.copy(coffeeToDelete = null)
                 }
+                CoffeeWidgetUpdater.requestUpdate(context)
                 getCoffeeCount()
                 getMoneySpent()
             }catch (e: Exception){
