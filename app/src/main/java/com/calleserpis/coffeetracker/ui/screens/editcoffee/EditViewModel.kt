@@ -1,10 +1,13 @@
 package com.calleserpis.coffeetracker.ui.screens.editcoffee
 
+import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
+import com.calleserpis.coffeetracker.ui.widget.CoffeeWidgetUpdater
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,6 +17,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class EditViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val coffeeUseCase: CoffeeUseCases
 ) : ViewModel() {
     private val _state = MutableStateFlow(EditCoffeeState())
@@ -66,6 +70,7 @@ class EditViewModel @Inject constructor(
                         price = _state.value.price.takeIf { it > 0.0 } ?: 0.0,
                     )
                 )
+                CoffeeWidgetUpdater.requestUpdate(context)
             }
             _state.update{ currentState ->
                 currentState.copy(isSaving = false, isSuccess = true)

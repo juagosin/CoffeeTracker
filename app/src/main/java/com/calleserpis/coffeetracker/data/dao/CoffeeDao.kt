@@ -21,6 +21,15 @@ interface CoffeeDao {
     @Query("SELECT COUNT(id) FROM coffee_table")
     suspend fun getCoffeeCount(): Int
 
+    @Query(
+        """
+        SELECT COUNT(id) FROM coffee_table
+        WHERE date(datetime(timestamp / 1000, 'unixepoch', 'localtime'))
+            = date('now', 'localtime')
+        """
+    )
+    suspend fun getCoffeeCountToday(): Int
+
 
     @Query("SELECT SUM(price) FROM coffee_table")
     suspend fun getSpentMoney(): Double
