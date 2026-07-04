@@ -19,6 +19,7 @@ foundation = "1.9.4"
 datastore = "1.1.1"
 firebase-bom = "34.7.0"
 google-services = "4.4.4"
+play-services-auth = "21.3.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -49,6 +50,7 @@ androidx-datastore-preferences = { group = "androidx.datastore", name = "datasto
 
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "play-services-auth" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

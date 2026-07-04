@@ -273,4 +273,17 @@
     <string name="widget_today_line">Hoy: %d</string>
     <string name="widget_tap_to_add">Toca aquí para añadir café</string>
 
+    <!-- Cuenta / backup en la nube -->
+    <string name="account_title">Copia de seguridad</string>
+    <string name="account_anonymous_description">Tus cafés se guardan en este móvil y se sincronizan en la nube de forma anónima. Vincula tu cuenta de Google para recuperarlos si cambias de teléfono.</string>
+    <string name="account_linked_description">Cuenta vinculada. Tus datos se sincronizan con la nube y puedes recuperarlos en otro móvil iniciando sesión con la misma cuenta de Google.</string>
+    <string name="account_sign_in_google">Vincular con Google</string>
+    <string name="account_sync_success">Cuenta vinculada y datos sincronizados correctamente.</string>
+    <string name="account_privacy_note">Solo usamos tu cuenta para identificar tu copia de seguridad. Las estadísticas globales de la app no guardan datos personales.</string>
+    <string name="account_error_developer">No se pudo vincular Google (configuración). Comprueba en Firebase la huella SHA-1 de Play y que el inicio de sesión con Google esté activado.</string>
+    <string name="account_error_network">Sin conexión. Comprueba la red e inténtalo de nuevo.</string>
+    <string name="account_error_internal">Error interno de Google. Inténtalo más tarde.</string>
+    <string name="account_error_canceled">Inicio de sesión cancelado.</string>
+    <string name="account_error_generic">No se pudo vincular Google (código %1$d).</string>
+
 </resources>

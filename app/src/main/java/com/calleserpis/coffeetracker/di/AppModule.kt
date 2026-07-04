@@ -4,8 +4,11 @@ import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import com.calleserpis.coffeetracker.data.CoffeeDatabase
+import com.calleserpis.coffeetracker.data.dao.AchievementDao
+import com.calleserpis.coffeetracker.data.dao.CoffeeDao
 import com.calleserpis.coffeetracker.data.MIGRATION_1_2
 import com.calleserpis.coffeetracker.data.MIGRATION_2_3
+import com.calleserpis.coffeetracker.data.MIGRATION_3_4
 import com.calleserpis.coffeetracker.data.datastore.CoffeePreferencesManager
 import com.calleserpis.coffeetracker.data.notification.NotificationHelper
 import com.calleserpis.coffeetracker.data.repository.CoffeeRepositoryImpl
@@ -47,8 +50,16 @@ object AppModule {
         )
             .addMigrations(MIGRATION_1_2)
             .addMigrations(MIGRATION_2_3)
+            .addMigrations(MIGRATION_3_4)
             .build()
     }
+
+    @Provides
+    fun provideCoffeeDao(db: CoffeeDatabase): CoffeeDao = db.coffeeDao
+
+    @Provides
+    fun provideAchievementDao(db: CoffeeDatabase): AchievementDao = db.achievementDao
+
     @Provides
     @Singleton
     fun provideCoffeePreferencesManager(
@@ -59,10 +70,9 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCoffeeRepository(db: CoffeeDatabase,
-                                preferencesManager: CoffeePreferencesManager): CoffeeRepository {
-        return CoffeeRepositoryImpl(db.coffeeDao,db.achievementDao, preferencesManager)
-    }
+    fun provideCoffeeRepository(
+        impl: CoffeeRepositoryImpl
+    ): CoffeeRepository = impl
 
     @Provides
     @Singleton

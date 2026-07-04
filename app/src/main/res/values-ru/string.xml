@@ -296,5 +296,17 @@
     <string name="widget_today_line">Сегодня: %d</string>
     <string name="widget_tap_to_add">Нажмите здесь, чтобы добавить кофе</string>
 
+    <string name="account_title">Облачная резервная копия</string>
+    <string name="account_anonymous_description">Ваши записи о кофе сохраняются на этом устройстве и анонимно синхронизируются с облаком. Привяжите аккаунт Google, чтобы восстановить их при смене телефона.</string>
+    <string name="account_linked_description">Аккаунт привязан. Ваши данные синхронизируются с облаком, и вы можете восстановить их на другом устройстве, войдя в тот же аккаунт Google.</string>
+    <string name="account_sign_in_google">Привязать Google</string>
+    <string name="account_sync_success">Аккаунт привязан, данные успешно синхронизированы.</string>
+    <string name="account_privacy_note">Мы используем ваш аккаунт только для идентификации резервной копии. Глобальная статистика приложения не хранит персональные данные.</string>
+    <string name="account_error_developer">Не удалось привязать Google (настройка). Проверьте отпечаток SHA-1 Play в Firebase и включённый вход через Google.</string>
+    <string name="account_error_network">Нет подключения. Проверьте сеть и повторите попытку.</string>
+    <string name="account_error_internal">Внутренняя ошибка Google. Попробуйте позже.</string>
+    <string name="account_error_canceled">Вход отменён.</string>
+    <string name="account_error_generic">Не удалось привязать Google (код %1$d).</string>
+
 </resources>
 

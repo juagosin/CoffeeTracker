@@ -12,7 +12,7 @@ import com.calleserpis.coffeetracker.data.entity.CoffeeEntity
         CoffeeEntity::class,
         AchievementEntity::class
                ],
-    version = 3,
+    version = 4,
     exportSchema = true // mantiene el histórico de los esquemas
 )
 abstract class CoffeeDatabase : RoomDatabase() {

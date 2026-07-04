@@ -290,4 +290,16 @@
     <string name="widget_today_line">Today: %d</string>
     <string name="widget_tap_to_add">Tap here to add coffee</string>
 
+    <string name="account_title">Cloud backup</string>
+    <string name="account_anonymous_description">Your coffees are saved on this device and synced anonymously to the cloud. Link your Google account to restore them if you change phones.</string>
+    <string name="account_linked_description">Account linked. Your data syncs to the cloud and you can restore it on another device by signing in with the same Google account.</string>
+    <string name="account_sign_in_google">Link with Google</string>
+    <string name="account_sync_success">Account linked and data synced successfully.</string>
+    <string name="account_privacy_note">We only use your account to identify your backup. Global app statistics do not store personal data.</string>
+    <string name="account_error_developer">Could not link Google (configuration). Check the Play SHA-1 fingerprint in Firebase and that Google sign-in is enabled.</string>
+    <string name="account_error_network">No connection. Check your network and try again.</string>
+    <string name="account_error_internal">Internal Google error. Try again later.</string>
+    <string name="account_error_canceled">Sign-in canceled.</string>
+    <string name="account_error_generic">Could not link Google (code %1$d).</string>
+
 </resources>

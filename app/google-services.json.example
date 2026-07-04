@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "REEMPLAZAR",
+    "project_id": "tu-proyecto-firebase",
+    "storage_bucket": "tu-proyecto-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:REEMPLAZAR:android:REEMPLAZAR",
+        "android_client_info": {
+          "package_name": "YOUR_APPLICATION_ID"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "REEMPLAZAR"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
