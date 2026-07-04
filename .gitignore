@@ -16,21 +16,40 @@ captures/
 *.apk
 output-metadata.json
 
-# IntelliJ
+# IntelliJ / Android Studio
 *.iml
 .idea/
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
 
-# Keystore files
+# Keystore and signing (never commit)
 *.jks
 *.keystore
+keystore.properties
+signing.properties
+secrets.properties
 
-# Google Services (e.g. APIs or Firebase)
+# Firebase / Google (credentials and local project config)
+**/google-services.json
 google-services.json
+firebase-debug.log
+firebase-debug.*.log
+.firebaserc
+firebase.json
+**/serviceAccount*.json
+**/service-account*.json
+**/firebase-adminsdk*.json
+
+# Environment and secrets
+.env
+.env.*
+*.pem
 
 # Android Profiling
 *.hprof
 /app/release
 
+# OS
+.DS_Store
+Thumbs.db

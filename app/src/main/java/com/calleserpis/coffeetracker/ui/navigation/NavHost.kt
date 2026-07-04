@@ -8,6 +8,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.calleserpis.coffeetracker.ui.screens.account.AccountScreen
 import com.calleserpis.coffeetracker.ui.screens.achievements.AchievementsScreen
 import com.calleserpis.coffeetracker.ui.screens.addcoffee.AddScreen
 import com.calleserpis.coffeetracker.ui.screens.addcoffee.EditScreen
@@ -72,6 +73,9 @@ fun CoffeeNavHost(modifier: Modifier = Modifier, navController: NavHostControlle
         }
         composable(Screens.Achievements.route){
             AchievementsScreen()
+        }
+        composable(Screens.Account.route) {
+            AccountScreen()
         }
     }
 

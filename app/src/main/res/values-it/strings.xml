@@ -284,4 +284,16 @@
         <item>I caffè coltivati ad alta quota hanno generalmente sapori più complessi e una maggiore acidità.</item>
     </string-array>
 
+    <string name="account_title">Backup cloud</string>
+    <string name="account_anonymous_description">I tuoi caffè sono salvati su questo dispositivo e sincronizzati anonimamente nel cloud. Collega il tuo account Google per recuperarli se cambi telefono.</string>
+    <string name="account_linked_description">Account collegato. I tuoi dati si sincronizzano nel cloud e puoi recuperarli su un altro dispositivo accedendo con lo stesso account Google.</string>
+    <string name="account_sign_in_google">Collega con Google</string>
+    <string name="account_sync_success">Account collegato e dati sincronizzati correttamente.</string>
+    <string name="account_privacy_note">Usiamo il tuo account solo per identificare il backup. Le statistiche globali dell\'app non memorizzano dati personali.</string>
+    <string name="account_error_developer">Impossibile collegare Google (configurazione). Controlla l\'impronta SHA-1 Play in Firebase e che l\'accesso Google sia attivo.</string>
+    <string name="account_error_network">Nessuna connessione. Controlla la rete e riprova.</string>
+    <string name="account_error_internal">Errore interno di Google. Riprova più tardi.</string>
+    <string name="account_error_canceled">Accesso annullato.</string>
+    <string name="account_error_generic">Impossibile collegare Google (codice %1$d).</string>
+
 </resources>

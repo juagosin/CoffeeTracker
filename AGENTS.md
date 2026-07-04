@@ -25,7 +25,8 @@ El proyecto sigue una estructura de **Clean Architecture** dividida en capas par
 
 *   **Language**: Kotlin (100%)
 *   **Dependency Injection**: Hilt (Dagger)
-*   **Database**: Room
+*   **Database**: Room (local, fuente inmediata de la UI)
+*   **Cloud**: Firebase Auth + Firestore (sync y backup; ver `data/firebase`, `data/sync`)
 *   **Preferences**: Jetpack DataStore
 *   **UI Framework**: Jetpack Compose
 *   **Asynchronous Flow**: Kotlin Coroutines & Flow

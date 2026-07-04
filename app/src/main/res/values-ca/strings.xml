@@ -281,4 +281,16 @@
         <item>El cafè torrat allibera diòxid de carboni durant diversos dies, per això ha de reposar abans d’envasar-se.</item>
         <item>Els cafès cultivats a més altitud solen tenir sabors més complexos i una acidesa més brillant.</item>
     </string-array>
+
+    <string name="account_title">Còpia de seguretat</string>
+    <string name="account_anonymous_description">Els teus cafès es guarden en aquest mòbil i se sincronitzen al núvol de forma anònima. Vincula el teu compte de Google per recuperar-los si canvies de telèfon.</string>
+    <string name="account_linked_description">Compte vinculat. Les teves dades se sincronitzen amb el núvol i pots recuperar-les en un altre mòbil iniciant sessió amb el mateix compte de Google.</string>
+    <string name="account_sign_in_google">Vincular amb Google</string>
+    <string name="account_sync_success">Compte vinculat i dades sincronitzades correctament.</string>
+    <string name="account_privacy_note">Només utilitzem el teu compte per identificar la còpia de seguretat. Les estadístiques globals de l\'app no guarden dades personals.</string>
+    <string name="account_error_developer">No s\'ha pogut vincular Google (configuració). Comprova la petjada SHA-1 de Play a Firebase i que l\'inici de sessió amb Google estigui actiu.</string>
+    <string name="account_error_network">Sense connexió. Comprova la xarxa i torna-ho a provar.</string>
+    <string name="account_error_internal">Error intern de Google. Torna-ho a provar més tard.</string>
+    <string name="account_error_canceled">Inici de sessió cancel·lat.</string>
+    <string name="account_error_generic">No s\'ha pogut vincular Google (codi %1$d).</string>
 </resources>

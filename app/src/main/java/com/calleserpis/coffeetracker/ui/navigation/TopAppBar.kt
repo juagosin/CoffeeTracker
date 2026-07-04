@@ -3,6 +3,7 @@ package com.calleserpis.coffeetracker.ui.navigation
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Cloud
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -25,6 +26,8 @@ fun CoffeeTopAppBar(navController: NavHostController) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute: String? = navBackStackEntry?.destination?.route
     val isAddRoute = currentRoute?.contains("add") == true
+    val isAccountRoute = currentRoute == Screens.Account.route
+    val showBack = isAddRoute || isAccountRoute
     TopAppBar(
         title = {
             Text(
@@ -38,13 +41,24 @@ fun CoffeeTopAppBar(navController: NavHostController) {
             titleContentColor = MaterialTheme.colorScheme.onSurface
         ),
         navigationIcon = {
-            if (isAddRoute) {
+            if (showBack) {
                 IconButton(onClick = {
                     navController.popBackStack()
                 }) {
                     Icon(
                         Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary
+                    )
+                }
+            }
+        },
+        actions = {
+            if (!showBack) {
+                IconButton(onClick = { navController.navigate(Screens.Account.route) }) {
+                    Icon(
+                        Icons.Default.Cloud,
+                        contentDescription = stringResource(R.string.account_title),
                         tint = MaterialTheme.colorScheme.primary
                     )
                 }

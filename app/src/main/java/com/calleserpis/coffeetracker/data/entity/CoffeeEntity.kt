@@ -2,6 +2,7 @@ package com.calleserpis.coffeetracker.data.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.calleserpis.coffeetracker.data.sync.SyncStatus
 
 @Entity(tableName = "coffee_table")
 data class CoffeeEntity(
@@ -9,5 +10,8 @@ data class CoffeeEntity(
     val coffeeType: String,
     val timestamp: Long = System.currentTimeMillis(),
     val notes: String? = null,
-    val price: Double? = null
+    val price: Double? = null,
+    val remoteId: String? = null,
+    val syncStatus: String = SyncStatus.SYNCED.name,
+    val updatedAt: Long = System.currentTimeMillis()
 )

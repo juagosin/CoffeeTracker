@@ -284,6 +284,16 @@
         <item>Kopi yang ditanam di ketinggian lebih tinggi biasanya memiliki rasa lebih kompleks dan keasaman yang lebih cerah.</item>
     </string-array>
 
-
+    <string name="account_title">Cadangan cloud</string>
+    <string name="account_anonymous_description">Kopi Anda disimpan di perangkat ini dan disinkronkan secara anonim ke cloud. Tautkan akun Google Anda untuk memulihkannya jika Anda ganti ponsel.</string>
+    <string name="account_linked_description">Akun tertaut. Data Anda disinkronkan ke cloud dan dapat dipulihkan di perangkat lain dengan masuk menggunakan akun Google yang sama.</string>
+    <string name="account_sign_in_google">Tautkan dengan Google</string>
+    <string name="account_sync_success">Akun tertaut dan data berhasil disinkronkan.</string>
+    <string name="account_privacy_note">Kami hanya menggunakan akun Anda untuk mengidentifikasi cadangan. Statistik global aplikasi tidak menyimpan data pribadi.</string>
+    <string name="account_error_developer">Tidak dapat menautkan Google (konfigurasi). Periksa sidik jari SHA-1 Play di Firebase dan pastikan masuk Google aktif.</string>
+    <string name="account_error_network">Tidak ada koneksi. Periksa jaringan dan coba lagi.</string>
+    <string name="account_error_internal">Kesalahan internal Google. Coba lagi nanti.</string>
+    <string name="account_error_canceled">Masuk dibatalkan.</string>
+    <string name="account_error_generic">Tidak dapat menautkan Google (kode %1$d).</string>
 
 </resources>

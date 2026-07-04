@@ -279,4 +279,16 @@
         <item>Les cafés cultivés à haute altitude ont généralement des saveurs plus complexes et une acidité plus marquée.</item>
     </string-array>
 
+    <string name="account_title">Sauvegarde cloud</string>
+    <string name="account_anonymous_description">Vos cafés sont enregistrés sur cet appareil et synchronisés anonymement dans le cloud. Associez votre compte Google pour les récupérer si vous changez de téléphone.</string>
+    <string name="account_linked_description">Compte associé. Vos données sont synchronisées dans le cloud et vous pouvez les restaurer sur un autre appareil en vous connectant avec le même compte Google.</string>
+    <string name="account_sign_in_google">Associer avec Google</string>
+    <string name="account_sync_success">Compte associé et données synchronisées avec succès.</string>
+    <string name="account_privacy_note">Nous utilisons votre compte uniquement pour identifier votre sauvegarde. Les statistiques globales de l\'application ne stockent pas de données personnelles.</string>
+    <string name="account_error_developer">Impossible d\'associer Google (configuration). Vérifiez l\'empreinte SHA-1 Play dans Firebase et que la connexion Google est activée.</string>
+    <string name="account_error_network">Pas de connexion. Vérifiez le réseau et réessayez.</string>
+    <string name="account_error_internal">Erreur interne Google. Réessayez plus tard.</string>
+    <string name="account_error_canceled">Connexion annulée.</string>
+    <string name="account_error_generic">Impossible d\'associer Google (code %1$d).</string>
+
 </resources>

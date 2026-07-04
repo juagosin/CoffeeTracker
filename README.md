@@ -35,6 +35,9 @@ Muestra el **total de cafés** registrados y los **de hoy**; al tocar puedes abr
 
 - 🗄️ **Persistencia local con Room Database**
 
+- ☁️ **Copia de seguridad en la nube (opcional)**  
+  Sincronización con Firebase (Firestore + Auth anónima/Google), modo offline-first: Room sigue siendo la fuente inmediata en el dispositivo.
+
 - 🎨 **Interfaz construida en Jetpack Compose (Material 3)**
 
 ---
@@ -48,6 +51,7 @@ Muestra el **total de cafés** registrados y los **de hoy**; al tocar puedes abr
 | **Arquitectura** | MVVM |
 | **DI Framework** | [Dagger Hilt](https://dagger.dev/hilt/) |
 | **Base de datos local** | [Room](https://developer.android.com/training/data-storage/room) |
+| **Backend en la nube** | [Firebase](https://firebase.google.com/) (Auth, Firestore, Analytics) |
 | **Navegación** | [Navigation Compose](https://developer.android.com/jetpack/compose/navigation) |
 | **Asincronía** | Coroutines + Flow |
 | **Estilo visual** | Material Design 3 |
@@ -76,6 +80,21 @@ Muestra el **total de cafés** registrados y los **de hoy**; al tocar puedes abr
 
 ¡Descarga Coffee Tracker ahora y empieza a trackear tus cafés! ☕
 
+
+---
+
+## ⚙️ Configuración local (desarrolladores)
+
+Para compilar y probar la sincronización en la nube necesitas tu propio proyecto en [Firebase Console](https://console.firebase.google.com/) y el fichero de configuración local (no versionado).
+
+1. Crea una app Android cuyo **package name** coincida con `applicationId` en `app/build.gradle.kts`.
+2. Descarga `google-services.json` y colócalo en `app/google-services.json` (este archivo está en `.gitignore` y **no debe subirse** al repositorio).
+3. En Firebase, activa **Authentication** (Anónimo y Google), **Firestore** y publica reglas de seguridad acordes a tu despliegue (plantilla de referencia en `firebase/firestore.rules`).
+4. Para **Google Sign-In**, registra las huellas SHA-1 de debug y de release en la configuración de la app Android en Firebase.
+
+Plantilla de ejemplo (sin claves reales): `app/google-services.json.example`.
+
+> Cada colaborador o fork usa su propio proyecto Firebase; no se incluyen credenciales en el repositorio público.
 
 ---
 

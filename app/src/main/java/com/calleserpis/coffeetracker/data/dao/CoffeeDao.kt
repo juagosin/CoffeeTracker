@@ -40,6 +40,28 @@ interface CoffeeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCoffee(coffee: CoffeeEntity)
 
+    @Query("SELECT * FROM coffee_table WHERE id = :id")
+    suspend fun getCoffeeByIdOnce(id: Int): CoffeeEntity?
+
+    @Query("SELECT * FROM coffee_table WHERE remoteId = :remoteId LIMIT 1")
+    suspend fun getCoffeeByRemoteId(remoteId: String): CoffeeEntity?
+
+    @Query("SELECT * FROM coffee_table WHERE syncStatus != 'SYNCED'")
+    suspend fun getPendingSyncCoffees(): List<CoffeeEntity>
+
+    @Query("SELECT * FROM coffee_table")
+    suspend fun getAllCoffeesOnce(): List<CoffeeEntity>
+
+    @Query(
+        "UPDATE coffee_table SET remoteId = :remoteId, syncStatus = :syncStatus, updatedAt = :updatedAt WHERE id = :id"
+    )
+    suspend fun updateSyncMetadata(
+        id: Int,
+        remoteId: String?,
+        syncStatus: String,
+        updatedAt: Long
+    )
+
     // Consultas para estadísticas:
     @Query("""
         WITH RECURSIVE days(day, remaining) AS (

@@ -39,4 +39,10 @@ sealed class Screens {
         override val route: String = "achievements"
         override val icon: ImageVector = Icons.Filled.Assistant
     }
+
+    @Serializable
+    data object Account : Screens() {
+        override val route: String = "account"
+        override val icon: ImageVector = Icons.Filled.Assistant
+    }
 }
