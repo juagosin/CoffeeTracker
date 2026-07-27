@@ -100,11 +100,16 @@ Plantilla de ejemplo (sin claves reales): `app/google-services.json.example`.
 
 ## 🧪 Estado del proyecto
 
-🟢 **Versión actual:** `v4.2.1`  
+🟢 **Versión actual:** `v4.4.0`  
 🔧 Proyecto en desarrollo activo.  
 Se planifican futuras actualizaciones para:
 - Refinamiento visual.
 - 📊 Nuevas estadísticas
+
+### Novedades en v4.4.0
+
+- **Sincronización en la nube:** integración con Firebase Auth + Firestore para sincronizar cafés y logros entre dispositivos.
+- **Actualización del toolchain:** subida de Android Gradle Plugin y Gradle Wrapper para mantener el proyecto al día.
 
 ### Novedades en v4.2.1
 
