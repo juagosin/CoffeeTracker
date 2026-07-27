@@ -31,7 +31,7 @@ class CoffeeRepositoryImpl @Inject constructor(
 ) : CoffeeRepository {
 
     override fun getLastNCoffees(n: Int): Flow<List<Coffee>> {
-        return coffeeDao.getLastNCoffees().map { it.toDomain() }
+        return coffeeDao.getLastNCoffees(n).map { it.toDomain() }
     }
 
     override fun getLastCoffee(): Flow<Coffee?> {
