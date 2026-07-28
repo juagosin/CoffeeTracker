@@ -1,9 +1,7 @@
 package com.calleserpis.coffeetracker.ui.screens.addcoffee
 
-import android.R
 import android.content.Context
 import android.util.Log
-import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.calleserpis.coffeetracker.data.entity.AchievementEntity
@@ -21,7 +19,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import okio.`-DeprecatedOkio`.source
 import javax.inject.Inject
 
 @HiltViewModel
@@ -95,7 +92,7 @@ class AddViewModel @Inject constructor(
                         id = 0,
                         type = _state.value.type,
                         timestamp = _state.value.date,
-                        notes = _state.value.notes,
+                        notes = _state.value.notes.ifBlank { null },
                         price = _state.value.price.takeIf { it > 0.0 } ?: 0.0
                     )
                 )

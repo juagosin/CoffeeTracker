@@ -12,7 +12,6 @@ import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AttachMoney
 import androidx.compose.material.icons.filled.ShoppingCartCheckout
 import androidx.compose.material3.Button
 import androidx.compose.material3.CardDefaults
@@ -152,6 +151,26 @@ fun EditScreen(
                     modifier = Modifier.fillMaxWidth(),
 
                     )
+                Text(
+                    text = stringResource(R.string.label_notes),
+                    style = MaterialTheme.typography.titleLarge,
+                    color = colorScheme.primary,
+                    modifier = Modifier.padding(top = 8.dp)
+                )
+                OutlinedTextField(
+                    value = state.notes,
+                    onValueChange = {
+                        viewModel.onEvent(EditEvent.OnNotesChanged(it))
+                    },
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedContainerColor = colorScheme.surfaceContainerLowest,
+                        unfocusedContainerColor = colorScheme.surfaceContainerLowest,
+                        focusedTextColor = colorScheme.onSurface,
+                        unfocusedTextColor = colorScheme.onSurface,
+                    ),
+                    modifier = Modifier.fillMaxWidth(),
+                    minLines = 2,
+                )
                 Text(
                     text = stringResource(R.string.label_price),
                     style = MaterialTheme.typography.titleLarge,
