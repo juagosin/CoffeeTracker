@@ -33,6 +33,11 @@ class EditViewModel @Inject constructor(
                     currentState.copy(date = event.value)
                 }
             }
+            is EditEvent.OnNotesChanged -> {
+                _state.update{ currentState ->
+                    currentState.copy(notes = event.value)
+                }
+            }
             is EditEvent.OnPriceChanged -> {
                 _state.update{ currentState ->
                     currentState.copy(
@@ -65,7 +70,7 @@ class EditViewModel @Inject constructor(
                     Coffee(
                         id = _state.value.coffee?.id ?: 0,
                         type = _state.value.type,
-                        notes = "",
+                        notes = _state.value.notes.ifBlank { null },
                         timestamp = state.value.date,
                         price = _state.value.price.takeIf { it > 0.0 } ?: 0.0,
                     )
@@ -102,6 +107,7 @@ class EditViewModel @Inject constructor(
                                 coffee = coffee,
                                 type = coffee.type,
                                 date = coffee.timestamp,
+                                notes = coffee.notes.orEmpty(),
                                 price = coffee.price?.toDouble() ?: 0.0,
                                 priceText = coffee.price.toString(),
 

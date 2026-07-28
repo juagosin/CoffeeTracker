@@ -8,6 +8,7 @@ data class EditCoffeeState (
     val coffee: Coffee? = null,
     val type: CoffeeType = CoffeeType.entries.first(),
     val date: Long = System.currentTimeMillis(),
+    val notes: String = "",
     val price: Double = 0.0,
     val priceText: String = "",
 

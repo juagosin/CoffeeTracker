@@ -213,6 +213,20 @@ fun CoffeeListItem(
             modifier = Modifier.padding(start = 14.dp),
             style = MaterialTheme.typography.bodySmall,
         )
+        if (!coffee.notes.isNullOrBlank()) {
+            Text(
+                text = stringResource(R.string.label_notes),
+                style = MaterialTheme.typography.labelSmall,
+                color = colorScheme.primary,
+                modifier = Modifier
+                    .padding(start = 8.dp)
+                    .background(
+                        color = colorScheme.primaryContainer,
+                        shape = RoundedCornerShape(12.dp)
+                    )
+                    .padding(horizontal = 8.dp, vertical = 4.dp)
+            )
+        }
         Spacer(modifier = Modifier.weight(1f))
 
 
@@ -256,6 +270,14 @@ fun CoffeeExpanded(
             .background(colorScheme.surfaceContainerLow)
             .padding(horizontal = 16.dp)
     ) {
+        if (!coffee.notes.isNullOrBlank()) {
+            Text(
+                text = stringResource(R.string.label_notes) + ": " + coffee.notes,
+                style = MaterialTheme.typography.bodySmall,
+                color = colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 12.dp)
+            )
+        }
         Row(
             modifier = modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
