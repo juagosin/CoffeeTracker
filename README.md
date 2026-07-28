@@ -4,7 +4,7 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21%2B-blue?logo=kotlin)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-orange?logo=jetpackcompose)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![Status](https://img.shields.io/badge/Version-4.2.1-brightgreen)
+![Status](https://img.shields.io/badge/Version-4.5.0-brightgreen)
 [![Get it on Google Play](https://img.shields.io/badge/Google_Play-Get_it_on-brightgreen?logo)](https://play.google.com/store/apps/details?id=com.calleserpis.coffeetracker)
 [![GitHub](https://img.shields.io/badge/GitHub-juagosin-black?logo=github)](https://github.com/juagosin)
 ---
@@ -100,16 +100,21 @@ Plantilla de ejemplo (sin claves reales): `app/google-services.json.example`.
 
 ## 🧪 Estado del proyecto
 
-🟢 **Versión actual:** `v4.4.0`  
+🟢 **Versión actual:** `v4.5.0`  
 🔧 Proyecto en desarrollo activo.  
 Se planifican futuras actualizaciones para:
 - Refinamiento visual.
 - 📊 Nuevas estadísticas
 
+### Novedades en v4.5.0
+
+- **Notas en los cafés:** ahora se pueden escribir y editar notas al registrar un café.
+- **README alineado con la release actual:** versión de app actualizada a `v4.5.0`.
+
 ### Novedades en v4.4.0
 
 - **Sincronización en la nube:** integración con Firebase Auth + Firestore para sincronizar cafés y logros entre dispositivos.
-- **Actualización del toolchain:** subida de Android Gradle Plugin y Gradle Wrapper para mantener el proyecto al día.
+- **Actualización del toolchain:** subida de Android Gradle Plugin y Gradle Wrapper (`Gradle 9.5.0`) para mantener el proyecto al día.
 
 ### Novedades en v4.2.1
 
