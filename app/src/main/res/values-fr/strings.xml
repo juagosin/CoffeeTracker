@@ -279,6 +279,11 @@
         <item>Les cafés cultivés à haute altitude ont généralement des saveurs plus complexes et une acidité plus marquée.</item>
     </string-array>
 
+    <string name="widget_description">Résumé des cafés et raccourci rapide pour en ajouter un nouveau.</string>
+    <string name="widget_total_caption">Total</string>
+    <string name="widget_today_line">Aujourd’hui : %d</string>
+    <string name="widget_tap_to_add">Touchez ici pour ajouter un café</string>
+
     <string name="account_title">Sauvegarde cloud</string>
     <string name="account_anonymous_description">Vos cafés sont enregistrés sur cet appareil et synchronisés anonymement dans le cloud. Associez votre compte Google pour les récupérer si vous changez de téléphone.</string>
     <string name="account_linked_description">Compte associé. Vos données sont synchronisées dans le cloud et vous pouvez les restaurer sur un autre appareil en vous connectant avec le même compte Google.</string>

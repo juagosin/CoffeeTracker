@@ -284,6 +284,11 @@
         <item>Kopi yang ditanam di ketinggian lebih tinggi biasanya memiliki rasa lebih kompleks dan keasaman yang lebih cerah.</item>
     </string-array>
 
+    <string name="widget_description">Ringkasan kopi dan pintasan cepat untuk menambahkan yang baru.</string>
+    <string name="widget_total_caption">Total</string>
+    <string name="widget_today_line">Hari ini: %d</string>
+    <string name="widget_tap_to_add">Ketuk di sini untuk menambahkan kopi</string>
+
     <string name="account_title">Cadangan cloud</string>
     <string name="account_anonymous_description">Kopi Anda disimpan di perangkat ini dan disinkronkan secara anonim ke cloud. Tautkan akun Google Anda untuk memulihkannya jika Anda ganti ponsel.</string>
     <string name="account_linked_description">Akun tertaut. Data Anda disinkronkan ke cloud dan dapat dipulihkan di perangkat lain dengan masuk menggunakan akun Google yang sama.</string>

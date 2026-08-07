@@ -4,7 +4,7 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21%2B-blue?logo=kotlin)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-UI-orange?logo=jetpackcompose)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
-![Status](https://img.shields.io/badge/Version-4.5.0-brightgreen)
+![Status](https://img.shields.io/badge/Version-4.6.0-brightgreen)
 [![Get it on Google Play](https://img.shields.io/badge/Google_Play-Get_it_on-brightgreen?logo)](https://play.google.com/store/apps/details?id=com.calleserpis.coffeetracker)
 [![GitHub](https://img.shields.io/badge/GitHub-juagosin-black?logo=github)](https://github.com/juagosin)
 ---
@@ -14,7 +14,7 @@
 **Coffee Tracker** es una aplicación Android para registrar y analizar tus hábitos de consumo de café.
 Su objetivo es ofrecer una experiencia moderna y minimalista para llevar un control detallado de cuántos cafés tomas, qué tipos prefieres y cuándo los consumes.
 
-La interfaz está disponible en **varios idiomas**, entre ellos **español**, **inglés** y **ruso** (recursos en `values-ru`), además de catalán, francés, italiano e indonesio.
+La interfaz está disponible en **varios idiomas**: **inglés**, **español**, **catalán**, **francés**, **italiano** e **indonesio**.
 
 ---
 
@@ -100,11 +100,18 @@ Plantilla de ejemplo (sin claves reales): `app/google-services.json.example`.
 
 ## 🧪 Estado del proyecto
 
-🟢 **Versión actual:** `v4.5.0`  
+🟢 **Versión actual:** `v4.6.0`  
 🔧 Proyecto en desarrollo activo.  
 Se planifican futuras actualizaciones para:
 - Refinamiento visual.
 - 📊 Nuevas estadísticas
+
+### Novedades en v4.6.0
+
+- **Internacionalización revisada:** el idioma base/fallback de la app ahora es **inglés** para cualquier dispositivo con un idioma no soportado.
+- **Idiomas soportados alineados:** recursos organizados y sincronizados para **inglés, español, catalán, francés, italiano e indonesio**.
+- **Selector de idioma en Android 13+:** la app ya expone sus idiomas soportados en los ajustes del sistema mediante `localeConfig`.
+- **README alineado con la release actual:** versión de app actualizada a `v4.6.0`.
 
 ### Novedades en v4.5.0
 

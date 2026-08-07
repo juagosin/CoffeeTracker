@@ -1,0 +1,289 @@
+<resources>
+    <string name="app_name">Coffee Tracker</string>
+
+    <string name="screenHome_title">Home</string>
+    <string name="screenStats_title">Estadísticas</string>
+    <string name="screenAchievements_title">Logros</string>
+
+    <string name="Main_title">Coffee Tracker</string>
+    <string name="fab_description">Añadir café</string>
+
+    <string name="title_newCoffee">Nuevo Café ☕</string>
+    <string name="title_editCoffee">Editar Café ☕</string>
+
+    <string name="label_notes">Notas</string>
+    <string name="label_price">Precio</string>
+    <string name="label_date">Fecha</string>
+    <string name="label_type">Tipo</string>
+
+    <!-- Coffee Types -->
+    <string name="coffee_type_cortado">Cortado</string>
+    <string name="coffee_type_latte">Con Leche</string>
+    <string name="coffee_type_espresso">Solo</string>
+    <string name="coffee_type_lungo">Largo</string>
+    <string name="coffee_type_cappuccino">Capuchino</string>
+    <string name="coffee_type_descafeinado">Descafeinado</string>
+    <string name="coffee_type_carajillo">Carajillo</string>
+    <string name="coffee_type_cremaet">Cremaet</string>
+    <string name="coffee_type_otros">Otros</string>
+
+    <!-- Time text -->
+    <!-- Plurales para días -->
+    <plurals name="time_days">
+        <item quantity="one">%d día</item>
+        <item quantity="other">%d días</item>
+    </plurals>
+
+    <!-- Plurales para horas -->
+    <plurals name="time_hours">
+        <item quantity="one">%d hora</item>
+        <item quantity="other">%d horas</item>
+    </plurals>
+
+    <!-- Plurales para minutos -->
+    <plurals name="time_minutes">
+        <item quantity="one">%d minuto</item>
+        <item quantity="other">%d minutos</item>
+    </plurals>
+
+    <!-- Plurales para segundos -->
+    <plurals name="time_seconds">
+        <item quantity="one">%d segundo</item>
+        <item quantity="other">%d segundos</item>
+    </plurals>
+
+    <!-- Strings simples -->
+    <string name="time_now">Hace un momento</string>
+    <string name="time_just_now">Justo ahora</string>
+    <string name="time_short_now">Ahora</string>
+    <string name="time_ago">Hace %s</string>
+    <string name="time_connector_and">y</string>
+
+    <string name="btn_save">Guardar</string>
+    <string name="btn_edit">Editar</string>
+    <string name="btn_accept">Aceptar</string>
+    <string name="btn_delete">Borrar</string>
+    <string name="btn_cancel">Cancelar</string>
+
+    <string name="title_nodata">No hay registros de consumo de café</string>
+    <string name="title_coffecount">Contador de cafés</string>
+    <string name="title_didyouknow">Sabías que...</string>
+    <string name="title_total_spent">Llevas gastado un total de </string>
+    <string name="title_lastcoffe">Último café</string>
+    <string name="title_last_coffees">Últimos cafés</string>
+    <string name="title_lastweek">Cafés de la última semana</string>
+
+    <string name="title_delete">Vas a borrar el café</string>
+    <string name="txt_delete">¿Estás seguro de borrar el café?</string>
+
+
+    <string name="title_chart_historical">Histórico de consumo de café</string>
+
+    <string name="txt_never">Nunca</string>
+
+    <string name="placeholder_price">0.00</string>
+
+    <string name="title_barchart">Consumo últimos 12 meses</string>
+    <string name="label_barchart">tazas</string>
+
+    <!-- LOGROS -->
+    <string name="achievement_first_coffee_title">Primer café</string>
+    <string name="achievement_first_coffee_description">Enhorabuena, has comenzado a tomar café.</string>
+    <string name="achievement_fifty_coffee_title">50 cafés</string>
+    <string name="achievement_fifty_coffee_description">Bueno, parece que eres algo aficionado al café.</string>
+    <string name="achievement_hundred_coffee_title">100 cafés</string>
+    <string name="achievement_hundred_coffee_description">Perfecto, ya podemos considerar que te gusta el café.</string>
+    <string name="achievement_fifty_hundred_coffee_title">500 cafés</string>
+    <string name="achievement_fifty_hundred_coffee_description">Bueno, parece que eres algo aficionado al café.</string>
+    <string name="achievement_666_coffee_title">666 cafés</string>
+    <string name="achievement_666_coffee_description">Has alcanzado los 666 cafés… oficialmente el demonio te ha añadido a su lista VIP de clientes con cafeína eterna..</string>
+    <string name="achievement_spaceodyssey_coffee_title">Odisea en el Café</string>
+    <string name="achievement_spaceodyssey_coffee_description">Has alcanzado 2001 cafés… HAL 9000 empieza a preocuparse porque tu nivel de cafeína supera cualquier misión espacial conocida.</string>
+    <string name="achievement_daily_5_coffee_title">5 cafés en un día</string>
+    <string name="achievement_daily_5_coffee_description">Wow, tómatelo con calma. No abuses de la cafeína</string>
+    <string name="achievement_daily_10_coffee_title">Límite legal superado</string>
+    <string name="achievement_daily_10_coffee_description">10 cafés en un día...Tu corazón pidió vacaciones</string>
+    <string name="achievement_christmas_title">Café Navideño</string>
+    <string name="achievement_christmas_desc">Disfruta de un café el día de Navidad.</string>
+    <string name="achievement_new_year_title">Nuevo Año, Nuevo Café</string>
+    <string name="achievement_new_year_desc">Empieza el año con un café</string>
+    <string name="achievement_valentines_title">Café Amoroso</string>
+    <string name="achievement_valentines_desc">Te has tomado un café en San Valentín… porque tu verdadera cita nunca te falla y siempre viene en taza caliente.</string>
+    <string name="achievement_halloween_title">Café o Truco</string>
+    <string name="achievement_halloween_desc">Has tomado café en Halloween… ahora no sabemos si estás más despierto por la cafeína o por los sustos.</string>
+    <string name="achievement_leap_year_title">Edición limitada</string>
+    <string name="achievement_leap_year_desc">Has tomado un café en el día que solo aparece cada cuatro años… más exclusivo que tu espresso favorito.</string>
+    <string name="achievement_year_streak_title">Leyenda del Café</string>
+    <string name="achievement_year_streak_desc">Toma café todos los días durante un año completo.</string>
+    <string name="achievement_perfect_detox_title">Detox Perfecto</string>
+    <string name="achievement_perfect_detox_desc">Un día sin café después de 30 días consecutivos.</string>
+    <string name="achievement_monday_morning_title">Lunes guerrero</string>
+    <string name="achievement_monday_morning_desc">Empieza el lunes con un café antes de las 6 de la mañana</string>
+    <string name="achievement_swiss_watch_title">Reloj Suizo</string>
+    <string name="achievement_swiss_watch_desc">Toma café a la misma hora exacta en 7 días diferentes</string>
+    <string name="achievement_last_minute_title">Al límite</string>
+    <string name="achievement_last_minute_desc">Siempre al filo del día… como tu sistema nervioso.</string>
+    <string name="achievement_explorer_title">Explorador</string>
+    <string name="achievement_explorer_desc">Enhorabuena, has probado todo tipo de cafés</string>
+    <string name="achievement_decaf_morning_title">Maestro del Autocontrol</string>
+    <string name="achievement_decaf_morning_desc">Has sobrevivido 7 mañanas seguidas con descafeinado… demostrando que el verdadero poder no siempre necesita cafeína.</string>
+
+    <string name="achievement_groundhog_title">Día de la marmota</string>
+    <string name="achievement_groundhog_desc">Café exactamente a la misma hora durante 30 días. Vives atrapado en un loop temporal.</string>
+
+
+
+    <string-array name="coffee_phrases">
+        <item>El café fue descubierto en Etiopía alrededor del siglo IX, según la leyenda del pastor Kaldi.</item>
+        <item>Kaldi notó que sus cabras se volvían más activas después de comer los frutos del cafeto.</item>
+        <item>La palabra \'café\' proviene del árabe \'qahwa\', que originalmente significaba \'vino\'.</item>
+        <item>El café llegó a Europa en el siglo XVII y rápidamente se convirtió en una bebida popular.</item>
+        <item>Venecia fue una de las primeras ciudades europeas en abrir una cafetería en 1645.</item>
+        <item>La primera cafetería inglesa abrió en Oxford en 1650, conocida como \'The Angel\'.</item>
+        <item>El café fue prohibido en La Meca en el año 1511 por considerarse estimulante y sospechoso.</item>
+        <item>En 1675, el rey Carlos II de Inglaterra intentó cerrar las cafeterías por fomentar debates políticos.</item>
+        <item>El café se popularizó en América después del Boston Tea Party de 1773, cuando el té fue boicoteado.</item>
+        <item>La primera cafetería en Estados Unidos abrió en Boston en 1676.</item>
+        <item>El café instantáneo fue inventado por el japonés Satori Kato en 1901.</item>
+        <item>La cafeína fue aislada por primera vez en 1819 por el químico alemán Friedlieb Runge.</item>
+        <item>Goethe fue quien sugirió a Runge que estudiara los granos de café.</item>
+        <item>El espresso fue inventado en Italia a comienzos del siglo XX.</item>
+        <item>Luigi Bezzera patentó la primera máquina de espresso en 1901.</item>
+        <item>La cafetera italiana o moka fue creada por Alfonso Bialetti en 1933.</item>
+        <item>El capuchino toma su nombre de los monjes capuchinos, por el color de su hábito.</item>
+        <item>Brasil es el mayor productor de café del mundo desde hace más de 150 años.</item>
+        <item>Colombia es uno de los mayores exportadores de café arábica del mundo.</item>
+        <item>El café arábica representa aproximadamente el 60% de la producción mundial.</item>
+        <item>El café robusta contiene casi el doble de cafeína que el arábica.</item>
+        <item>El café descafeinado se produce extrayendo la cafeína con agua o disolventes naturales.</item>
+        <item>La cafeína actúa bloqueando la adenosina, un neurotransmisor que induce el sueño.</item>
+        <item>El efecto estimulante del café suele durar entre 3 y 5 horas.</item>
+        <item>El café fue la bebida preferida de Napoleón Bonaparte.</item>
+        <item>Honoré de Balzac bebía entre 40 y 50 tazas de café al día mientras escribía.</item>
+        <item>Voltaire bebía más de 30 tazas de café diarias y decía que lo mantenía lúcido.</item>
+        <item>Beethoven contaba exactamente 60 granos de café por taza antes de prepararla.</item>
+        <item>El compositor Johann Sebastian Bach escribió una cantata dedicada al café en 1732.</item>
+        <item>La llamada \'Cantata del Café\' de Bach bromea sobre la adicción de su hija a esta bebida.</item>
+        <item>En Finlandia se consume más café per cápita que en cualquier otro país del mundo.</item>
+        <item>Un finlandés promedio consume más de 12 kilos de café al año.</item>
+        <item>Italia produce una de las culturas del café más influyentes del mundo, centrada en el espresso.</item>
+        <item>En Etiopía, el café es considerado un símbolo de hospitalidad y respeto.</item>
+        <item>El café llegó a Sudamérica por primera vez a través de Guyana Francesa en el siglo XVIII.</item>
+        <item>El café fue una bebida de lujo en Europa hasta el siglo XVIII.</item>
+        <item>En el siglo XIX, el café se convirtió en un producto básico de comercio internacional.</item>
+        <item>Los granos de café son en realidad las semillas del fruto del cafeto, llamadas \'cerezas\'.</item>
+        <item>Cada cereza de café contiene normalmente dos granos, aunque algunas tienen uno solo (peaberry).</item>
+        <item>El café verde debe tostarse antes de ser molido y preparado.</item>
+        <item>El nivel de tueste afecta al sabor, aroma y acidez del café.</item>
+        <item>El café más caro del mundo es el Kopi Luwak, producido con granos digeridos por civetas.</item>
+        <item>El Kopi Luwak se originó en Indonesia y puede alcanzar precios de más de 500 euros por kilo.</item>
+        <item>El café turco es Patrimonio Cultural Inmaterial de la Humanidad desde 2013.</item>
+        <item>En Turquía, preparar café es un acto simbólico de amistad y hospitalidad.</item>
+        <item>En Viena, las cafeterías tradicionales fueron declaradas patrimonio cultural por la UNESCO en 2011.</item>
+        <item>El espresso significa literalmente \'exprés\' o \'a presión\' en italiano.</item>
+        <item>El café americano surgió en la Segunda Guerra Mundial, cuando los soldados diluían el espresso con agua.</item>
+        <item>El latte se popularizó en Estados Unidos en los años 80 gracias al auge de Starbucks.</item>
+        <item>El Flat White nació en Australia o Nueva Zelanda (su origen exacto sigue siendo discutido).</item>
+        <item>La primera máquina de café por cápsulas fue patentada por Nestlé en 1986.</item>
+        <item>La cafeína es el estimulante psicoactivo más consumido del mundo.</item>
+        <item>Un espresso contiene menos cafeína que una taza de café filtrado, pero es más concentrado.</item>
+        <item>El café puede mejorar el rendimiento físico al aumentar la liberación de adrenalina.</item>
+        <item>Estudios demuestran que el café reduce el riesgo de enfermedades como el Parkinson o la diabetes tipo 2.</item>
+        <item>Beber café en moderación está asociado con una mayor esperanza de vida.</item>
+        <item>El aroma del café proviene de más de 800 compuestos volátiles distintos.</item>
+        <item>El café tiene más antioxidantes que la mayoría de frutas y verduras.</item>
+        <item>En Japón existen cafeterías donde se puede tomar café junto a gatos, búhos o incluso serpientes.</item>
+        <item>En Corea del Sur hay más cafeterías por habitante que en cualquier otro país del mundo.</item>
+        <item>El café fue introducido en Yemen en el siglo XV, donde se exportaba desde el puerto de Moka.</item>
+        <item>El término \'mocha\' proviene del puerto yemení de Moka, famoso por su café.</item>
+        <item>La primera cafetería de París abrió en 1686, llamada Café Procope.</item>
+        <item>Voltaire, Rousseau y Diderot frecuentaban el Café Procope.</item>
+        <item>El café ayudó a impulsar la Ilustración al servir como punto de encuentro de pensadores.</item>
+        <item>En el siglo XVIII, las cafeterías eran conocidas como \'penny universities\' en Inglaterra.</item>
+        <item>Se llamaban así porque por un penique se podía comprar una taza de café y conversar con intelectuales.</item>
+        <item>La primera máquina de café expreso moderna fue desarrollada por Achille Gaggia en 1947.</item>
+        <item>Gaggia introdujo el sistema de palanca, que permitió crear la crema característica del espresso.</item>
+        <item>El barista es el profesional especializado en la preparación y presentación del café.</item>
+        <item>El término \'barista\' proviene del italiano y significa literalmente \'barman\'.</item>
+        <item>El Día Internacional del Café se celebra el 1 de octubre.</item>
+        <item>El café es la segunda mercancía más comercializada del mundo, después del petróleo.</item>
+        <item>Más de 25 millones de personas trabajan directa o indirectamente en la industria del café.</item>
+        <item>Un solo árbol de café puede producir entre 1 y 2 kilos de granos al año.</item>
+        <item>Los cafetos pueden vivir más de 50 años en condiciones adecuadas.</item>
+        <item>El café crece mejor en regiones tropicales con altitudes entre 800 y 2000 metros.</item>
+        <item>La zona cafetera de Colombia fue declarada Patrimonio de la Humanidad por la UNESCO en 2011.</item>
+        <item>En Etiopía, el café forma parte de ceremonias sociales y familiares diarias.</item>
+        <item>Los etíopes suelen tostar, moler y preparar el café frente a los invitados.</item>
+        <item>En Suecia existe la tradición del \'fika\', una pausa diaria para tomar café y conversar.</item>
+        <item>Los escandinavos consideran el café una parte esencial de su cultura laboral.</item>
+        <item>El café contiene pequeñas cantidades de vitaminas B2, B3, B5 y minerales como magnesio y potasio.</item>
+        <item>La cafeína comienza a hacer efecto unos 15 minutos después de ser ingerida.</item>
+        <item>El café tiene un pH de entre 4.5 y 6, ligeramente ácido.</item>
+        <item>Los primeros filtros de café de papel fueron inventados por Melitta Bentz en 1908.</item>
+        <item>Melitta Bentz creó su filtro usando papel secante y una lata perforada.</item>
+        <item>La empresa Melitta sigue siendo una de las principales productoras de filtros de café.</item>
+        <item>El café irlandés se inventó en los años 40 en el aeropuerto de Foynes, Irlanda.</item>
+        <item>Fue creado por el chef Joe Sheridan, que añadió whisky irlandés a la bebida para calentar a los viajeros.</item>
+        <item>El café frío o \'cold brew\' se popularizó en Japón siglos antes de llegar a Occidente.</item>
+        <item>El cold brew se prepara con agua fría y se deja reposar durante 12 a 24 horas.</item>
+        <item>Los baristas modernos compiten en campeonatos mundiales de latte art.</item>
+        <item>El latte art nació en Seattle en la década de 1980.</item>
+        <item>En 1991 se celebró el primer Campeonato Mundial de Baristas.</item>
+        <item>El café ocupa un lugar central en la cultura de muchos países, desde Italia hasta Etiopía.</item>
+        <item>La NASA desarrolló una taza especial para beber café en el espacio.</item>
+        <item>El primer café tomado en el espacio fue en 1969 por el astronauta Buzz Aldrin.</item>
+        <item>En 2015, los astronautas de la Estación Espacial Internacional disfrutaron del primer espresso hecho en órbita.</item>
+        <item>Esa máquina fue diseñada por Lavazza y la Agencia Espacial Italiana.</item>
+        <item>El café tiene más de 120 especies conocidas, aunque solo dos se cultivan comercialmente: arábica y robusta.</item>
+        <item>El café llegó por primera vez a Japón en el siglo XVII, pero no se popularizó hasta después de la Segunda Guerra Mundial.</item>
+        <item>En Etiopía, la ceremonia del café puede durar más de una hora e incluye tres rondas de servicio.</item>
+        <item>El café llegó a Brasil en 1727 gracias a Francisco de Melo Palheta, quien contrabandeó semillas desde la Guayana Francesa.</item>
+        <item>El café fue llevado a Hawái en 1825, donde se estableció la famosa región productora de Kona.</item>
+        <item>El café soluble fue popularizado por Nestlé durante la Segunda Guerra Mundial bajo la marca Nescafé.</item>
+        <item>La primera máquina automática de espresso doméstica fue lanzada por Gaggia en 1977.</item>
+        <item>El café fue considerado una medicina en Europa durante el siglo XVI.</item>
+        <item>En el siglo XVIII, Federico el Grande de Prusia trató de prohibir el café para promover el consumo de cerveza.</item>
+        <item>El café verde se utilizó como moneda de intercambio en África durante siglos.</item>
+        <item>El café es el cultivo comercial más importante de Etiopía, representando más del 30% de sus exportaciones.</item>
+        <item>El primer café en lata fue lanzado en Japón en 1969 por la empresa UCC Ueshima Coffee Co.</item>
+        <item>En Italia, tomar un café en la barra es más barato que sentarse en una mesa.</item>
+        <item>El café llegó a México a finales del siglo XVIII y se extendió rápidamente por Chiapas y Veracruz.</item>
+        <item>El café de Jamaica Blue Mountain es uno de los más apreciados y suaves del mundo.</item>
+        <item>En el siglo XVII, algunos clérigos europeos intentaron prohibir el café llamándolo \'bebida del diablo\'.</item>
+        <item>El Papa Clemente VIII aprobó el consumo de café en 1600, declarando que era \'tan delicioso que debía ser bautizado\'.</item>
+        <item>En Yemen, el café se consideraba una ayuda para la meditación entre los monjes sufíes.</item>
+        <item>El término \'café break\' se popularizó en Estados Unidos en los años 50 gracias a campañas publicitarias.</item>
+        <item>El café instantáneo se volvió indispensable durante la Primera Guerra Mundial por su practicidad para los soldados.</item>
+        <item>El 80% del café que se consume en el mundo es del tipo arábica.</item>
+        <item>En Francia, el filósofo Montesquieu solía escribir acompañado de varias tazas de café.</item>
+        <item>El café de especialidad se define por obtener más de 80 puntos en la escala de la Specialty Coffee Association.</item>
+        <item>El café etíope Yirgacheffe es famoso por sus notas florales y cítricas.</item>
+        <item>El café fue introducido en la India por el sufí Baba Budan en el siglo XVII.</item>
+        <item>El café es la principal fuente de antioxidantes en la dieta occidental promedio.</item>
+        <item>Una taza promedio de café contiene entre 80 y 120 mg de cafeína.</item>
+        <item>El café negro sin azúcar contiene solo unas 2 calorías por taza.</item>
+        <item>El récord Guinness del mayor número de tazas de café servidas en un día es de más de 12.000, logrado en Colombia.</item>
+        <item>El café tostado libera dióxido de carbono durante varios días, por eso debe reposar antes de envasarse.</item>
+        <item>Los cafés cultivados a mayor altitud suelen tener sabores más complejos y una acidez más brillante.</item>
+    </string-array>
+
+    <!-- Home screen widget -->
+    <string name="widget_description">Resumen de cafés y acceso rápido para añadir uno nuevo.</string>
+    <string name="widget_total_caption">Total</string>
+    <string name="widget_today_line">Hoy: %d</string>
+    <string name="widget_tap_to_add">Toca aquí para añadir café</string>
+
+    <!-- Cuenta / backup en la nube -->
+    <string name="account_title">Copia de seguridad</string>
+    <string name="account_anonymous_description">Tus cafés se guardan en este móvil y se sincronizan en la nube de forma anónima. Vincula tu cuenta de Google para recuperarlos si cambias de teléfono.</string>
+    <string name="account_linked_description">Cuenta vinculada. Tus datos se sincronizan con la nube y puedes recuperarlos en otro móvil iniciando sesión con la misma cuenta de Google.</string>
+    <string name="account_sign_in_google">Vincular con Google</string>
+    <string name="account_sync_success">Cuenta vinculada y datos sincronizados correctamente.</string>
+    <string name="account_privacy_note">Solo usamos tu cuenta para identificar tu copia de seguridad. Las estadísticas globales de la app no guardan datos personales.</string>
+    <string name="account_error_developer">No se pudo vincular Google (configuración). Comprueba en Firebase la huella SHA-1 de Play y que el inicio de sesión con Google esté activado.</string>
+    <string name="account_error_network">Sin conexión. Comprueba la red e inténtalo de nuevo.</string>
+    <string name="account_error_internal">Error interno de Google. Inténtalo más tarde.</string>
+    <string name="account_error_canceled">Inicio de sesión cancelado.</string>
+    <string name="account_error_generic">No se pudo vincular Google (código %1$d).</string>
+
+</resources>

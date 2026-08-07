@@ -282,6 +282,11 @@
         <item>Els cafès cultivats a més altitud solen tenir sabors més complexos i una acidesa més brillant.</item>
     </string-array>
 
+    <string name="widget_description">Resum de cafès i accés ràpid per afegir-ne un de nou.</string>
+    <string name="widget_total_caption">Total</string>
+    <string name="widget_today_line">Avui: %d</string>
+    <string name="widget_tap_to_add">Toca aquí per afegir cafè</string>
+
     <string name="account_title">Còpia de seguretat</string>
     <string name="account_anonymous_description">Els teus cafès es guarden en aquest mòbil i se sincronitzen al núvol de forma anònima. Vincula el teu compte de Google per recuperar-los si canvies de telèfon.</string>
     <string name="account_linked_description">Compte vinculat. Les teves dades se sincronitzen amb el núvol i pots recuperar-les en un altre mòbil iniciant sessió amb el mateix compte de Google.</string>
