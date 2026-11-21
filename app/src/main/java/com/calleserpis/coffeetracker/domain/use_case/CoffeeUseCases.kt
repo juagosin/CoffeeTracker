@@ -16,4 +16,5 @@ data class CoffeeUseCases(
     val showNotificationUseCase: ShowNotificationUseCase,
     val getAllAchievementsUseCase: GetAllAchievementsUseCase,
     val addAchievementUseCase: AddAchievementUseCase,
+    val evaluateAchievementsUseCase: EvaluateAchievementsUseCase,
 )

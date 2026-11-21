@@ -1,10 +1,8 @@
 package com.calleserpis.coffeetracker.ui.screens.addcoffee
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.calleserpis.coffeetracker.domain.model.Achievement
 import com.calleserpis.coffeetracker.domain.model.AchievementDefinition
 import com.calleserpis.coffeetracker.domain.model.Coffee
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
@@ -112,28 +110,18 @@ class AddViewModel @Inject constructor(
     private suspend fun checkAchievements() {
         val coffeeList = coffeeUseCase.getLastNCoffeesUseCase(10000).first()
         val unlockedAchievements = coffeeUseCase.getAllAchievementsUseCase().first()
+        val newAchievements = coffeeUseCase.evaluateAchievementsUseCase(
+            coffees = coffeeList,
+            unlockedAchievementIds = unlockedAchievements.mapTo(mutableSetOf()) { it.id }
+        )
 
-        AchievementDefinition.ALL.forEach { achievementDefinition ->
-            val isUnlocked = achievementDefinition.checkCondition(coffeeList)
-            Log.d(
-                "AddViewModel",
-                "Checking achievement: ${achievementDefinition.id} : Condicion $isUnlocked"
+        newAchievements.forEach { achievement ->
+            val definition = AchievementDefinition.ALL.first { it.id == achievement.id }
+            coffeeUseCase.addAchievementUseCase(achievement)
+            coffeeUseCase.showNotificationUseCase(
+                context.getString(definition.titleRes),
+                context.getString(definition.descriptionRes)
             )
-            if (isUnlocked && unlockedAchievements.none { achievementDefinition.id == it.id }) {
-                val newAchievement = Achievement(
-                    id = achievementDefinition.id,
-                    type = achievementDefinition.type,
-                    threshold = achievementDefinition.threshold,
-                    unlockedAt = System.currentTimeMillis(),
-                    isUnlocked = true
-                )
-
-                coffeeUseCase.addAchievementUseCase(newAchievement)
-                coffeeUseCase.showNotificationUseCase(
-                    context.getString(achievementDefinition.titleRes),
-                    context.getString(achievementDefinition.descriptionRes)
-                )
-            }
         }
     }
 }

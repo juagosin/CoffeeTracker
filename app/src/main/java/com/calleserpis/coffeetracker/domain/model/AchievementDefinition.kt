@@ -17,7 +17,6 @@ import com.calleserpis.coffeetracker.domain.model.AchievementHelpers.isValentine
 import com.calleserpis.coffeetracker.domain.model.AchievementHelpers.toLocalDate
 import com.calleserpis.coffeetracker.domain.model.AchievementHelpers.toLocalDateTime
 import java.time.Instant
-import java.time.LocalDate
 import java.time.ZoneId
 
 sealed class AchievementDefinition(
@@ -100,12 +99,11 @@ sealed class AchievementDefinition(
         descriptionRes = R.string.achievement_daily_5_coffee_description,
         iconRes = R.drawable.ic_achievement_daily_5,
         checkCondition = { coffees ->
-            val today = LocalDate.now()
-            coffees.count {
+            coffees.groupingBy {
                 Instant.ofEpochMilli(it.timestamp)
                     .atZone(ZoneId.systemDefault())
-                    .toLocalDate() == today
-            } >= 5
+                    .toLocalDate()
+            }.eachCount().any { (_, count) -> count >= 5 }
         }
     )
     data object DailyAddict10 : AchievementDefinition(
@@ -116,12 +114,11 @@ sealed class AchievementDefinition(
         descriptionRes = R.string.achievement_daily_10_coffee_description,
         iconRes = R.drawable.ic_achievement_daily_10,
         checkCondition = { coffees ->
-            val today = LocalDate.now()
-            coffees.count {
+            coffees.groupingBy {
                 Instant.ofEpochMilli(it.timestamp)
                     .atZone(ZoneId.systemDefault())
-                    .toLocalDate() == today
-            } >= 10
+                    .toLocalDate()
+            }.eachCount().any { (_, count) -> count >= 10 }
         }
     )
 

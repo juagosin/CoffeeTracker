@@ -17,6 +17,7 @@ import com.calleserpis.coffeetracker.domain.use_case.AddAchievementUseCase
 import com.calleserpis.coffeetracker.domain.use_case.AddCoffeeUseCase
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
 import com.calleserpis.coffeetracker.domain.use_case.DeleteCoffeeUseCase
+import com.calleserpis.coffeetracker.domain.use_case.EvaluateAchievementsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetAllAchievementsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetAllTimeTypeStatsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetCoffeeByIdUseCase
@@ -76,7 +77,11 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCoffeeUseCases(repository: CoffeeRepository,notificationHelper: NotificationHelper): CoffeeUseCases {
+    fun provideCoffeeUseCases(
+        repository: CoffeeRepository,
+        notificationHelper: NotificationHelper,
+        evaluateAchievementsUseCase: EvaluateAchievementsUseCase
+    ): CoffeeUseCases {
         return CoffeeUseCases(
             addCoffeeUseCase = AddCoffeeUseCase(repository),
             getCoffeeCount = GetCoffeeCount(repository),
@@ -92,7 +97,8 @@ object AppModule {
             saveLastCoffeePrefUseCase = SaveLastCoffeePrefUseCase(repository),
             showNotificationUseCase = ShowNotificationUseCase(notificationHelper),
             getAllAchievementsUseCase = GetAllAchievementsUseCase(repository),
-            addAchievementUseCase = AddAchievementUseCase(repository)
+            addAchievementUseCase = AddAchievementUseCase(repository),
+            evaluateAchievementsUseCase = evaluateAchievementsUseCase
         )
     }
 
