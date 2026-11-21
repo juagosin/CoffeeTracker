@@ -76,12 +76,12 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun getCoffeeCount() {
-        var coffeeCount:Int = 0
         viewModelScope.launch {
             try{
-                coffeeCount = coffeeUseCase.getCoffeeCount()
-                _state.update { currentState ->
-                    currentState.copy(coffeeCount = coffeeCount)
+                coffeeUseCase.observeCoffeeCountUseCase().collect { coffeeCount ->
+                    _state.update { currentState ->
+                        currentState.copy(coffeeCount = coffeeCount)
+                    }
                 }
             }catch (e:Exception){
 

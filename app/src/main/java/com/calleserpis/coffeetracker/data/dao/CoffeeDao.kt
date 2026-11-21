@@ -21,6 +21,9 @@ interface CoffeeDao {
     @Query("SELECT COUNT(id) FROM coffee_table")
     suspend fun getCoffeeCount(): Int
 
+    @Query("SELECT COUNT(id) FROM coffee_table")
+    fun observeCoffeeCount(): Flow<Int>
+
     @Query(
         """
         SELECT COUNT(id) FROM coffee_table
