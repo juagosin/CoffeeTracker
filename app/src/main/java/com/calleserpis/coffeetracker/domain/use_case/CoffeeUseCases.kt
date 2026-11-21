@@ -3,6 +3,7 @@ package com.calleserpis.coffeetracker.domain.use_case
 data class CoffeeUseCases(
     val addCoffeeUseCase: AddCoffeeUseCase,
     val getCoffeeCount: GetCoffeeCount,
+    val observeCoffeeCountUseCase: ObserveCoffeeCountUseCase,
     val getMoneySpent: GetMoneySpent,
     val getLasCoffeeUseCase: GetLasCoffeeUseCase,
     val getLastNDaysCoffeeUseCase: GetLastNDaysStatsUseCase,
@@ -16,4 +17,5 @@ data class CoffeeUseCases(
     val showNotificationUseCase: ShowNotificationUseCase,
     val getAllAchievementsUseCase: GetAllAchievementsUseCase,
     val addAchievementUseCase: AddAchievementUseCase,
+    val evaluateAchievementsUseCase: EvaluateAchievementsUseCase,
 )

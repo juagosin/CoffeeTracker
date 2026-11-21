@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface AchievementDao {
-    @Query("SELECT * FROM achievements")
+    @Query("SELECT * FROM achievements ORDER BY unlockedAt DESC")
     fun getAllUnlocked(): Flow<List<AchievementEntity>>
 
     @Query("SELECT * FROM achievements WHERE id = :id")
@@ -20,6 +20,9 @@ interface AchievementDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(achievement: AchievementEntity)
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertIfAbsent(achievement: AchievementEntity): Long
 
     @Query("DELETE FROM achievements WHERE id = :achievementId")
     suspend fun delete(achievementId: String)

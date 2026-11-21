@@ -13,6 +13,7 @@ interface CoffeeRepository {
     fun getLastCoffee(): Flow<Coffee?>
     fun getCoffeeById(id: Int): Flow<Coffee?>
     suspend fun getCoffeeCount(): Int
+    fun observeCoffeeCount(): Flow<Int>
     suspend fun getCoffeeCountToday(): Int
     suspend fun getSpentMoney(): Double
 
@@ -43,5 +44,4 @@ interface CoffeeRepository {
 
 
 }
-
 

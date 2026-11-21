@@ -48,6 +48,10 @@ class CoffeeRepositoryImpl @Inject constructor(
         return coffeeDao.getCoffeeCount()
     }
 
+    override fun observeCoffeeCount(): Flow<Int> {
+        return coffeeDao.observeCoffeeCount()
+    }
+
     override suspend fun getCoffeeCountToday(): Int {
         return coffeeDao.getCoffeeCountToday()
     }

@@ -8,6 +8,9 @@ import com.calleserpis.coffeetracker.data.entity.AchievementEntity
 import com.calleserpis.coffeetracker.data.entity.CoffeeEntity
 import com.calleserpis.coffeetracker.data.firebase.FirebaseAuthManager
 import com.calleserpis.coffeetracker.data.firebase.FirestoreCoffeeRemoteDataSource
+import com.calleserpis.coffeetracker.data.mapper.toDomain
+import com.calleserpis.coffeetracker.data.mapper.toEntity
+import com.calleserpis.coffeetracker.domain.use_case.EvaluateAchievementsUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -24,7 +27,8 @@ class CoffeeSyncManager @Inject constructor(
     private val achievementDao: AchievementDao,
     private val authManager: FirebaseAuthManager,
     private val remoteDataSource: FirestoreCoffeeRemoteDataSource,
-    private val preferencesManager: CoffeePreferencesManager
+    private val preferencesManager: CoffeePreferencesManager,
+    private val evaluateAchievementsUseCase: EvaluateAchievementsUseCase
 ) {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val syncMutex = Mutex()
@@ -38,26 +42,31 @@ class CoffeeSyncManager @Inject constructor(
 
     fun scheduleSync() {
         scope.launch {
-            runCatching { syncAll() }
+            runCatching { syncAll(reconcileExistingAchievements = false) }
                 .onFailure { Log.w(TAG, "Sync fallido", it) }
         }
     }
 
-    suspend fun syncAll() = syncMutex.withLock {
+    suspend fun syncAll(reconcileExistingAchievements: Boolean = true) = syncMutex.withLock {
         val uid = authManager.ensureSignedIn()
         assignRemoteIdsForLegacyRows()
-        pullFromRemote(uid)
+        val coffeesChanged = pullFromRemote(uid)
+        if (reconcileExistingAchievements || coffeesChanged) {
+            reconcileAchievements()
+        }
         syncPendingCoffees(uid)
         syncPendingAchievements(uid)
         preferencesManager.setCloudMigrationCompleted()
     }
 
-    private suspend fun pullFromRemote(uid: String) {
-        pullCoffeesFromRemote(uid)
+    private suspend fun pullFromRemote(uid: String): Boolean {
+        val coffeesChanged = pullCoffeesFromRemote(uid)
         pullAchievementsFromRemote(uid)
+        return coffeesChanged
     }
 
-    private suspend fun pullCoffeesFromRemote(uid: String) {
+    private suspend fun pullCoffeesFromRemote(uid: String): Boolean {
+        var coffeesChanged = false
         remoteDataSource.fetchAllCoffees(uid).forEach { remote ->
             val local = coffeeDao.getCoffeeByRemoteId(remote.remoteId)
             if (local == null) {
@@ -72,6 +81,7 @@ class CoffeeSyncManager @Inject constructor(
                         updatedAt = remote.updatedAt
                     )
                 )
+                coffeesChanged = true
             } else if (remote.updatedAt > local.updatedAt) {
                 coffeeDao.insertCoffee(
                     local.copy(
@@ -83,8 +93,10 @@ class CoffeeSyncManager @Inject constructor(
                         syncStatus = SyncStatus.SYNCED.name
                     )
                 )
+                coffeesChanged = true
             }
         }
+        return coffeesChanged
     }
 
     private suspend fun pullAchievementsFromRemote(uid: String) {
@@ -125,6 +137,26 @@ class CoffeeSyncManager @Inject constructor(
                     updatedAt = entity.updatedAt.takeIf { it > 0 } ?: entity.timestamp
                 )
             }
+    }
+
+    private suspend fun reconcileAchievements() {
+        val coffees = coffeeDao.getAllCoffeesOnce().toDomain()
+        val unlockedIds = achievementDao.getAllAchievementsOnce()
+            .mapTo(mutableSetOf()) { it.id }
+        val now = System.currentTimeMillis()
+
+        evaluateAchievementsUseCase(
+            coffees = coffees,
+            unlockedAchievementIds = unlockedIds,
+            unlockedAt = now
+        ).forEach { achievement ->
+            achievementDao.insertIfAbsent(
+                achievement.toEntity().copy(
+                    syncStatus = SyncStatus.PENDING_UPLOAD.name,
+                    updatedAt = now
+                )
+            )
+        }
     }
 
     private suspend fun syncPendingCoffees(uid: String) {

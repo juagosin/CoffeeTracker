@@ -17,6 +17,7 @@ import com.calleserpis.coffeetracker.domain.use_case.AddAchievementUseCase
 import com.calleserpis.coffeetracker.domain.use_case.AddCoffeeUseCase
 import com.calleserpis.coffeetracker.domain.use_case.CoffeeUseCases
 import com.calleserpis.coffeetracker.domain.use_case.DeleteCoffeeUseCase
+import com.calleserpis.coffeetracker.domain.use_case.EvaluateAchievementsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetAllAchievementsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetAllTimeTypeStatsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetCoffeeByIdUseCase
@@ -27,6 +28,7 @@ import com.calleserpis.coffeetracker.domain.use_case.GetLastCoffeePrefUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetLastNCoffeesUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetLastNDaysStatsUseCase
 import com.calleserpis.coffeetracker.domain.use_case.GetMoneySpent
+import com.calleserpis.coffeetracker.domain.use_case.ObserveCoffeeCountUseCase
 import com.calleserpis.coffeetracker.domain.use_case.SaveLastCoffeePrefUseCase
 import com.calleserpis.coffeetracker.domain.use_case.ShowNotificationUseCase
 import dagger.Module
@@ -76,10 +78,15 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCoffeeUseCases(repository: CoffeeRepository,notificationHelper: NotificationHelper): CoffeeUseCases {
+    fun provideCoffeeUseCases(
+        repository: CoffeeRepository,
+        notificationHelper: NotificationHelper,
+        evaluateAchievementsUseCase: EvaluateAchievementsUseCase
+    ): CoffeeUseCases {
         return CoffeeUseCases(
             addCoffeeUseCase = AddCoffeeUseCase(repository),
             getCoffeeCount = GetCoffeeCount(repository),
+            observeCoffeeCountUseCase = ObserveCoffeeCountUseCase(repository),
             getLasCoffeeUseCase = GetLasCoffeeUseCase(repository),
             getLastNDaysCoffeeUseCase = GetLastNDaysStatsUseCase(repository),
             getLastNCoffeesUseCase = GetLastNCoffeesUseCase(repository),
@@ -92,7 +99,8 @@ object AppModule {
             saveLastCoffeePrefUseCase = SaveLastCoffeePrefUseCase(repository),
             showNotificationUseCase = ShowNotificationUseCase(notificationHelper),
             getAllAchievementsUseCase = GetAllAchievementsUseCase(repository),
-            addAchievementUseCase = AddAchievementUseCase(repository)
+            addAchievementUseCase = AddAchievementUseCase(repository),
+            evaluateAchievementsUseCase = evaluateAchievementsUseCase
         )
     }
 
